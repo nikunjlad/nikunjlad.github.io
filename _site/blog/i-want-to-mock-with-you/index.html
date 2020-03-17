@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      I want to mock with you &middot; Anjana Sofia Vakil
+    
+  </title>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/public/css/anjana.css">
+
+  <!-- Custom JS -->
+  <script src="/public/js/anjana.js"></script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <!-- <link rel="shortcut icon" href="/public/favicon.ico"> -->
+
+  <!-- Feed (jekyll-feed) -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Anjana Sofia Vakil" />
+</head>
+
+
+  <body class="theme-base-0c">
+
+    <div class="sidebar">
+  <div class="container left-align">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Anjana Sofia Vakil
+        </a>
+      </h1>
+      <p class="lead">Language technologist and software developer</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      
+
+      <a class="sidebar-nav-item"
+         href="/">Blog</a>
+      
+      <a class="sidebar-nav-item"
+         href="/about/">About</a>
+      <!-- a class="sidebar-nav-item"
+         href="/resume/">Resume</a -->
+      <a class="sidebar-nav-item"
+         href="/projects/">Projects</a>
+      <a class="sidebar-nav-item"
+         href="/talks/">Talks</a>
+    </nav>
+
+    <ul class="list-inline" id="sidebar-buttons">
+        <li>
+            <a href="mailto:anjanavakil@gmail.com" class="btn-social btn-outline" title="E-Mail me">
+                <i class="fa fa-fw fa-at"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/vakila" target="_blank" class="btn-social btn-outline" title="vakila on GitHub">
+                <i class="fa fa-fw fa-github"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="http://www.facebook.com/anjana.vakil" target="_blank" class="btn-social btn-outline" title="Anjana Vakil on Facebook">
+                <i class="fa fa-fw fa-facebook"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://twitter.com/AnjanaVakil" target="_blank" class="btn-social btn-outline" title="@AnjanaVakil on Twitter">
+                <i class="fa fa-fw fa-twitter"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="" target="_blank" class="btn-social btn-outline" title="Google Plus">
+                <i class="fa fa-fw fa-google-plus"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://www.linkedin.com/in/anjanavakil " target="_blank" class="btn-social btn-outline" title="Anjana Vakil on LinkedIn">
+                <i class="fa fa-fw fa-linkedin"></i>
+            </a>
+        </li>
+
+
+    </ul>
+
+    <p id="credits">&copy; 2020. <a href="/credits">Credits</a>.</p>
+  </div>
+</div>
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title"><p>I want to mock with you</p>
+</h1>
+  
+  <span class="post-date">16 Jun 2016</span>
+  <p><em>This post brought to you from Mozilla’s London All Hands meeting - cheers!</em></p>
+
+<p>When writing Python unit tests, sometimes you want to just test one specific aspect of a piece of code that does multiple things.</p>
+
+<p>For example, maybe you’re wondering:</p>
+
+<ul>
+  <li>Does object X get created here?</li>
+  <li>Does method X get called here?</li>
+  <li>Assuming method X returns Y, does the right thing happen after that?</li>
+</ul>
+
+<p>Finding the answers to such questions is super simple if you use <code class="highlighter-rouge">mock</code>: a library which “allows you to replace parts of your system under test with mock objects and make assertions about how they have been used.” Since Python 3.3 it’s available simply as <code class="highlighter-rouge">unittest.mock</code>, but if you’re using an earlier Python you can get it from PyPI with <code class="highlighter-rouge">pip install mock</code>.</p>
+
+<p>So, what are mocks? How do you use them?</p>
+
+<p>Well, in short I could tell you that a <code class="highlighter-rouge">Mock</code> is a sort of magical object that’s intended to be a doppelgänger for some object in your code that you want to test. <code class="highlighter-rouge">Mock</code>s have special attributes and methods you can use to find out how your test is using the object you’re mocking. For example, you can use <code class="highlighter-rouge">Mock.called</code> and <code class="highlighter-rouge">.call_count</code> to find out if and how many times a method has been called. You can also manipulate <code class="highlighter-rouge">Mock</code>s to simulate functionality that you’re not directly testing, but is necessary for the code you’re testing. For example, you can set <code class="highlighter-rouge">Mock.return_value</code> to pretend that an function gave you some particular output, and make sure that the right thing happens in your program.</p>
+
+<p>But honestly, I don’t think I could give a better or more succinct overview of mocks than the <a href="https://docs.python.org/3/library/unittest.mock.html#quick-guide">Quick Guide</a>, so for a real intro you should go read that. While you’re doing that, I’m going to watch this fantastic Michael Jackson video:</p>
+
+<div style="text-align:center; padding:1em;"><iframe width="420" height="315" src="https://www.youtube.com/embed/5X-Mrc2l1d0" frameborder="0" allowfullscreen=""></iframe></div>
+
+<p>Oh you’re back? Hi! So, now that you have a basic idea of what makes <code class="highlighter-rouge">Mock</code>s super cool, let me share with you some of the tips/tips/trials/tribulations I discovered when starting to use them.</p>
+
+<h2 id="patches-and-namespaces">Patches and namespaces</h2>
+
+<p><em>tl;dr: Learn <a href="https://docs.python.org/3/library/unittest.mock.html#where-to-patch">where to patch</a> if you don’t want to be sad!</em></p>
+
+<p>When you import a helper module into a module you’re testing, the tested module gets its own namespace for the helper module. So if you want to mock a class from the helper module, you need to mock it <em>within the tested module’s namespace</em>.</p>
+
+<p>For example, let’s say I have a Super Useful <code class="highlighter-rouge">helper</code> module, which defines a class <code class="highlighter-rouge">HelperClass</code> that is So Very Helpful:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># helper.py
+
+class HelperClass():
+    def __init__(self):
+        self.name = "helper"
+    def help(self):
+        helpful = True
+        return helpful
+</code></pre></div></div>
+
+<p>And in the module I want to test, <code class="highlighter-rouge">tested</code>, I instantiate the Incredibly Helpful <code class="highlighter-rouge">HelperClass</code>, which I imported from <code class="highlighter-rouge">helper.py</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># tested.py
+
+from helper import HelperClass
+
+def fn():
+    h = HelperClass() # using tested.HelperClass
+    return h.help()
+</code></pre></div></div>
+
+<p>Now, let’s say that it is Incredibly Important that I make sure that a <code class="highlighter-rouge">HelperClass</code> object is actually getting created in <code class="highlighter-rouge">tested</code>, i.e. that <code class="highlighter-rouge">HelperClass()</code> is being called. I can write a test module that patches <code class="highlighter-rouge">HelperClass</code>, and check the resulting <code class="highlighter-rouge">Mock</code> object’s <a href="https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.called"><code class="highlighter-rouge">called</code> property</a>. But I have to be careful that I patch the right <code class="highlighter-rouge">HelperClass</code>! Consider <code class="highlighter-rouge">test_tested.py</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># test_tested.py
+
+import tested
+
+from mock import patch
+
+# This is not what you want:
+@patch('helper.HelperClass')
+def test_helper_wrong(mock_HelperClass):
+    tested.fn()
+    assert mock_HelperClass.called # Fails! I mocked the wrong class, am sad :(
+
+# This is what you want:
+@patch('tested.HelperClass')
+def test_helper_right(mock_HelperClass):
+    tested.fn()
+    assert mock_HelperClass.called # Passes! I am not sad :)
+</code></pre></div></div>
+
+<p>OK great! If I patch <code class="highlighter-rouge">tested.HelperClass</code>, I get what I want.</p>
+
+<p>But what if the module I want to test uses <code class="highlighter-rouge">import helper</code> and <code class="highlighter-rouge">helper.HelperClass()</code>, instead of <code class="highlighter-rouge">from helper import HelperClass</code> and <code class="highlighter-rouge">HelperClass()</code>? As in <code class="highlighter-rouge">tested2.py</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># tested2.py
+
+import helper
+
+def fn():
+    h = helper.HelperClass()
+    return h.help()
+</code></pre></div></div>
+
+<p>In this case, in my test for <code class="highlighter-rouge">tested2</code> I need to patch the class with <code class="highlighter-rouge">patch('helper.HelperClass')</code> instead of <code class="highlighter-rouge">patch('tested.HelperClass')</code>. Consider <code class="highlighter-rouge">test_tested2.py</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># test_tested2.py
+
+import tested2
+from mock import patch
+
+# This time, this IS what I want:
+@patch('helper.HelperClass')
+def test_helper_2_right(mock_HelperClass):
+    tested2.fn()
+    assert mock_HelperClass.called # Passes! I am not sad :)
+
+# And this is NOT what I want!
+# Mock will complain: "module 'tested2' does not have the attribute 'HelperClass'"
+@patch('tested2.HelperClass')
+def test_helper_2_right(mock_HelperClass):
+    tested2.fn()
+    assert mock_HelperClass.called
+</code></pre></div></div>
+
+<p>Wonderful!</p>
+
+<p>In short: be careful of which namespace you’re patching in. If you patch whatever object you’re testing in the wrong namespace, the object that’s created will be the real object, not the mocked version. And that will make you confused and sad.</p>
+
+<p>I was confused and sad when I was trying to mock the <code class="highlighter-rouge">TestManifest.active_tests()</code> function to test <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/harness/marionette/runner/base.py#902"><code class="highlighter-rouge">BaseMarionetteTestRunner.add_test</code></a>, and I was trying to mock it in the place it was defined, i.e. <code class="highlighter-rouge">patch('manifestparser.manifestparser.TestManifest.active_tests')</code>.</p>
+
+<p>Instead, I had to patch <code class="highlighter-rouge">TestManifest</code> <em>within the <code class="highlighter-rouge">runner.base</code> module</em>, i.e. the place where it was actually being called by the <code class="highlighter-rouge">add_test</code> function, i.e. <code class="highlighter-rouge">patch('marionette.runner.base.TestManifest.active_tests')</code>.</p>
+
+<p>So don’t be confused or sad, mock the thing <em>where it is used</em>, not where it was defined!</p>
+
+<h2 id="pretending-to-read-files-with-mock_open">Pretending to read files with <code class="highlighter-rouge">mock_open</code></h2>
+
+<p>One thing I find particularly annoying is writing tests for modules that have to interact with files. Well, I guess I could, like, write code in my tests that creates dummy files and then deletes them, or (even worse) just put some dummy files next to my test module for it to use. But wouldn’t it be better if I could just skip all that and <em>pretend</em> the files exist, and have whatever content I need them to have?</p>
+
+<p>It sure would! And that’s exactly the type of thing <code class="highlighter-rouge">mock</code> is really helpful with. In fact, there’s even a helper called <code class="highlighter-rouge">mock_open</code> that makes it super simple to pretend to read a file. All you have to do is patch the builtin <code class="highlighter-rouge">open</code> function, and pass in <code class="highlighter-rouge">mock_open(read_data="my data")</code> to the patch to make the <code class="highlighter-rouge">open</code> in the code you’re testing only <em>pretend</em> to open a file with that content, instead of actually doing it.</p>
+
+<p>To see it in action, you can take a look at a (not necessarily great) little test I wrote that pretends to open a file and read some data from it:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def test_nonJSON_file_throws_error(runner):
+    with patch('os.path.exists') as exists:
+        exists.return_value = True
+        with patch('__builtin__.open', mock_open(read_data='[not {valid JSON]')):
+            with pytest.raises(Exception) as json_exc:
+                runner._load_testvars() # This is the code I want to test, specifically to be sure it throws an exception
+    assert 'not properly formatted' in json_exc.value.message
+</code></pre></div></div>
+
+<h2 id="gotchya-mocking-and-debugging-at-the-same-time">Gotchya: Mocking and debugging at the same time</h2>
+
+<p>See that <code class="highlighter-rouge">patch('os.path.exists')</code> in the test I just mentioned? Yeah, that’s probably not a great idea. At least, I found it problematic.</p>
+
+<p>I was having some difficulty with a similar test, in which I was also patching <code class="highlighter-rouge">os.path.exists</code> to fake a file (though that wasn’t the part I was having problems with), so I decided to <a href="https://pytest.org/latest/usage.html#setting-a-breakpoint-aka-set-trace">set a breakpoint with <code class="highlighter-rouge">pytest.set_trace()</code></a> to drop into the Python debugger and try to understand the problem. The debugger I use is <a href="https://pypi.python.org/pypi/pdbpp/">pdb++</a>, which just adds some helpful little features to the default <a href="https://docs.python.org/3/library/pdb.html">pdb</a>, like colors and <a href="https://pypi.python.org/pypi/pdbpp/#sticky-mode"><code class="highlighter-rouge">sticky</code> mode</a>.</p>
+
+<p>So there I am, merrily debugging away at my <code class="highlighter-rouge">(Pdb++)</code> prompt. But as soon as I entered the <code class="highlighter-rouge">patch('os.path.exists')</code> context, I started getting weird behavior in the debugger console: complaints about some <code class="highlighter-rouge">~/.fancycompleterrc.py</code> file and certain commands not working properly.</p>
+
+<p>It turns out that at least one module pdb++ was using (e.g. <code class="highlighter-rouge">fancycompleter</code>) was getting confused about file(s) it needs to function, because of checks for <code class="highlighter-rouge">os.path.exists</code> that were now all messed up thanks to my ill-advised <code class="highlighter-rouge">patch</code>. This had me scratching my head for longer than I’d like to admit.</p>
+
+<p>What I still don’t understand (explanations welcome!) is why I still got this weird behavior when I tried to change the test to patch <code class="highlighter-rouge">'mymodule.os.path.exists'</code> (where <code class="highlighter-rouge">mymodule.py</code> contains <code class="highlighter-rouge">import os</code>) instead of just <code class="highlighter-rouge">'os.path.exists'</code>. Based on what we saw about namespaces, I figured this would restrict the mock to only <code class="highlighter-rouge">mymodule</code>, so that pdb++ and related modules would be safe - but it didn’t seem to have any effect whatsoever. But I’ll have to save that mystery for another day (and another post).</p>
+
+<p>Still, lesson learned: if you’re patching a commonly used function, like, say, <code class="highlighter-rouge">os.path.exists</code>, don’t forget that once you’re inside that mocked context, you no longer have access to the real function <em>at all</em>! So keep an eye out, and mock responsibly!</p>
+
+<h2 id="mock-the-night-away">Mock the night away</h2>
+
+<p>Those are just a few of the things I’ve learned in my first few weeks of <code class="highlighter-rouge">mock</code>ing. If you need some bedtime reading, check out these resources that I found helpful:</p>
+
+<ul>
+  <li><a href="https://www.toptal.com/python/an-introduction-to-mocking-in-python">An intro to mocking in Python</a> on Toptal</li>
+  <li>Mozilla dev Armen Z.G.’s <a href="http://armenzg.blogspot.de/2016/04/improving-how-i-write-python-tests.html">blog post on better Python tests</a></li>
+</ul>
+
+<p>I’m sure <code class="highlighter-rouge">mock</code> has all kinds of secrets, magic, and superpowers I’ve yet to discover, but that gives me something to look forward to! If you have <code class="highlighter-rouge">mock</code>-foo tips to share, just give me a shout on <a href="https://twitter.com/intent/tweet?screen_name=AnjanaVakil">Twitter</a>!</p>
+
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/blog/katsconf2/">
+            <p>Notes from KatsConf2</p>
+
+            <small>19 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/fosdem-2017/">
+            <p>Notes from FOSDEM 2017</p>
+
+            <small>13 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/marionette-act-ii-testing/">
+            <p>Marionette, Act II: Harnessing automation to test the browser</p>
+
+            <small>22 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+
+  </body>
+</html>

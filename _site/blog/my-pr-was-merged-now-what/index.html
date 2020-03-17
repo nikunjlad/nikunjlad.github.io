@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      My pull request was merged! Now what? &middot; Anjana Sofia Vakil
+    
+  </title>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/public/css/anjana.css">
+
+  <!-- Custom JS -->
+  <script src="/public/js/anjana.js"></script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <!-- <link rel="shortcut icon" href="/public/favicon.ico"> -->
+
+  <!-- Feed (jekyll-feed) -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Anjana Sofia Vakil" />
+</head>
+
+
+  <body class="theme-base-0c">
+
+    <div class="sidebar">
+  <div class="container left-align">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Anjana Sofia Vakil
+        </a>
+      </h1>
+      <p class="lead">Language technologist and software developer</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      
+
+      <a class="sidebar-nav-item"
+         href="/">Blog</a>
+      
+      <a class="sidebar-nav-item"
+         href="/about/">About</a>
+      <!-- a class="sidebar-nav-item"
+         href="/resume/">Resume</a -->
+      <a class="sidebar-nav-item"
+         href="/projects/">Projects</a>
+      <a class="sidebar-nav-item"
+         href="/talks/">Talks</a>
+    </nav>
+
+    <ul class="list-inline" id="sidebar-buttons">
+        <li>
+            <a href="mailto:anjanavakil@gmail.com" class="btn-social btn-outline" title="E-Mail me">
+                <i class="fa fa-fw fa-at"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/vakila" target="_blank" class="btn-social btn-outline" title="vakila on GitHub">
+                <i class="fa fa-fw fa-github"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="http://www.facebook.com/anjana.vakil" target="_blank" class="btn-social btn-outline" title="Anjana Vakil on Facebook">
+                <i class="fa fa-fw fa-facebook"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://twitter.com/AnjanaVakil" target="_blank" class="btn-social btn-outline" title="@AnjanaVakil on Twitter">
+                <i class="fa fa-fw fa-twitter"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="" target="_blank" class="btn-social btn-outline" title="Google Plus">
+                <i class="fa fa-fw fa-google-plus"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://www.linkedin.com/in/anjanavakil " target="_blank" class="btn-social btn-outline" title="Anjana Vakil on LinkedIn">
+                <i class="fa fa-fw fa-linkedin"></i>
+            </a>
+        </li>
+
+
+    </ul>
+
+    <p id="credits">&copy; 2020. <a href="/credits">Credits</a>.</p>
+  </div>
+</div>
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title"><p>My pull request was merged! Now what?</p>
+</h1>
+  
+  <span class="post-date">28 Mar 2016</span>
+  <p>So, you’ve just made a contribution to an open-source project on Github by creating a pull request and having it merged by the project’s administrators! Congratulations, you’re a rockstar! …But now what do you do? How do you clean up your fork and your local copy of the repository? It’s a pretty simple process, but involves a few steps; here they are all written down in one place.</p>
+
+<h3 id="1-pull-in-the-central-changes-to-your-local-repo">1. Pull in the central changes to your local repo</h3>
+
+<p>Your PR has been merged, so the changes you made are now in the central repository. You want to pull those in (along with any other changes that might have been made to the central repo since you last updated your fork) to your local copy of the repo.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch upstream
+
+git checkout master
+
+git merge upstream/master
+</code></pre></div></div>
+
+<p>For more info, see <a href="https://help.github.com/articles/syncing-a-fork/">Github Help: Syncing a Fork</a>.</p>
+
+<h3 id="2-push-the-changes-to-your-fork">2. Push the changes to your fork</h3>
+
+<p>Great, now your local copy of the repo is up-to-date. But your fork of the project on Github won’t be updated until you push to it, so go ahead and:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin master
+</code></pre></div></div>
+
+<p>For more info, see  <a href="https://help.github.com/articles/pushing-to-a-remote/">Github Help: Pushing to a Remote</a>.</p>
+
+<h3 id="3-optional-delete-the-branch-from-your-fork">3. [Optional] Delete the branch from your fork</h3>
+
+<p>If you want, you can clean up your fork by deleting the branch you made for the PR (you did <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow">make a new feature branch</a> for your work on that feature/bugfix, didn’t you?), so that old branches don’t start to pile up in your repo.</p>
+
+<p>At the bottom of the Pull Request page on Github, below any comments, there will be a button giving you the option to delete the branch.</p>
+
+<p><img src="https://help.github.com/assets/images/help/pull_requests/delete_branch_button.png" alt="Screenshot: Deleting a PR's branch on Github" /></p>
+
+<p>Push it! (Don’t worry, you can un-delete - or “restore” - the branch later if you need to.)</p>
+
+<p>For more info, see <a href="https://help.github.com/articles/deleting-unused-branches/">Github Help: Deleting unused branches</a>.</p>
+
+<h3 id="4-optional-delete-the-branch-from-your-local-repo">4. [Optional] Delete the branch from your local repo</h3>
+
+<p>This has two sub-steps. (For more info, see <a href="http://www.fizerkhan.com/blog/posts/Clean-up-your-local-branches-after-merge-and-delete-in-GitHub.html">this blog post by Fizer Khan</a>.)</p>
+
+<h5 id="4a-prune-the-remote-tracker-for-the-branch">4a. Prune the remote tracker for the branch</h5>
+
+<p>First, make sure that the right branch(es) will be pruned, using</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote show origin
+</code></pre></div></div>
+
+<p>and/or</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote prune --dry-run origin
+</code></pre></div></div>
+
+<p>Make sure that only the branch(es) you want to delete are marked as <code class="highlighter-rouge">stale</code> (if you used <code class="highlighter-rouge">show</code>) or <code class="highlighter-rouge">[would prune]</code> (if you used <code class="highlighter-rouge">prune --dry-run</code>). If everything looks OK, go ahead and actually prune the branch:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote prune origin
+</code></pre></div></div>
+
+<h5 id="4b-delete-your-local-copy-of-the-branch">4b. Delete your local copy of the branch</h5>
+
+<p>You don’t have to, but if you want to it’s easy:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch -d my-branch
+</code></pre></div></div>
+
+<h3 id="all-done">All done!</h3>
+
+<p>Sit back, relax, and enjoy a celebratory glass of bubbly while you bask in the glory of your open-source contribution and immaculately tidy repo. Er, I mean, get to work on that next PR!</p>
+
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/blog/katsconf2/">
+            <p>Notes from KatsConf2</p>
+
+            <small>19 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/fosdem-2017/">
+            <p>Notes from FOSDEM 2017</p>
+
+            <small>13 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/marionette-act-ii-testing/">
+            <p>Marionette, Act II: Harnessing automation to test the browser</p>
+
+            <small>22 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+
+  </body>
+</html>
