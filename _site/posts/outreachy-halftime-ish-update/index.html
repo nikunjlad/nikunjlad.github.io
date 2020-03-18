@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Outreachy halftime(ish) update &middot; Nikunj Rajesh Lad
+    
+  </title>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/public/css/anjana.css">
+
+  <!-- Custom JS -->
+  <script src="/public/js/anjana.js"></script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <!-- <link rel="shortcut icon" href="/public/favicon.ico"> -->
+
+  <!-- Feed (jekyll-feed) -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Nikunj Rajesh Lad" />
+</head>
+
+
+  <body class="theme-base-0c">
+
+    <div class="sidebar">
+  <div class="container left-align">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Nikunj Rajesh Lad
+        </a>
+      </h1>
+      <p class="lead">Computer Vision Developer and Graduate Teaching Assistant</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      
+
+<!--      <a class="sidebar-nav-item"-->
+<!--         href="/">Blog</a>-->
+<!--      -->
+      <a class="sidebar-nav-item"
+         href="/about/">About</a>
+      <!-- a class="sidebar-nav-item"
+         href="/resume/">Resume</a -->
+      <a class="sidebar-nav-item"
+         href="/projects/">Projects</a>
+      <a class="sidebar-nav-item"
+         href="/publications/">Publications</a>
+    </nav>
+
+    <ul class="list-inline" id="sidebar-buttons">
+        <li>
+            <a href="mailto:lad.n@husky.neu.edu" class="btn-social btn-outline" title="E-Mail me">
+                <i class="fa fa-fw fa-at"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/nikunjlad" target="_blank" class="btn-social btn-outline" title="Nikunj on GitHub">
+                <i class="fa fa-fw fa-github"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="http://www.facebook.com/nikunj.sporty" target="_blank" class="btn-social btn-outline" title="Anjana Vakil on Facebook">
+                <i class="fa fa-fw fa-facebook"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://twitter.com/LadNikunj" target="_blank" class="btn-social btn-outline" title="@LadNikunj on Twitter">
+                <i class="fa fa-fw fa-twitter"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="" target="_blank" class="btn-social btn-outline" title="Google Plus">
+                <i class="fa fa-fw fa-google-plus"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://www.linkedin.com/in/nikunjlad " target="_blank" class="btn-social btn-outline" title="Nikunj Lad on LinkedIn">
+                <i class="fa fa-fw fa-linkedin"></i>
+            </a>
+        </li>
+
+
+    </ul>
+
+    <p id="credits">&copy; 2020. <a href="/credits">Credits</a>.</p>
+  </div>
+</div>
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title"><p>Outreachy halftime(ish) update</p>
+</h1>
+  
+  <span class="post-date">02 Aug 2016</span>
+  <p>It feels like yesterday that I <a href="/posts/outreachy-what-how-why/">started my Outreachy internship</a>, but it was actually over 2 months ago! For the last couple of weeks I’ve been on Outreachy hiatus because of <a href="https://ep2016.europython.eu/en/">EuroPython</a>, moving from <a href="https://goo.gl/maps/Rp7qp5Dvg5C2">Saarbrücken to Berlin</a>, and my mentor being on vacation. Now I’m back, with 6 weeks left in my internship! So it seems like a good moment to check in and reflect on how things have been going so far, and what’s in store for the rest of my time as an Outreachyee.</p>
+
+<h2 id="what-have-i-been-up-to">What have I been up to?</h2>
+
+<h3 id="learning-how-to-do-the-work">Learning how to do the work</h3>
+
+<p>In the rather involved application process for Outreachy, I already had to spend quite a bit of time figuring out the process for making even the tiniest contribution to the Mozilla codebase. But obviously one can’t learn everything there is to know about a project within a couple of weeks, so a good chunk of my Outreachy time so far was spent on getting better acquainted with:</p>
+
+<ul>
+  <li>
+    <p><strong>The tools</strong></p>
+
+    <p>I’ve already written about my learning experiences with <a href="/posts/warming-up-to-mercurial/">Mercurial</a>, but there were a lot of other components of the Mozilla development process that I had to learn about (and am still learning about), such as <a href="https://bugzilla.mozilla.org/">Bugzilla</a>, <a href="http://mozilla-version-control-tools.readthedocs.io/en/latest/mozreview.html">MozReview</a>, <a href="https://wiki.mozilla.org/EngineeringProductivity/Projects/Treeherder">Treeherder</a>, <a href="https://wiki.mozilla.org/ReleaseEngineering/TryServer">Try</a>, <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/mach">Mach</a>…
+Then, since the project I’m working focuses on testing, I had to grok things like <a href="http://docs.pytest.org/en/latest/">Pytest</a> and <a href="https://docs.python.org/3/library/unittest.mock.html">Mock</a>. Since most everything I’m doing is in Python, I’ve also been picking up useful Python tidbits here and there.</p>
+  </li>
+  <li>
+    <p><strong>The project</strong></p>
+
+    <p>My internship project, <a href="https://wiki.mozilla.org/Outreachy#Test-driven_Refactoring_of_Marionette.27s_Python_Test_Runner">“Test-driven refactoring of Marionette’s Python test runner”</a>, relates to a component of the Marionette project, which encompasses a lot of moving parts. Even figuring out what Marionette is, what components it comprises, how these interrelate, and which of them I need to know about, was a non-trivial task. That’s why I’m writing a couple of posts about the project itself - <a href="/posts/marionette-act-i-automation/">one down</a>, one to go - to crystallize what I’ve learned and hopefully make it a little easier for other people to get through the what-even-is-it steps that I’ve been going through. This post is a sort of “intermission”, so stay tuned for my upcoming post on the Marionette test runner and harness!</p>
+  </li>
+</ul>
+
+<h3 id="doing-the-work">Doing the work</h3>
+
+<p>Of course, there’s a reason I’ve been trying to wrap my head around all the stuff I just mentioned: so that I can actually do this project! So what is the actual work I’ve been doing, i.e. my overall contribution to Mozilla as an Outreachy intern?</p>
+
+<p>Well, to quote the <a href="https://wiki.mozilla.org/Outreachy#Test-driven_Refactoring_of_Marionette.27s_Python_Test_Runner">project description</a>:</p>
+
+<blockquote>
+  <p>we’re testing the thing that runs Firefox tests</p>
+</blockquote>
+
+<p>The “thing” is the Marionette test runner, a tool written in Python that allows us to run tests that make use of <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette">Marionette</a> to automate the browser. It’s responsible for things like discovering which tests we need to run, setting up all the necessary prerequisites, running the tests one by one, and logging all of the results.</p>
+
+<p>Since the test runner is essentially a program like any other, it can be broken just like any other! And since it’s used in automation to run the tests that let Firefox developers know if some new change they’ve introduced breaks something, if the test runner itself breaks, that could cause a lot of problems. So what do we do? We test it!</p>
+
+<p>That’s where I come in. My mentor, Maja, had started writing some unit tests for the test runner before the internship began. My job is basically to add more tests. This involves:</p>
+
+<ul>
+  <li>Reading <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/harness/marionette/runner/base.py">the code</a> to identify things that could break and cause problems, and thus should be tested</li>
+  <li>Writing <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1275288">new</a> <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1276974">unit</a> <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1287591#c4">tests</a> using Pytest</li>
+  <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1275269">Refactoring</a> the code to make it easier to test, more readable, easier to extend/change, or otherwise better</li>
+</ul>
+
+<p>Aside from the testing side of things, another aspect of the project (which I particularly enjoy) involves improving how the runner relates to the rest of the world. For example, improving the <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1237958">command line interface</a> to the runner, or making sure the unit tests for the runner are producing <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1285299">logs</a> that play nicely with the rest of the Mozilla ecosystem.</p>
+
+<h3 id="writing-stuff-down">Writing stuff down</h3>
+
+<p>As you can see, I’ve also been spending a fair bit of time writing blog <a href="/posts/outreachy-what-how-why/">p</a><a href="/posts/warming-up-to-mercurial/">o</a><a href="/posts/i-want-to-mock-with-you/">s</a><a href="/posts/mozilla-london-all-hands-2016/">t</a><a href="/posts/marionette-act-i-automation/">s</a> about what I’ve been learning and encountering over the course of my internship. Hopefully these have been or will be useful to others who might also be wrapping their heads around these things for the first time. But regardless, writing them has certainly been useful for me!</p>
+
+<h2 id="whats-been-fun">What’s been fun?</h2>
+
+<h3 id="learning-all-the-things">Learning all the things</h3>
+
+<p>While working with a new system or technology can often be frustrating, especially when you’re used to something similar-but-not-quite-the-same (ahem, <a href="/posts/warming-up-to-mercurial/">git and hg</a>), I’ve found that the frustration does subside (or at least lessen) eventually, and in its place you find not only the newfound ease of working with the new thing, but also the gratification that comes with the realization: “Hey! I learned the thing!” This makes the overall experience of grappling with the learning curve fun, in my experience.</p>
+
+<h3 id="working-remotely">Working remotely</h3>
+
+<p>This internship has been my first experience with a lifestyle that always attracted me: working remotely. I love the freedom of being able to work from home if I have things to take care of around the house, or at a cafe if I just really need to sip on a Chocolate Chai Soy Latte right now, or from the public library if I want some peace &amp; quiet. I also loved being able to escape Germany for 2 weeks to visit my boyfriend’s family in Italy, or to work a day out of the Berlin office if I’m there for a long weekend looking at apartments. Now that I’ve moved to Berlin, I love the option of working out of the office here if I want to, or working from home or a cafe if I have things I need to take care of on the other side of the city. And because the team I’m working on is also completely distributed, there’s a great infrastructure already in place (IRC, video conferences, collaborative documents) to enable us to work in completely different countries/time zones and still feel connected.</p>
+
+<h3 id="helping-others-get-started-contributing">Helping others get started contributing!</h3>
+
+<p>A couple of weeks ago I got to mentor my first bug on Bugzilla, and help someone else get started contributing to the thing that I had gotten started contributing to a few months ago for my Outreachy internship. Although it was a pretty simple &amp; trivial thing, it felt great to help someone else get involved, and to realize I knew the answers to a couple of their questions, meaning that I’m actually already involved! That’s the kind of thing that really makes me want to continue working with FOSS projects after my internship ends, and makes me so appreciative of initiatives like Outreachy that help bring newcomers like me into this community.</p>
+
+<h2 id="whats-been-hard">What’s been hard?</h2>
+
+<h3 id="impostor-syndrome">Impostor Syndrome</h3>
+
+<p>The flip side of the learning-stuff fun is that, especially at the beginning, ye olde Impostor Syndrome gets to run amok. When I started my internship, I had the feeling that I had Absolutely No Idea what I was doing – over the past couple of months it has gotten gradually better, but I still have the feeling that I have a Shaky and Vague Idea of what I’m doing. From my communications with other current/former Outreachy interns, this seems to be par for the course, and I suppose it’s par for the course for anyone joining a new project or team for the first time. But even if it’s normal, it’s still there, and it’s still hard.</p>
+
+<h3 id="working-remotely-1">Working remotely</h3>
+
+<p>As I mentioned, overall I’ve been really enjoying the remote-work lifestyle, but it does have its drawbacks. When working from home, I find it incredibly difficult to separate my working time from my not-working time, which is most often manifested in my complete inability to stop working at the end of the day. Because I don’t have to physically walk away from my computer, at the end of the day I think “Oh, I’ll just do that one last thing,” and the next thing I know the Last Thing has led to 10 other Last Things and now it’s 11:00pm and I’ve been working for 13 hours straight. Not healthy, not fun. Also, while the flexibility and freedom of not having a fixed place of work is great, moving around (e.g. from Germany to Italy to other side of Germany) can also be chaotic and stressful, and can make working (productively) more difficult – especially if you’re not sure where your next internet is going to come from. So the remote work thing is really a double-edged sword, and doing in a way that preserves both flexibility and stability is clearly a balancing act that takes some practice. I’m working on it.</p>
+
+<h3 id="measuring-productivity">Measuring productivity</h3>
+
+<p>Speaking of working productively, how do you know when you’re doing it? Is spending a whole day reading about mock objects, or writing a blog post, or banging your head against a build failure, or [insert activity that is not writing 1000 lines of code] productive? The nature of the Outreachy system is that every project is different, and the target outcomes (or lack thereof) are determined by the project mentor, and whether or not your work is satisfactory is entirely a matter of their judgment. Luckily, my mentor is extremely fair, open, clear, and realistic about her goals for the project. She’s also been very reassuring when I’ve expressed uncertainty about productivity, and forthcoming about her satisfaction with my progress. But I feel like this is just my good luck having a mentor who a) is awesome and b) was an Outreachy intern herself once, and can thus empathize. I do wonder how my experience would be different, especially from the standpoint of knowing whether I’m measuring up to expectations, if I were on a different project with a different mentor. Which brings me to…</p>
+
+<h2 id="whats-been-helpful">What’s been helpful?</h2>
+
+<h3 id="having-a-fantastic-mentor">Having a fantastic mentor</h3>
+
+<p>As I’ve just said, I feel really lucky to be working with my mentor, Maja. She’s been an incredible support throughout the internship, and has just made it a great experience. I’m really thankful for her for being so detailed &amp; thorough in her initial conception of the project and instructions to me, and for being so consistently responsive and helpful with any of my questions or concerns. I can’t imagine a better mentor.</p>
+
+<h3 id="being-part-of-a-team">Being part of a team</h3>
+
+<p>“It takes a village,” or whatever they say, and my village is the Automation crew (who hang out in <a href="irc://irc.mozilla.org/#automation">#automation</a> on IRC) within the slightly-larger village of the Engineering Productivity team (A-Team) (<a href="irc://irc.mozilla.org/#ateam">#ateam</a>). Just like my mentor, the rest of the crew and the team have also been really friendly and helpful to me so far. If Maja’s not there, if I’m working on some adjacent component, or if I have some general question, they’ve been there for me. And while having a fantastic mentor is fantastic, having a fantastic mentor within a fantastic team is double-fantastic, because it helps with the hard things like learning new tools or working remotely (especially when your mentor is in a different time zone, but other team members are in yours). So I’m also really grateful to the whole team for taking me in and treating me as one of their own.</p>
+
+<h3 id="attending-the-all-hands">Attending the All Hands</h3>
+
+<p>Apparently, at some point in the last couple of years, someone at Mozilla decided to start including Outreachy interns in the semi-annual All Hands meetings. Whoever made that decision: please accept my heartfelt thanks. Being included in the <a href="/posts/mozilla-london-all-hands-2016/">London All Hands</a> made a real difference - not only because I understood a lot about various components of the Mozilla infrastructure that had previously been confusing or unclear to me, but also because the chance to meet and socialize with team members and other Outreachy interns face-to-face was a huge help in dealing with e.g. Impostor Syndrome and the challenges of working on a distributed team. I’m so glad I was able to join that meeting, because it really helped me feel more bonded to both Mozilla as a whole and to my specific team/project, and I hope for the sake of both Mozilla and Outreachy that Outreachyees continue to be invited to such gatherings.</p>
+
+<h3 id="intern-solidarity">Intern solidarity</h3>
+
+<p>Early on in the internship, one of the other Mozilla Outreachy interns started a channel just for us on Mozilla’s IRC. Having a “safe space” to check in with the other interns, ask “dumb” questions, express insecurities/frustrations, and just generally support each other is immensely helpful. On top of that, several of us got to hang out in person at the London All Hands meeting, which was fantastic. Having contact with a group of other people going through more or less the same exciting/bewildering/overwelming/interesting experience you are is invaluable, especially if you suffer from Impostor Syndrome as so many of us do. So I’m so grateful to the other interns for their support and solidarity.</p>
+
+<h2 id="whats-up-next">What’s up next?</h2>
+
+<p>In the remaining weeks of my internship, I’m going to be continuing the work I mentioned, but instead of from a library in a small German town or a random internet connection in a small Italian town, I’ll be working mainly out of the Berlin office, and hopefully getting to know more Mozillians here. I’ll also be participating in the <a href="https://wiki.mozilla.org/TechSpeakers">TechSpeakers</a> program, a training program from the Mozilla Reps to improve your public speaking skills so that you can go forth and spread the word about Mozilla’s awesome technologies. Finally, in the last week or two, I’ll be figuring out how to pass the baton, i.e. tie up loose ends, document what I’ve done and where I’m leaving off, and make it possible for someone else – whether existing team or community members, or perhaps the next intern – to continue making the Marionette test runner and its unit tests Super Awesome. And blogging all the while, of course. :) Looking forward to it!</p>
+
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/posts/katsconf2/">
+            <p>Notes from KatsConf2</p>
+
+            <small>19 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/fosdem-2017/">
+            <p>Notes from FOSDEM 2017</p>
+
+            <small>13 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/marionette-act-ii-testing/">
+            <p>Marionette, Act II: Harnessing automation to test the browser</p>
+
+            <small>22 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+
+  </body>
+</html>

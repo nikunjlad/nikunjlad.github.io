@@ -1,13 +1,13 @@
 # Dependencies
 highlighter:      rouge
 
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-feed
 
 # Permalinks
-permalink:              /blog/:categories/:title/
-# permalink:            blog/:categories/:year/:month/:day/:title/
+permalink:              /posts/:categories/:title/
+# permalink:            posts/:categories/:year/:month/:day/:title/
 
 # Setup
 title:            'Nikunj Rajesh Lad'
@@ -16,7 +16,7 @@ name:             'Nikunj Rajesh Lad'
 description:      'Computer Vision Developer and Graduate Teaching Assistant'
 #url:              http://vakila.github.io/
 baseurl:
-# blogurl:          /blog/
+# blogurl:          /posts/
 
 # Assets
 images:         '/img'
@@ -33,7 +33,7 @@ author:
   linkedin:       'https://www.linkedin.com/in/nikunjlad '
 
 paginate:         3
-# paginate_path:    "/blog/page:num/"
+# paginate_path:    "/posts/page:num/"
 
 # Custom vars
 version:          2.1.0
@@ -43,6 +43,7 @@ github:
 
 # Collections
 collections:
+  - publications
   - projects
   - talks
 
