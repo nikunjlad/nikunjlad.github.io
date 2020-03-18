@@ -3,13 +3,4 @@ layout: page
 title: Resume
 ---
 
-<div class="resume">
-  <div class="resume post">
-    <h2 class="resume-title post-title">
-    </h2>
-
-    {{ resume.content }}
-
-
-  </div>
-</div>
+![](https://github.com/nikunjlad/nikunjlad.github.io/master/img/Nikunj_Lad.png)
