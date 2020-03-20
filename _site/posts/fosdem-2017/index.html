@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Notes from FOSDEM 2017 &middot; Nikunj Rajesh Lad
+    
+  </title>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/public/css/anjana.css">
+
+  <!-- Custom JS -->
+  <script src="/public/js/anjana.js"></script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <!-- <link rel="shortcut icon" href="/public/favicon.ico"> -->
+
+  <!-- Feed (jekyll-feed) -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Nikunj Rajesh Lad" />
+</head>
+
+
+  <body class="theme-base-0c">
+
+    <div class="sidebar">
+  <div class="container left-align">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Nikunj Rajesh Lad
+        </a>
+      </h1>
+      <p class="lead">Computer Vision Developer and Graduate Teaching Assistant</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      
+
+<!--      <a class="sidebar-nav-item"-->
+<!--         href="/">Blog</a>-->
+<!--      -->
+      <a class="sidebar-nav-item"
+         href="/about/">About</a>
+      <a class="sidebar-nav-item"
+         href="/resume/">Resume</a>
+      <a class="sidebar-nav-item"
+         href="/projects/">Projects</a>
+      <a class="sidebar-nav-item"
+         href="/publications/">Publications</a>
+    </nav>
+
+    <ul class="list-inline" id="sidebar-buttons">
+        <li>
+            <a href="mailto:lad.n@husky.neu.edu" class="btn-social btn-outline" title="E-Mail me">
+                <i class="fa fa-fw fa-at"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/nikunjlad" target="_blank" class="btn-social btn-outline" title="Nikunj on GitHub">
+                <i class="fa fa-fw fa-github"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="http://www.facebook.com/nikunj.sporty" target="_blank" class="btn-social btn-outline" title="Anjana Vakil on Facebook">
+                <i class="fa fa-fw fa-facebook"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://twitter.com/LadNikunj" target="_blank" class="btn-social btn-outline" title="@LadNikunj on Twitter">
+                <i class="fa fa-fw fa-twitter"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="" target="_blank" class="btn-social btn-outline" title="Google Plus">
+                <i class="fa fa-fw fa-google-plus"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://www.linkedin.com/in/nikunjlad " target="_blank" class="btn-social btn-outline" title="Nikunj Lad on LinkedIn">
+                <i class="fa fa-fw fa-linkedin"></i>
+            </a>
+        </li>
+
+
+    </ul>
+
+    <p id="credits">&copy; 2020. <a href="/credits">Credits</a>.</p>
+  </div>
+</div>
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title"><p>Notes from FOSDEM 2017</p>
+</h1>
+  
+  <span class="post-date">13 Feb 2017</span>
+  <p>Riding the tram you hear the word “Linux” pronounced in four different languages. Stepping out into the grey drizzle, you instantly smell fresh waffles and GitHub-sponsored coffee, and everywhere you look you see a <a href="http://www.fsf.org/">FSF</a> t-shirt. That’s right kids, it’s <a href="https://fosdem.org/2017/">FOSDEM</a> time again! The beer may not be free, but the software sure is.</p>
+
+<p><a href="/posts/fosdem-2016/">Last year</a> I got my first taste of this most epic of FLOSS conferences, back when I was an unemployed ex-grad-student with not even 5 pull requests to my name. This year, as a bona fide open source contributor, Mozillian, and full-time professional software engineer, I came back for more. Here are some things I learned:</p>
+
+<ul>
+  <li>Open source in general - and, anecdotally, FOSDEM in particular - has a <a href="#diversity">diversity</a> problem. (Yes, we already knew this, but it still needs mentioning.)</li>
+  <li>…But not for long, if organizations like <a href="#mozilla">Mozilla</a> and projects like <a href="#includo">IncLudo</a> have anything to say about it.</li>
+  <li>Games are a powerful tool to <a href="#invaders">introduce programming</a>, <a href="#includo">promote diversity</a>, and build <a href="#hellink">21st-century</a> <a href="#tablexia">literacy</a> skills.</li>
+  <li><a href="#speech">Speech</a> applications built on open technologies are not just a pipe dream!</li>
+  <li>How browsers <a href="#webrender">render the web</a> is super interesting and something I want to get a clue about.</li>
+  <li><a href="#foxpuppet">FoxPuppet</a> is making automating &amp; testing Firefox even easier than with our beloved Marionette!</li>
+  <li>The <a href="https://twitter.com/mozTechSpeakers">Mozilla Tech Speakers</a> are straight killin’ it.</li>
+</ul>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">— &quot;How do you say “<a href="https://twitter.com/mozTechSpeakers">@mozTechSpeakers</a> rocked <a href="https://twitter.com/fosdem">@FOSDEM</a> today!” in fox?<br />— … 😉<a href="https://twitter.com/hashtag/mozdem?src=hash">#mozdem</a> <a href="https://t.co/KStl9R8QLM">pic.twitter.com/KStl9R8QLM</a></p>&mdash; Flaki (@slsoftworks) <a href="https://twitter.com/slsoftworks/status/827951076586438657">February 4, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Open data for bike sharing programs in &gt;400 cities around the world! 💚🚲💚 <a href="https://t.co/liu6MOI8Nc">https://t.co/liu6MOI8Nc</a> <a href="https://twitter.com/ctbikes">@ctbikes</a> <a href="https://twitter.com/hashtag/FOSDEM?src=hash">#FOSDEM</a> <a href="https://t.co/QHJyx3QzAm">pic.twitter.com/QHJyx3QzAm</a></p>&mdash; Anjana Vakil (@AnjanaVakil) <a href="https://twitter.com/AnjanaVakil/status/828247891877715972">February 5, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Wrapped up the day with some VR painting in the browser (!!!) at the <a href="https://twitter.com/mozilla">@mozilla</a> stand - see you next year <a href="https://twitter.com/hashtag/FOSDEM?src=hash">#FOSDEM</a> ✌️ <a href="https://t.co/d23v7sRY9a">pic.twitter.com/d23v7sRY9a</a></p>&mdash; Anjana Vakil (@AnjanaVakil) <a href="https://twitter.com/AnjanaVakil/status/828276764208201730">February 5, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>See the notes below for more!</p>
+
+<p><em>Disclaimer: The (unedited!!!) notes below represent my impressions of the content of these talks, jotted down as I listened. They may or may not be totally accurate, or precisely/adequately represent what the speakers said or think. If you want to get it from the horse’s mouth, follow the links to the <a href="https://fosdem.org/2017/schedule/">FOSDEM schedule</a> entry to find the video, slides, and/or other resources!</em></p>
+
+<h2 id="mozilla-dev-room-saturday"><a name="mozilla"></a>Mozilla Dev Room, Saturday</h2>
+
+<h3 id="firefox-nightly"><a href="https://fosdem.org/2017/schedule/event/mozilla_rebooting_firefox_nightly/">Firefox Nightly</a></h3>
+<p><strong>Pascal Chevrel</strong></p>
+
+<ul>
+  <li>Nightly users are crucial for early detection of regressions and bugs introduced by new features (especially important with the advent of Quantum)</li>
+  <li>Nightly users aren’t as diverse as stable users:
+    <ul>
+      <li>86% Windows, 6% Linux, 5% Mac</li>
+      <li>Around 70% come from just 15 countries (USA, Germany, Russia at top)</li>
+      <li>Over 80% are using en-US locale</li>
+    </ul>
+  </li>
+  <li>
+    <p>Generally, Nightly users are tech-savvy (though not necessarily devs) - this means the bugs they report are generally higher-quality, more helpful</p>
+  </li>
+  <li>Nightly Reboot Status: Project started in 2016 to encourage Nightly use and bring better integration with release process
+    <ul>
+      <li>Download pages: now you can download Nightly! :D</li>
+      <li>Nightly-specific default bookmarks</li>
+      <li>Locale-specific about:home page with e.g. info about local events, links to translated articles</li>
+      <li>Nightly IRC channel</li>
+      <li>Nightly blog (e.g. mconley’s “These weeks in Firefox”)</li>
+      <li>@FirefoxNightly on Twitter</li>
+    </ul>
+  </li>
+  <li>Help out!
+    <ul>
+      <li>Use Nightly as your main browser</li>
+      <li>Translate information &amp; help bug reporters that aren’t comfortable with English</li>
+      <li>Help triage bugs - too many for Mozilla staff to handle</li>
+    </ul>
+  </li>
+  <li>Q&amp;A
+    <ul>
+      <li>A lot of former Nightly users have moved over to Aurora - this means they find the bugs later, and Aurora isn’t more stable/as stable as people expect</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="firefox-devtools"><a href="https://fosdem.org/2017/schedule/event/mozilla_devtools_deep_dive/">Firefox DevTools</a></h3>
+<p><strong>Alex “Laka” Lakatos (@lakatos88)</strong></p>
+
+<ul>
+  <li>Opening DevTools:
+    <ul>
+      <li>Right click &gt; Inspect Element</li>
+      <li>Tools menu</li>
+    </ul>
+  </li>
+  <li>Element inspector:
+    <ul>
+      <li>Search box: can search for CSS selectors</li>
+    </ul>
+  </li>
+  <li>CSS rules:
+    <ul>
+      <li>use filter box to find e.g. every ‘color’ selector</li>
+      <li>Colors
+        <ul>
+          <li>Shift-Click on colored circle to switch between hex/RGB/named representation</li>
+          <li>Click on it to get color picker</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Debugger
+    <ul>
+      <li>Click line to set breakpoint</li>
+      <li>Can view all variables at the point where execution is paused</li>
+    </ul>
+  </li>
+  <li>Network
+    <ul>
+      <li>Shows every request you make</li>
+      <li>Shows two sizes: Size during transport and size on disk - helps you minimize transfer time</li>
+    </ul>
+  </li>
+  <li>DevTools in Nightly
+    <ul>
+      <li>New features rolled out constantly</li>
+      <li>Disable HTTP Cache when DevTools is open - super useful while you’re developing and the cache drives you insane!</li>
+      <li>If you’re nostalgic, can use the Firebug theme</li>
+    </ul>
+  </li>
+  <li>Moving DevTools to add-on instead of built in to Firefox - Will help ship faster</li>
+</ul>
+
+<h3 id="webextensions"><a href="https://fosdem.org/2017/schedule/event/mozilla_firefox_and_webextensions/">WebExtensions</a></h3>
+<p><strong>Daniele Scasciafratte</strong></p>
+
+<ul>
+  <li>Firefox is famous for extensions - it’s the most customizable browser out there</li>
+  <li>Extensions sometimes become features of Ffx itself</li>
+  <li>WebExtensions is “One API to Rule Them All”
+    <ul>
+      <li>Standard HTML/CSS/JS (not XUL)</li>
+      <li>compatibility with Chrome</li>
+      <li>Content scripts allow extensions to run in pages</li>
+      <li>Background scripts allow them to maintain long-term state from the moment they’re installed to the moment they’re removed</li>
+      <li>Fully customizable “browser actions” (buttons on top right) with their own menus etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-firefox-puppet-show"><a name="foxpuppet"></a><a href="https://fosdem.org/2017/schedule/event/mozilla_firefox_puppet_show/">The Firefox Puppet Show</a></h3>
+<p><strong>Dave Hunt (&amp; Henrik the Foxy Puppet)</strong></p>
+
+<ul>
+  <li>Selenium
+    <ul>
+      <li>Tool for browser automation</li>
+      <li>Never maintained by Mozilla</li>
+      <li>Works for multiple browsers, including Firefox</li>
+      <li>Limited to the content space; has no control over browser chrome</li>
+    </ul>
+  </li>
+  <li>FirefoxDriver
+    <ul>
+      <li>Deprecated due to add-on signing from Ffx 48</li>
+    </ul>
+  </li>
+  <li>Marionette (Woo!!!)
+    <ul>
+      <li>Introduced 2012, originally for FirefoxOS</li>
+      <li>Directly integrated into Gecko</li>
+      <li>Controls chrome and content (whereas Selenium is content-based)</li>
+    </ul>
+  </li>
+  <li>GeckoDriver
+    <ul>
+      <li>Proxy for W3C WebDriver &amp; Gecko</li>
+      <li>WebDriver spec should be a recommendation by end of Q1 2017</li>
+      <li>Idea: any browser implementing the spec can be automated</li>
+      <li>Has been adopted by all major browser vendors</li>
+      <li>Thanks to WebDriver, Selenium (or any automation client) doesn’t have to worry about how to automate all the browsers: just has to implement the spec, and can then control any compliant browser</li>
+      <li>GeckoDriver not feature complete yet, partly bc the spec is still in late stages of development</li>
+    </ul>
+  </li>
+  <li>FoxPuppet
+    <ul>
+      <li>Python package w/ simple API for finding &amp; interacting with the Firefox UI</li>
+      <li>Allows you to interact with Firefox in Selenium, builds on top of Selenium</li>
+      <li>Ultimately going to be used to test Ffx itself</li>
+      <li>Marionette can do more than what just Selenium offers (chrome); FoxPuppet takes it the next step by making it much simpler to write automation code using Selenium+Marionette</li>
+      <li>At the moment supports window management, interaction with popups, soon interaction with tabs…</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Excited about FoxPuppet @ <a href="https://twitter.com/hashtag/mozdem?src=hash">#mozdem</a>! It&#39;s even easier to automate &amp; test <a href="https://twitter.com/firefox">@Firefox</a> now: <a href="https://t.co/apmdCW3ZMC">https://t.co/apmdCW3ZMC</a> <a href="https://twitter.com/davehunt82">@davehunt82</a> <a href="https://twitter.com/whimboo">@whimboo</a> <a href="https://t.co/RRnJoE49sO">pic.twitter.com/RRnJoE49sO</a></p>&mdash; Anjana Vakil (@AnjanaVakil) <a href="https://twitter.com/AnjanaVakil/status/827849820626882560">February 4, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<ul>
+  <li>Q&amp;A:
+    <ul>
+      <li>Can it run headlessly?
+        <ul>
+          <li>No, because there’s no true headless mode for Firefox, though you can make it effectively headless via e.g. running in Docker</li>
+        </ul>
+      </li>
+      <li>Can it work with WebGL?
+        <ul>
+          <li>The problem is similar to with canvas - if we just have one element, we can’t look inside of it unless there’s some workaround to expose additional information about the the state of the app specifically for testing</li>
+        </ul>
+      </li>
+      <li>Excecuting async JS?
+        <ul>
+          <li>Selenium has functionality to handle this, and since FoxPuppet builds on Selenium, the base Selenium functionality is still available</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="webrender"><a name="webrender"></a><a href="https://fosdem.org/2017/schedule/event/mozilla_webrender_next_generation_graphics_engine/">WebRender</a></h3>
+<p><strong>Nicolas Silva</strong></p>
+
+<ul>
+  <li>Servo
+    <ul>
+      <li>Mostly research, for trying out new ideas more quickly than we could in Ffx (without worrying about putting it in front of users)</li>
+    </ul>
+  </li>
+  <li>How do rendering engines work? (Using Gecko as a reference)
+    <ul>
+      <li><em>layout</em>: DOM Tree layout is computed and transformed into a Frame Tree (has other names in e.g. WebKit)</li>
+      <li><em>invalidation</em>: From the Frame Tree we get a display list - pretty flat structure of things we need to render</li>
+      <li><em>painting</em>: We then render the display list into a Layer Tree
+        <ul>
+          <li>like layers in Photoshop</li>
+          <li>Intermediate surfaces containing rendered elements</li>
+        </ul>
+      </li>
+      <li><em>compositing</em>: mirror the layer tree on the compositor process, for scrolling etc. at a high frame rate</li>
+    </ul>
+  </li>
+  <li>WebRender
+    <ul>
+      <li>attempts to move away from this type of architecture and do something different</li>
+      <li>designed to work around the GPU, like a game rendering engine</li>
+      <li>drops the distinction between painting/compositing, and just render everything to the window directly</li>
+      <li>take the page content &amp; turn it into a series of primitives we can send to the GPU (??)</li>
+      <li>written in Rust</li>
+      <li>using OpenGL for now, though in the future other backends would be possible</li>
+      <li>doesn’t understand arbitrary shapes, but rather only a simple set of shapes that are common on the web (e.g. rectangles, rounded rects)</li>
+    </ul>
+  </li>
+  <li>Working fast on a GPU
+    <ul>
+      <li>GPUs are very stateful things, so switching state/state changes have a big impact</li>
+      <li>Batching is the key</li>
+      <li>Transferring data to/from the CPU is expensive</li>
+      <li>Memory bandwidth is really costly, especially on mobile devices - so try to avoid touching too many pixels/touching the same pixels too many times (aka “overdraw”)
+        <ul>
+          <li>Rendering back-to-front, you have to draw e.g. the whole background even if most of it is covered by other things</li>
+          <li>Rendering front-to-back means you can avoid drawing any parts of layers other than those that will ultimately be seen</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="how-rust-is-being-developed"><a href="https://fosdem.org/2017/schedule/event/mozilla_rust_development/">How Rust is being developed</a></h3>
+<p><strong>@jgbarah Jesus M. Gonzalez-Barahona, Bitergia</strong></p>
+
+<ul>
+  <li>Analytics dashboard with contribution data: https://rust-analytics.mozilla.community</li>
+</ul>
+
+<h3 id="code-invaders-learning-to-code-with-iot-games-and-htmlcssjs"><a name="invaders"></a><a href="https://fosdem.org/2017/schedule/event/mozilla_iot_coding_with_html5_games/">Code Invaders: Learning to code with IoT games and HTML/CSS/JS</a></h3>
+<p><strong>István “Flaki” Szmozsánszky @slsoftworks</strong></p>
+
+<ul>
+  <li>Happy Code Friends
+    <ul>
+      <li>Tech needs more diversity, we need more people to learn to code</li>
+      <li>But we need to spark people’s interest - games!</li>
+    </ul>
+  </li>
+  <li>Arduboy
+    <ul>
+      <li>Kickstarter project funded about 1-2 years ago</li>
+      <li>Basically puts a micro Arduino, screen, buttons in a nice little (cheap) package</li>
+      <li>But unfortunately you had to write programs for it in C through the Arduino IDE - not very beginner friendly</li>
+    </ul>
+  </li>
+  <li>Code Invaders
+    <ul>
+      <li>Teaching people the basics of programming (functions, variables, …) while building their own game</li>
+      <li>Code is written in JS and compiled to C by pushing a button in the IDE</li>
+      <li>Makes Arduboy programming accessible for beginners</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/slsoftworks">@slsoftworks</a> invaded spaces at <a href="https://twitter.com/hashtag/mozdem?src=hash">#mozdem</a>, showing us how beginners can learn to code <a href="https://twitter.com/hashtag/arduboy?src=hash">#arduboy</a> games in JS! <a href="https://t.co/WKNrGUpAvv">pic.twitter.com/WKNrGUpAvv</a></p>&mdash; Anjana Vakil (@AnjanaVakil) <a href="https://twitter.com/AnjanaVakil/status/827886909372379136">February 4, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h3 id="diversity-in-open-source"><a name="diversity"></a><a href="https://fosdem.org/2017/schedule/event/mozilla_diversity_user_research/">Diversity in Open Source</a></h3>
+<p><strong>Kristi Pogri @KristiPogri</strong></p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hard truths about (lack of) diversity in FOSS as <a href="https://twitter.com/mozTechSpeakers">@mozTechSpeakers</a> own <a href="https://twitter.com/KristiProgri">@KristiProgri</a> opens eyes at <a href="https://twitter.com/hashtag/mozdem?src=hash">#mozdem</a> <a href="https://t.co/VzAZEofTQT">pic.twitter.com/VzAZEofTQT</a></p>&mdash; Anjana Vakil (@AnjanaVakil) <a href="https://twitter.com/AnjanaVakil/status/827926761694441472">February 4, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<ul>
+  <li>Horrendenously low %s of open-source developers are women</li>
+  <li>Open source isn’t really open unless it’s open to everyone</li>
+  <li>Organizations/initiatives like WoMoz and Outreachy are actively trying to change this</li>
+</ul>
+
+<h3 id="diversity-user-research"><a href="https://fosdem.org/2017/schedule/event/mozilla_diversity_user_research/">Diversity user research</a></h3>
+<p><strong>Gloria Dwomoh</strong></p>
+
+<ul>
+  <li>Listening is a skill, one which we don’t study enough in comparison with e.g. reading, writing, speaking</li>
+  <li>Hearing vs. Listening:
+    <ul>
+      <li>Hearing is perceiving sounds</li>
+      <li>Listening is concentrating on them</li>
+    </ul>
+  </li>
+  <li>Body language is important for listening - showing that you’re bored makes the speaker cut themselves off</li>
+  <li>Active listening
+    <ul>
+      <li>Reflection: when someone tells you something, you try to reflect back what they’re saying - to show that you understood, e.g. “so you mean that….”</li>
+      <li>Funneling: you try to ask for more general or more specific information</li>
+      <li>Empathy: important for building trust with the speaker
+        <ul>
+          <li>Sympathy is “oh, that must have been hard, I’m sorry”</li>
+          <li>Empathy is also “I understand what you mean, because I had a similar experience when ….” - show that you deeply understand the speaker’s experience</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Active listening: reflect, summarize, clarify, show empathy. <a href="https://twitter.com/mozTechSpeakers">@mozTechSpeakers</a> own Gloria Dwomoh reminds us we should all get better at this <a href="https://t.co/UzemrL5YZ1">pic.twitter.com/UzemrL5YZ1</a></p>&mdash; Anjana Vakil (@AnjanaVakil) <a href="https://twitter.com/AnjanaVakil/status/827930991373201408">February 4, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h3 id="dont-break-the-internet-mozilla-copyright-campaign-in-europe"><a href="https://fosdem.org/2017/schedule/event/mozilla_copyright_campaign_europe/">Don’t break the internet! Mozilla Copyright Campaign in Europe</a></h3>
+<p><strong>Raegan MacDonald</strong></p>
+
+<ul>
+  <li>We need to bring copyright into the 21st century
+    <ul>
+      <li>Bring in flexibility</li>
+      <li>Encourage creativity &amp; expression online</li>
+    </ul>
+  </li>
+  <li>Copyright reform is happening, but unfortunately it’s not the kind of reform we need
+    <ul>
+      <li>Doesn’t focus on the interests of users on the internet</li>
+      <li>Instead of protecting &amp; encouraging innovation &amp; creativity online, may in some cases undermine that</li>
+    </ul>
+  </li>
+  <li>Mozilla wants to ensure that the internet remains a “global public resource open &amp; accessible to all”
+    <ul>
+      <li>not trying to get rid of copyright</li>
+      <li>but rather encourage copyright laws that support all actors in the web ecosystem</li>
+    </ul>
+  </li>
+  <li>Issues in the current copyright directive
+    <ul>
+      <li>Upload filters:
+        <ul>
+          <li>platforms that are holding large amounts of copyrighted content would need agrements with rights holders</li>
+          <li>ensuring that they uphold those agreements would require them to implement upload filters that may end up restricting users’ ability to post their own content</li>
+        </ul>
+      </li>
+      <li>Neighboring rights - aka “snippet tax” or “google tax”
+        <ul>
+          <li>proposal to extend copyright to press publishers</li>
+          <li>press publications would get to charge aggregators for e.g. posting a snippet of their article, the headline, and a hyperlink</li>
+          <li>already been attempted in Germany and Spain, where it had negative effects on startup aggregators and entrenched the power of established aggregators (Google)</li>
+        </ul>
+      </li>
+      <li>Text &amp; Data Mining (TDM)
+        <ul>
+          <li>there would be restrictions on ingesting copyrighted data for the purposes of data mining</li>
+          <li>there would only be exceptions for research institutions</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>The fight right now is unfortunately quite binary: The big Silicon Valley companies/aggregators (Google etc.) vs. the Publishing/Music/Film industry
+    <ul>
+      <li>We need it to involve the full spectrum of stakeholders on the web, especially users, independent content creators</li>
+    </ul>
+  </li>
+  <li>Get involved!
+    <ul>
+      <li>changecopyright.org</li>
+      <li>raegan@mozilla.com</li>
+      <li>Series of events across Europe</li>
+    </ul>
+  </li>
+  <li>Q&amp;A:
+    <ul>
+      <li>Since filtering requires monitoring, and monitoring is unconstitutional in the EU, are there plans to fight this if it passes?
+        <ul>
+          <li>Yes, there is absolutely a contradiction there, and we plan to fight it. We want to bring the proposal in line with existing law and channel activism against these filters.</li>
+        </ul>
+      </li>
+      <li>Previous events/campaigns were focused on Freedom of Panorama (copyright exception that allows you to take photographs of e.g. buildings, art and post them online). Will new events be focused on the 4 areas you discussed?
+        <ul>
+          <li>Yes, this is sort of our 2nd wave of activism on this issue, and we’ll be organizing and encouraging more advocacy around these issues.</li>
+        </ul>
+      </li>
+      <li>Do you coordinate with the media?
+        <ul>
+          <li>Yes. There are a number of organizations working on a modern version of copyright that looks forward, not backwards. The C4C (copyright for creativity) brings together a lot of players (e.g libraries, digital rights NGOs), and that serves as a sort of umbrella. A lot of folks have similar issues and we work together as much as possible to amplify &amp; support certain voices.</li>
+        </ul>
+      </li>
+      <li>What is the purpose of another wave? Are we starting over?
+        <ul>
+          <li>EU policy making is a very slow game. This reform has been under discussion for over 5 years, and the process of it going through negotiations to reach a final EU parliament agreement will be at least a year. If we want to have an impact &amp; mobilize different voices, it has to be a sustained, long-term effort, which was not the case in the 1st wave because we didn’t have the proposal yet. Now that we have it, we have more focus on what to encourage people to speak out about, which is potentially game-changing.</li>
+        </ul>
+      </li>
+      <li>It seems that the education exception excludes all informal sources of education
+        <ul>
+          <li>This exception applies to cases where licensed materials can’t be acquired. But that’s not really the problem; the problem is the cost. There’s now a campaign copyrightforeducation.org. It’s something we’re following closely, and we’re mostly relying on our partners who are experts in this area.</li>
+        </ul>
+      </li>
+      <li>When will this be decided by parliament?
+        <ul>
+          <li>There will be votes on committee opinions next month, but the main opinion will be deliberated in March, and they want it to be voted by end of summer 2017. So the next 6 months could be game-changing, it’s an important time to contact your representatives.</li>
+        </ul>
+      </li>
+      <li>Would the TDM exception implicate privacy concerns?
+        <ul>
+          <li>This doesn’t deal with privacy-protected content, but rather would allow people that have lawfully acquired works/texts to create e.g. a visualization. It doesn’t get into privacy issues about mining people’s metadata and all that - it’s a separate issue from privacy and wouldn’t override it.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="other-rooms-saturday-sunday">Other rooms, Saturday-Sunday</h2>
+
+<h3 id="webrtc-and-speech-recognition-with-adhearsion"><a name="speech"></a><a href="https://fosdem.org/2017/schedule/event/webrtc_speech_recognition/">WebRTC and speech recognition with Adhearsion</a></h3>
+<p><strong>Luca Pradovera @lucaprado -  MojoLingo</strong></p>
+
+<ul>
+  <li>Spoken dialog system built entirely on open tools</li>
+  <li>PocketSphinx for recognition (understands stock grammar of ~100 words)</li>
+  <li>Rasa NLU for interpretation</li>
+  <li>Flite for TTS (voice a bit robotic but gets the job done)</li>
+  <li>FreeSwitch - switching platform with good WebRTC support. Asterisk is an alternative</li>
+  <li>Adhearsion is the main control layer
+    <ul>
+      <li>Ruby framework for voice apps</li>
+      <li>handles things like picking up the call, transferring, answering, recording, etc.</li>
+      <li>Connects to FreeSwitch or Asterisk</li>
+      <li>Uses actor model - treats each call as an actor, handles it in isolation (so if one call fails, the whole system doesn’t fail)</li>
+      <li>Case studies
+        <ul>
+          <li>RingRx HIPAA-compliant phone system</li>
+          <li>LiveConnect for broadcasting surgical procedures</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="can-open-source-open-minds-includo-games-for-workplace-diversity"><a name="includo"></a><a href="https://fosdem.org/2017/schedule/event/ogd_includo/">Can open source open minds? IncLudo games for workplace diversity</a></h3>
+<p><strong>Jesse Himmelstein</strong></p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;Diversity is an institutional advantage.&quot; WORD. <a href="https://twitter.com/himmelattack">@himmelattack</a> &amp; <a href="https://twitter.com/IncludoProject">@IncludoProject</a> are trying to ++ workplace diversity with games 🤘 <a href="https://twitter.com/hashtag/FOSDEM?src=hash">#FOSDEM</a> <a href="https://t.co/ynqIgnxoKq">pic.twitter.com/ynqIgnxoKq</a></p>&mdash; Anjana Vakil (@AnjanaVakil) <a href="https://twitter.com/AnjanaVakil/status/828218342712410112">February 5, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<ul>
+  <li>Diversity is an institutional advantage</li>
+  <li>But it’s difficult to implement - “we are feeling beings who think, not thinking beings who feel”
+    <ul>
+      <li>some research suggests that our ability to reason may exist to convince others of our ideas, rather than to make decisions</li>
+    </ul>
+  </li>
+  <li>IncLudo project created a variety of games to improve workplace diversity in India
+    <ul>
+      <li>some teach about biases</li>
+      <li>some (esp. board games) encourage conversation &amp; exchange of experiences/stories among players</li>
+    </ul>
+  </li>
+  <li>Process
+    <ul>
+      <li>Game jams are a good way to try out new ideas</li>
+      <li>Paper prototypes are great for experimenting, though clients don’t always accept them so easily</li>
+      <li>Having a diverse team helps</li>
+    </ul>
+  </li>
+  <li>Q&amp;A
+    <ul>
+      <li>You mentioned a game where you have to hide your bias from others
+        <ul>
+          <li>You pretend you’re management at a company, and you have to hire someone for a position. Everyone has a secret bias card (“don’t want to hire [women, muslims, …]”). Your goal is to fight for the candidate you (don’t) want, but without being so obvious about it as to reveal your secret bias to the other managers. There were some really funny conversations coming out of it.</li>
+        </ul>
+      </li>
+      <li>How do you measure the impact?
+        <ul>
+          <li>That’s really hard. There’s a few different things: you can try to measure what people learned from the game, which is difficult in itself. The other attempt is to see what the organizations actually do in real live - that’s what (our partner) ZMQ is going to do: see if the orgs actually change their practices.</li>
+        </ul>
+      </li>
+      <li>How do your games relate to competitive vs. collaborative games
+        <ul>
+          <li>I wouldn’t agree that competition is bad by itself - it motivates us and as long as we understand that we’re competing in the game and not once it’s over. Our games are competitive, with the exception of Pirat Partage which wasn’t competitive but then the players started asking us for a scoring system so that they could see who’s winnign</li>
+        </ul>
+      </li>
+      <li>Aren’t competition and diversity contradictory?
+        <ul>
+          <li>If you’re trying to bring diversity into an existing social structure made of companies that are competing, it makes sense to sell it to them that way.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="hellink-an-educational-game-about-open-data"><a name="hellink"></a><a href="https://fosdem.org/2017/schedule/event/ogd_hellink/">Hellink, an educational game about open data</a></h3>
+<p><strong>Thomas Planques</strong></p>
+
+<ul>
+  <li>Game for 1st year uni students that aims to
+    <ul>
+      <li>teach information literacy:  critical thinking about info sources</li>
+      <li>raise awareness about open data</li>
+    </ul>
+  </li>
+  <li>The game talks about process of creation of  scientific knowledge
+    <ul>
+      <li>Who pays for scientific knowledge?
+        <ul>
+          <li>Unis pay Scientists’ salaries</li>
+          <li>Unis must also pay publishers, the publishers don’t pay the scientists</li>
+          <li>Unis also pay to buy the journal, to buy back the knowledge</li>
+          <li>So we say in scientific knowledge domain, people (taxpayers) pay 3 times</li>
+        </ul>
+      </li>
+      <li>What keeps this system going?
+        <ul>
+          <li>each scientist has an H index based on their publications that’s important for their career</li>
+          <li>the publishers own the journals, i.e. the means for scientists to advance their careers</li>
+          <li>monopoly by big scientific publishers make knowledge less accessible</li>
+        </ul>
+      </li>
+      <li>One big solution would be the open data movement
+        <ul>
+          <li>publishing not in private journals, but open source archives</li>
+          <li>but scientists often think this will strip them of their work
+            <ul>
+              <li>but it’s the other way around</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>This is the subject of our game: we believe in the goal of open knowledge
+        <ul>
+          <li>the goal is to raise awareness about this problem</li>
+          <li>and also that checking the sources of your info is very important</li>
+        </ul>
+      </li>
+      <li>We chose to use the same humorous tone as Ace Attorney (manga-like Japanese game where you play a lawyer, trial is like Dragonball-Z)
+        <ul>
+          <li>you’re sent to investigate a massive plot linked to who owns info &amp; data in the uni/scientific publishing world</li>
+          <li>you have one person who tells you a false assertion backed by false info sources</li>
+          <li>like in Papers Please, you need to point out what is false in the info source &amp; link it with a publishing rule that the source is supposed to respect</li>
+        </ul>
+      </li>
+      <li>What we learned
+        <ul>
+          <li>procedural rhetoric: the game itself must convey the message
+            <ul>
+              <li>a lot of educational games involve a little playing and a lot of reading</li>
+              <li>the goal here is that you actually learn by playing</li>
+            </ul>
+          </li>
+          <li>making a game about notions like this that have gray areas is a lot harder than making games about hard science/math/programming etc. &amp; needs more time invested</li>
+          <li>what should ed games aim to do?
+            <ul>
+              <li>games in general are not very good at conveying a very complex message/complex domain of learning</li>
+              <li>what they’re good at is piquing interest and raising awareness</li>
+              <li>ed games shouldn’t aim to teach everything to the player, but rather to give them the interest to go look into the topic themselves</li>
+            </ul>
+          </li>
+          <li>we tried to make our game one that’s actually fun in itself
+            <ul>
+              <li>the game is for 1st year uni students, who by that point are used to playing a lot of “serious games” that are not up to the standard of entertainment games</li>
+              <li>ours aims not just to be a “serious game” for education, but one that’s actually fun to play in and of itself</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>The game will be released (for free) in April 2017</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="tablexia-app-for-children-with-dyslexia"><a name="tablexia"><a href="https://fosdem.org/2017/schedule/event/ogd_tablexia/">Tablexia: app for children with dyslexia</a></a></h3>
+<p><strong>Andrea Sichova, cz.nic</strong></p>
+
+<ul>
+  <li>Cognitive training for children with dyslexia
+    <ul>
+      <li>focused on older children, 11-15 years</li>
+      <li>teachers told us: we can give a lot of lessons, but with older children the problem is motivation</li>
+      <li>so we developed a game to address that</li>
+      <li>available on Android/iOS</li>
+      <li>available in schools &amp; counseling facilities, but we also encourage students to use it indepedently</li>
+      <li>Available in Czech, Slovak, and German language</li>
+    </ul>
+  </li>
+  <li>What’s dyslexia?
+    <ul>
+      <li>specific learning disability</li>
+      <li>problems with reading/writing caused by cognitive functions (attention, working memory)</li>
+      <li>dyslexic people have different learning strategies to cope</li>
+    </ul>
+  </li>
+  <li>App development
+    <ul>
+      <li>focused on mobile (Android)</li>
+      <li>testing: tried to put it in front of students as much as possible, ask questionnaires etc</li>
+      <li>difficulty: needs to be at the right level so that they’re neither bored nor frustrated</li>
+      <li>tasks:
+        <ul>
+          <li>attention/working memory: need to read instructions and remember how they relate to previous ones</li>
+          <li>spacial reasoning: map tiles</li>
+          <li>phonological recognition/analysis: see a word, hear different options, choose the right one</li>
+          <li>visual memory: have to click on the right things at the right time</li>
+          <li>visual recognition: recognizing “alien” writing symbols, some of which are similar to others</li>
+          <li>phonological memory: remember the content/order of sounds you heard</li>
+        </ul>
+      </li>
+      <li>also includes “badges” for completing exercises, statistics view of progress, and “encyclopedia” with info about dyslexia (which also has voice recordings of all texts)</li>
+    </ul>
+  </li>
+  <li>Does it work?
+    <ul>
+      <li>studying it is difficult: we need a lot of children diagnosed with dyslexia, and let them play the game for some time</li>
+      <li>children are not going to school regularly - problems with attendance</li>
+    </ul>
+  </li>
+  <li>Language
+    <ul>
+      <li>We focused on Czech</li>
+      <li>Dyslexia is closely related to the language
+        <ul>
+          <li>aspects that dyslexic children struggle with are different from e.g. Czech to German</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/posts/katsconf2/">
+            <p>Notes from KatsConf2</p>
+
+            <small>19 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/marionette-act-ii-testing/">
+            <p>Marionette, Act II: Harnessing automation to test the browser</p>
+
+            <small>22 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/outreachy-halftime-ish-update/">
+            <p>Outreachy halftime(ish) update</p>
+
+            <small>02 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      World, say hello to Kimi! &middot; Nikunj Rajesh Lad
+    
+  </title>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/public/css/anjana.css">
+
+  <!-- Custom JS -->
+  <script src="/public/js/anjana.js"></script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <!-- <link rel="shortcut icon" href="/public/favicon.ico"> -->
+
+  <!-- Feed (jekyll-feed) -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Nikunj Rajesh Lad" />
+</head>
+
+
+  <body class="theme-base-0c">
+
+    <div class="sidebar">
+  <div class="container left-align">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Nikunj Rajesh Lad
+        </a>
+      </h1>
+      <p class="lead">Computer Vision Developer and Graduate Teaching Assistant</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      
+
+<!--      <a class="sidebar-nav-item"-->
+<!--         href="/">Blog</a>-->
+<!--      -->
+      <a class="sidebar-nav-item"
+         href="/about/">About</a>
+      <a class="sidebar-nav-item"
+         href="/resume/">Resume</a>
+      <a class="sidebar-nav-item"
+         href="/projects/">Projects</a>
+      <a class="sidebar-nav-item"
+         href="/publications/">Publications</a>
+    </nav>
+
+    <ul class="list-inline" id="sidebar-buttons">
+        <li>
+            <a href="mailto:lad.n@husky.neu.edu" class="btn-social btn-outline" title="E-Mail me">
+                <i class="fa fa-fw fa-at"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/nikunjlad" target="_blank" class="btn-social btn-outline" title="Nikunj on GitHub">
+                <i class="fa fa-fw fa-github"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="http://www.facebook.com/nikunj.sporty" target="_blank" class="btn-social btn-outline" title="Anjana Vakil on Facebook">
+                <i class="fa fa-fw fa-facebook"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://twitter.com/LadNikunj" target="_blank" class="btn-social btn-outline" title="@LadNikunj on Twitter">
+                <i class="fa fa-fw fa-twitter"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="" target="_blank" class="btn-social btn-outline" title="Google Plus">
+                <i class="fa fa-fw fa-google-plus"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://www.linkedin.com/in/nikunjlad " target="_blank" class="btn-social btn-outline" title="Nikunj Lad on LinkedIn">
+                <i class="fa fa-fw fa-linkedin"></i>
+            </a>
+        </li>
+
+
+    </ul>
+
+    <p id="credits">&copy; 2020. <a href="/credits">Credits</a>.</p>
+  </div>
+</div>
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title"><p>World, say hello to Kimi!</p>
+</h1>
+  
+  <span class="post-date">20 Nov 2015</span>
+  <p>In week 7 of my batch here at the <a href="http://www.recurse.com">Recurse Center</a>, I started (and finished) a new project: creating and interpreting a programming language.
+My goal for this language was less to build a language you can actually code in, and more to simply learn about programming languages and interpreters, as this is something I find really interesting but have almost no experience with.</p>
+
+<h2 id="what-is-kimi">What is Kimi?</h2>
+
+<p><a href="https://github.com/vakila/kimi">Kimi</a> is a little toy language with only the most basic features a small, elegant language needs, and nothing more.
+The name “Kimi” stands for Keep It MInimal, which is exactly what I tried to do with this project.</p>
+
+<h2 id="why-did-i-build-kimi">Why did I build Kimi?</h2>
+<p>A few weeks into my batch at the <a href="https://www.recurse.com">Recurse Center</a>, resident <a href="https://cs.uwaterloo.ca/~plragde/">Prabhakar Ragde</a> gave a talk called “Small, Elegant, Practical: The benefits of a minimal approach”, in which he laid out a minimal set of features (see below) for a small, elegant programming language. It was interesting to know that a programming language doesn’t in principle need to have a huge set of features, like most of the major languages do.</p>
+
+<p>I didn’t know much about programming languages before coming to RC, and although I had a vague sense of what interpreters/compilers do, I didn’t really know what was going on under the hood. So, with some inspiration from Prabhakar’s talk, and some encouragement from RC facilitator <a href="http://workmajj.com/">John Workman</a>, I decided to write a little interpreter for such a minimal language myself.</p>
+
+<h2 id="how-did-i-build-kimi">How did I build Kimi?</h2>
+<p>In crafting the language, I tried to stick as closely as possible to minimal set of features laid out by Prabhakar:</p>
+
+<ul>
+  <li>Lambda expressions</li>
+  <li>Some useful built-in functions (e.g. arithmetic)</li>
+  <li>Function application</li>
+  <li>Variable definition</li>
+  <li>Conditional evaluation</li>
+  <li>Lists</li>
+</ul>
+
+<p>To write the interpreter, I loosely followed two tutorials:</p>
+
+<ul>
+  <li>the <a href="http://eloquentjavascript.net/11_language.html">Programming language project</a> outlined by this week’s RC resident, <a href="http://marijnhaverbeke.nl/">Marijn Haverbeke</a>, in his excellent and fun book <a href="http://eloquentjavascript.net">Eloquent Javascript</a>. Marijn himself also provided invaluable assistance by pair-programming with me on some components of the interpreter.</li>
+  <li><a href="">Peter Norvig</a>’s tutorial <a href="http://norvig.com/lispy.html">(How to Write a (Lisp) Interpreter (in Python))</a>.</li>
+</ul>
+
+<h2 id="what-does-kimi-code-look-like">What does Kimi code look like?</h2>
+<p>Here’s a sample Kimi program, <code class="highlighter-rouge">factorial.kimi</code>, which defines a recursive function to compute the factorial of a given number, and then applies that function to the number <code class="highlighter-rouge">3</code>:</p>
+
+<figure class="highlight"><pre><code class="language-hylang" data-lang="hylang"><span class="p">(</span><span class="nb">do</span><span class="w">
+    </span><span class="p">(</span><span class="nf">define</span><span class="w"> </span><span class="n">fact</span><span class="w">
+        </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="n">n</span><span class="w">
+            </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">(</span><span class="nf">fact</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="mi">1</span><span class="p">))))))</span><span class="w">
+    </span><span class="p">(</span><span class="nf">fact</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">
+</span><span class="p">)</span></code></pre></figure>
+
+<p>Running this program in the Kimi interpreter produces the result <code class="highlighter-rouge">6</code>.</p>
+
+<p>Several other examples are available in the <code class="highlighter-rouge">samples/</code> directory of the <a href="https://github.com/vakila/kimi">Kimi repo</a>.</p>
+
+<h2 id="what-did-i-learn-from-this-project">What did I learn from this project?</h2>
+<p>Before starting work on Kimi, I had a very shallow understanding of what an interpreter actually does. Through this project, I learned how an interpreter:</p>
+
+<ul>
+  <li>Tokenizes the raw source code into distinct pieces</li>
+  <li>Parses those tokens into an abstract syntax tree representing the structure of the program</li>
+  <li>Evaluates the expressions in that tree recursively</li>
+  <li>Creates and keeps track of a hierarchy of environments, i.e. contexts in which expressions are evaluated</li>
+  <li>Makes use of special syntactic forms (e.g. <code class="highlighter-rouge">if</code> statements, <code class="highlighter-rouge">lambda</code> expressions, and imperative <code class="highlighter-rouge">do</code> blocks) to decide how to evaluate certain expressions</li>
+</ul>
+
+<p>This project was also a great opportunity to practice Test-Driven Development; before implementing a given feature (e.g. a built-in function like <code class="highlighter-rouge">+</code>), I wrote tests using Python’s <code class="highlighter-rouge">unittest</code> to capture the desired behavior, watched them fail, and then wrote the code that made them pass. I loved the structure and gratification I got from TDD on this project - seeing those tests pass is so rewarding! - so I’ll definitely keep using this development strategy in the future.</p>
+
+<h2 id="whats-next-for-kimi">What’s next for Kimi?</h2>
+<p>For the time being, I’m satisfied with Kimi’s feature set and will be switching focus to other projects. But in the unlikely case of a future time and energy surplus, I’ll also try to implement some nice-to-have features, such as:</p>
+
+<ul>
+  <li>Built-in string functions (e.g. <code class="highlighter-rouge">concat</code> or <code class="highlighter-rouge">find</code>)</li>
+  <li>Simple I/O (e.g. <code class="highlighter-rouge">print</code>)</li>
+  <li>Macros</li>
+  <li>Maps</li>
+  <li>Arbitrary structures using S-expressions (a la XML or JavaScript objects)</li>
+</ul>
+
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/posts/katsconf2/">
+            <p>Notes from KatsConf2</p>
+
+            <small>19 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/fosdem-2017/">
+            <p>Notes from FOSDEM 2017</p>
+
+            <small>13 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/marionette-act-ii-testing/">
+            <p>Marionette, Act II: Harnessing automation to test the browser</p>
+
+            <small>22 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+
+  </body>
+</html>
