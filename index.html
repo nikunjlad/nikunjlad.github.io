@@ -1,40 +1,170 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title | markdownify }}
-      </a>
-    </h1>
-    {% if post.subtitle %}
-      <h3 class="post-subtitle">{{ post.subtitle | markdownify  }}</h3>
-    {% endif %}
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+<head>
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    {{ post.excerpt | markdownify }}
+
+  <title>Breakfast with Data</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://nikunjlad.github.io/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://nikunjlad.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Breakfast with Data Full Atom Feed" />
+
+  <link href="https://nikunjlad.github.io/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://nikunjlad.github.io/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Breakfast with Data"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Breakfast with Data"/>
+<meta property="og:description" content="View the blog."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://nikunjlad.github.io/"/>
+<meta property="og:image" content="https://nikunjlad.github.io/theme/images/home-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Website",
+  "name": " Breakfast with Data ",
+  "url" : "https://nikunjlad.github.io/",
+  "image": "https://nikunjlad.github.io/theme/images/home-bg.jpg",
+  "description": "View the blog."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
   </div>
-  {% endfor %}
+</nav>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="blog-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="blog-name"><a href="https://nikunjlad.github.io/">Breakfast with Data</a></h1>
+
+          <div class="blog-cover cover" style="background-image: url('https://nikunjlad.github.io/theme/images/post-bg.jpg')">
+      </div>
+    </header>
+
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+<div id="index" class="container">
+  <main class="content" role="main">
+    <div class="extra-pagination">
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+    </div>
+
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="https://nikunjlad.github.io/King-County-Housing-Price-Prediction.html" rel="bookmark" title="Permalink to King County Housing Price Prediction">King County Housing Price Prediction</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://nikunjlad.github.io/author/nikunj-lad.html">Nikunj Lad</a>
+                     | <time datetime="Wed 20 February 2019">Wed 20 February 2019</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        King County Housing Price Prediction¶Abstract¶This notebook is analyzing the house data of king county using various regression and classification based models. Initial exploratory analysis helps us understand that only a select set of features...
+                    </p>
+                </section>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="https://nikunjlad.github.io/Understanding-Probability-Distributions.html" rel="bookmark" title="Permalink to Understanding Probability Distributions">Understanding Probability Distributions</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://nikunjlad.github.io/author/nikunj-lad.html">Nikunj Lad</a>
+                     | <time datetime="Tue 12 February 2019">Tue 12 February 2019</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        Understanding Probability Distributions¶ Probability Distributions¶ We use probability distributions because they model data in real world. They allow us to calculate what to expect and therefore understand what is unusual. They also provide...
+                    </p>
+                </section>
+            </div>
+        </article>
+
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+  </main>
 </div>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
 
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a class="pagination-item newer"
-       href="{{ site.baseurl }}/{% if paginator.page > 2 %}page{{paginator.previous_page}}{% endif %}">
-       <i class="fa fa-arrow-left"></i> Newer
-   </a>
-  {% endif %}
-
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">
-        Older <i class="fa fa-arrow-right"></i>
-    </a>
-  {% endif %}
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
 
 
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
 
-</div>
+  <script type="text/javascript" src="https://nikunjlad.github.io/theme/js/script.js"></script>
+
+</body>
+</html>

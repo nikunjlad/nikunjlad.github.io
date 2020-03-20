@@ -6,43 +6,44 @@ plugins:
   - jekyll-feed
 
 # Permalinks
-permalink:              /blog/:categories/:title/
-# permalink:            blog/:categories/:year/:month/:day/:title/
+permalink:              /posts/:categories/:title/
+# permalink:            posts/:categories/:year/:month/:day/:title/
 
 # Setup
-title:            'Anjana Sofia Vakil'
-name:             'Anjana Sofia Vakil'
+title:            'Nikunj Rajesh Lad'
+name:             'Nikunj Rajesh Lad'
 #tagline:          ''
-description:      'Language technologist and software developer'
+description:      'Computer Vision Developer and Graduate Teaching Assistant'
 #url:              http://vakila.github.io/
 baseurl:
-# blogurl:          /blog/
+# blogurl:          /posts/
 
 # Assets
 images:         '/img'
 pdfs:           '/pdf'
 
 author:
-  name:           'Anjana Sofia Vakil'
-  url:            vakila.github.io
-  email:          'anjanavakil@gmail.com'
-  github:         'https://github.com/vakila'
-  facebook:       'http://www.facebook.com/anjana.vakil'
-  twitter:        'https://twitter.com/AnjanaVakil'
+  name:           'Nikunj Rajesh Lad'
+  url:            nikunjlad.github.io
+  email:          'lad.n@husky.neu.edu'
+  github:         'https://github.com/nikunjlad'
+  facebook:       'http://www.facebook.com/nikunj.sporty'
+  twitter:        'https://twitter.com/LadNikunj'
   googleplus:     ''
-  linkedin:       'https://www.linkedin.com/in/anjanavakil '
+  linkedin:       'https://www.linkedin.com/in/nikunjlad '
 
 paginate:         3
-# paginate_path:    "/blog/page:num/"
+# paginate_path:    "/posts/page:num/"
 
 # Custom vars
 version:          2.1.0
 
 github:
-  repo:           https://github.com/vakila/vakila.github.io
+  repo:           https://github.com/nikunjlad/nikunjlad.github.io
 
 # Collections
 collections:
+  - publications
   - projects
   - talks
 
