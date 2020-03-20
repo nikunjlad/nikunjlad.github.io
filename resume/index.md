@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Resume
 ---
 
-![](https://github.com/nikunjlad/nikunjlad.github.io/blob/master/img/Nikunj_Lad.png)
+<embed src="Nikunj_Lad.pdf" type="application/pdf" width="100%" height="1200px" />

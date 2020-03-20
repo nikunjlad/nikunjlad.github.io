@@ -6,10 +6,10 @@ title: Home
 ![](https://avatars0.githubusercontent.com/u/4640912?s=400&u=deee4465e71cd7d10ccf2bc459b6774cb4acf24b&v=4)
 <br>
 
-# Hi, I'm Nikunj!
+<span style="color:#000; font-family: 'Montserrat'; font-size: 2.5em;"><b>Hi, I'm Nikunj!</b></span>
 
-I love building [language technology](https://en.wikipedia.org/wiki/Language_technology) and programming in languages like
-Python and JavaScript. At the moment I'm doing my coding at the [Recurse Center](http://www.recurse.com).
+I love building [Computer Vision](https://www.sas.com/en_us/insights/analytics/computer-vision.html) applications and programming in Python. 
+At the moment I'm doing my research on [Long-Short Term Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 For more about me, please check out my [bio]({{ site.baseurl }}about/) and [resume]({{ site.baseurl }}resume/).
 
