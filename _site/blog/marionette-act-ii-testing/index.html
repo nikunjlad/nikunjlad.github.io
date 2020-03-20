@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Marionette, Act II: Harnessing automation to test the browser &middot; Anjana Sofia Vakil
+    
+  </title>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/public/css/anjana.css">
+
+  <!-- Custom JS -->
+  <script src="/public/js/anjana.js"></script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <!-- <link rel="shortcut icon" href="/public/favicon.ico"> -->
+
+  <!-- Feed (jekyll-feed) -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Anjana Sofia Vakil" />
+</head>
+
+
+  <body class="theme-base-0c">
+
+    <div class="sidebar">
+  <div class="container left-align">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Anjana Sofia Vakil
+        </a>
+      </h1>
+      <p class="lead">Language technologist and software developer</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      
+
+      <a class="sidebar-nav-item"
+         href="/">Blog</a>
+      
+      <a class="sidebar-nav-item"
+         href="/about/">About</a>
+      <!-- a class="sidebar-nav-item"
+         href="/resume/">Resume</a -->
+      <a class="sidebar-nav-item"
+         href="/projects/">Projects</a>
+      <a class="sidebar-nav-item"
+         href="/publications/">Publications</a>
+    </nav>
+
+    <ul class="list-inline" id="sidebar-buttons">
+        <li>
+            <a href="mailto:anjanavakil@gmail.com" class="btn-social btn-outline" title="E-Mail me">
+                <i class="fa fa-fw fa-at"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/vakila" target="_blank" class="btn-social btn-outline" title="vakila on GitHub">
+                <i class="fa fa-fw fa-github"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="http://www.facebook.com/anjana.vakil" target="_blank" class="btn-social btn-outline" title="Anjana Vakil on Facebook">
+                <i class="fa fa-fw fa-facebook"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://twitter.com/AnjanaVakil" target="_blank" class="btn-social btn-outline" title="@AnjanaVakil on Twitter">
+                <i class="fa fa-fw fa-twitter"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="" target="_blank" class="btn-social btn-outline" title="Google Plus">
+                <i class="fa fa-fw fa-google-plus"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://www.linkedin.com/in/anjanavakil " target="_blank" class="btn-social btn-outline" title="Anjana Vakil on LinkedIn">
+                <i class="fa fa-fw fa-linkedin"></i>
+            </a>
+        </li>
+
+
+    </ul>
+
+    <p id="credits">&copy; 2020. <a href="/credits">Credits</a>.</p>
+  </div>
+</div>
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title"><p>Marionette, Act II: Harnessing automation to test the browser</p>
+</h1>
+  
+  <span class="post-date">22 Aug 2016</span>
+  <p>Welcome back to my post series on the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette">Marionette</a> project! In <a href="/blog/marionette-act-i-automation/">Act I</a>, we looked into Marionette’s automation framework for Gecko, the engine behind the Firefox browser. Here in Act II, we’ll take a look at a complementary side of the Marionette project: the testing framework that helps us run tests using our Marionette-animated browser, aka the <a href="https://developer.mozilla.org/en-US/docs/Marionette_Test_Runner">Marionette test harness</a>. If – like me at the start of my <a href="/blog/outreachy-what-how-why/">Outreachy internship</a> – you’re <a href="https://en.wikipedia.org/wiki/Clueless_(film)">clueless</a> about test harnesses, or the Marionette harness in particular, and want to fix that, you’re in the right place!</p>
+
+<!--/excerpt-->
+
+<h2 id="wait-whats-marionette-again">Wait, what’s Marionette again?</h2>
+
+<p>Quick recap from <a href="/blog/marionette-act-i-automation/">Act I</a>:</p>
+
+<blockquote>
+  <p><a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette">Marionette</a> refers to a suite of tools for automated testing of Mozilla browsers.</p>
+</blockquote>
+
+<p>In that post, we <a href="/blog/marionette-act-i-automation/#how-do-marionettes-server-and-client-automate-the-browser">saw</a> how the Marionette automation framework lets us control the Gecko browser engine (our “puppet”), thanks to a <em>server</em> component built into Gecko (the puppet’s “strings”) and a <em>client</em> component (a “handle” for the puppeteer) that gives us a simple Python API to talk to the server and thus control the browser. But why do we need to automate the browser in the first place? What good does it do us?</p>
+
+<p>Well, one thing it’s great for is testing. Indulge me in a brief return to my puppet metaphor from last time, won’t you? If the <em>automation</em> side of Marionette gives us strings and a handle that turn the browser into our puppet, the <em>testing</em> side of Marionette gives that puppet a reason for being, by letting it perform: it sets up a stage for the puppet to dance on, tell it to carry out a given performance, write a review of that performance, and tear down the stage again.</p>
+
+<p>OK, OK, metaphor-indulgence over; let’s get real.</p>
+
+<h2 id="wait-why-do-we-need-automated-browser-testing-again">Wait, why do we need automated browser testing again?</h2>
+
+<p>As Firefox<sup id="a1"><a href="#f1">1</a></sup> contributors, we don’t want to have to manually open up Firefox, click around, and check that everything works every time we change a line of code. We’re developers, we’re lazy!</p>
+
+<p><img src="http://media4.popsugar-assets.com/files/thumbor/W4GOj04aYxDOfU2W8M8VooIy7A4/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2015/07/21/936/n/1922283/a3ec73cee2bf5525_1e96c7e2cf97ee07e043ac3cef331074/i/When-Your-Mom-Criticizes-Your-Strict-Diet-Quesadillas.gif" alt="&quot;Gosh, you say it like it's a bad thing&quot; (GIF from the film &quot;Clueless&quot;)" /></p>
+<p class="credit"><em>Clueless</em> via <a href="http://www.popsugar.com/entertainment/Clueless-Movie-GIFs-37943154">POPSUGAR</a></p>
+
+<p>But we can’t <em>not</em> do it, because then we might not realize that we’ve broken the entire internet (or, you know, introduced a bug that makes Firefox crash, which is just as bad).</p>
+
+<p>So instead of testing manually, we do the same thing we always do: make the computer do it for us!</p>
+
+<p>The type of program that can magically do this stuff for us is called a <a href="https://en.wikipedia.org/wiki/Test_harness">test harness</a>. And there’s even a special version specific to testing Gecko-based browsers, called – can you guess? – the Marionette test harness, also known as the <a href="https://developer.mozilla.org/en-US/docs/Marionette_Test_Runner">Marionette test runner</a>.</p>
+
+<p>(Lazy) Firefox contributors, rejoice!</p>
+
+<p><img src="https://media.tenor.co/images/5e3ed62355b84ea1662a5fcc9178e85f/raw" alt="&quot;Two enthusiastic thumbs up!&quot; (GIF from the film &quot;Clueless&quot;)" /></p>
+<p class="credit"><em>Clueless</em> via <a href="https://www.tenor.co/view/thumbsup-enthusiastic-clueless-gif-5146508">tenor</a></p>
+
+<p>So, what exactly is this magical “test harness” thing? And what do we need to know about the Marionette-specific one?</p>
+
+<h2 id="whats-a-test-harness">What’s a test harness?</h2>
+
+<p>First of all, let’s not get hung up on the name “test harness” – the names people use to refer to these things can be a bit ambiguous and confusing, as we saw with other parts of the Marionette suite in Act I. So let’s set aside the name of the thing for now, and focus on what the thing does.</p>
+
+<p>Assuming we have a framework like the Marionette client/server that lets us automatically control the browser, the other thing we need for automatically testing the browser is something that lets us:</p>
+
+<ul>
+  <li>Properly set up &amp; launch the browser, and any other related components we might need</li>
+  <li>Define tests we want to perform and their expected results</li>
+  <li>Discover tests defined in a file or directory</li>
+  <li>Run those tests, using the automation framework to do the stuff we want to do in the browser</li>
+  <li>Keep track of what we actually saw, and how it compares to what we expected to see</li>
+  <li>Report the results in human- and/or machine-readable logs</li>
+  <li>Clean up all of that stuff we set up in the beginning</li>
+</ul>
+
+<p>Take out the browser-specific parts, and you’ve got the basic outline of what a test harness for any kind of software should do.</p>
+
+<p>Ever write tests using Python’s <a href="https://docs.python.org/3/library/unittest.html"><code class="highlighter-rouge">unittest</code></a>, JavaScript’s <a href="http://mochajs.org/"><code class="highlighter-rouge">mocha</code></a>, Java’s <a href="http://junit.org"><code class="highlighter-rouge">JUnit</code></a>, or a similar tool? If you’re like me, you might have been perfectly happy writing unit tests with one of these, thinking not:</p>
+
+<blockquote>
+  <p>Yeah, I know <code class="highlighter-rouge">unittest</code>! It’s a test harness.</p>
+</blockquote>
+
+<p>but rather:</p>
+
+<blockquote>
+  <p>Yeah, I know <code class="highlighter-rouge">unittest</code>! It’s, you know, a, like, thing for writing tests that lets you make assertions and write setup/teardown methods and stuff and, like, print out stuff about the test results, or whatever.</p>
+</blockquote>
+
+<p>Turns out, they’re the same thing; one is just shorter (and less, like, full of “like”s, and stuff).</p>
+
+<p><img src="http://media1.popsugar-assets.com/files/thumbor/cSwGkFRP96rFHR0GStr-CAC1m_4/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2015/07/21/936/n/1922283/f359498dff0704fd_Whatever-Clueless-GIF-1433983360/i/When-People-Tell-You-Going-Bed-9-pm-Lame.gif" alt="&quot;Whatever&quot; (GIF from the film &quot;Clueless&quot;)" /></p>
+<p class="credit"><em>Clueless</em> via <a href="http://www.popsugar.com/entertainment/Clueless-Movie-GIFs-37943154">POPSUGAR</a></p>
+
+<p>So that’s the general idea of a test harness. But we’re not concerned with just any test harness; we want to know more about the <em>Marionette</em> test harness.</p>
+
+<h2 id="whats-special-about-the-marionette-test-harness">What’s special about the Marionette test harness?</h2>
+
+<p>Um, like, duh, it’s made for tests using Marionette!</p>
+
+<p>What I mean is that unlike an all-purpose test harness, the Marionette harness already knows that you’re a Mozillian specifically interested in is running Gecko-based browser tests using Marionette. So instead of making you write code in for setup/teardown/logging/etc. that talks to Marionette and uses other features of the Mozilla ecosystem, it does that legwork for you.</p>
+
+<p>You still have control, though; it makes it easy for you to make decisions about certain Mozilla-/Gecko-specific properties that could affect your tests, like:</p>
+
+<ul>
+  <li>Need to use a specific Firefox binary? Or a particular Firefox instance running on a device somewhere?</li>
+  <li>Got a special profile or set of preferences you want the browser to run with?</li>
+  <li>Want <a href="https://developer.mozilla.org/en-US/Firefox/Multiprocess_Firefox">Electrolysis</a> enabled, or not?</li>
+</ul>
+
+<p>As well as some more general decisions, like:</p>
+
+<ul>
+  <li>Need to run an individual test module? A directory full of tests? Tests listed in a manifest file?</li>
+  <li>Want the tests run multiple times? Or in chunks?</li>
+  <li>How and where should the results be logged?</li>
+  <li>Care to drop into a debugger if something goes wrong?</li>
+</ul>
+
+<p>But how does it do all this? What does it look like on the inside? Let’s dive into the code to find out.</p>
+
+<h2 id="how-does-the-marionette-harness-work">How does the Marionette harness work?</h2>
+
+<p>Inside Marionette, in the file <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runtests.py#30"><code class="highlighter-rouge">harness/marionette/runtests.py</code></a>, we find the <code class="highlighter-rouge">MarionetteHarness</code> class. <code class="highlighter-rouge">MarionetteHarness</code> itself is quite simple: it takes in a set of <em>arguments</em> that specify the desired preferences with respect to the type of decisions we just mentioned, uses an <em>argument parser</em> to parse and process those arguments, and then passes them along to a <em>test runner</em>, which runs the tests accordingly.</p>
+
+<p>So actually, it’s the “test runner” that does the brunt of the work of a test harness here. Perhaps for that reason, the names “Marionette Test Harness” and “Marionette Test Runner” sometimes seem to be used interchangeably, which I for one found quite confusing at first.</p>
+
+<p>Anyway, the test runner that <code class="highlighter-rouge">MarionetteHarness</code> makes use of is the <code class="highlighter-rouge">MarionetteTestRunner</code> class defined in <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runtests.py#18"><code class="highlighter-rouge">runtests.py</code></a>, but that’s really just a little wrapper around <code class="highlighter-rouge">BaseMarionetteTestRunner</code> from <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#491"><code class="highlighter-rouge">harness/marionette/runner/base.py</code></a>, which is where the magic happens – and also where I’ve spent most of my time for my <a href="/blog/outreachy-what-how-why/">Outreachy</a> <a href="/blog/outreachy-halftime-ish-update/">internship</a>, but more on that later. For now let’s check out the runner!</p>
+
+<h3 id="how-does-marionettes-test-runner-work">How does Marionette’s test runner work?</h3>
+
+<p>The beating heart of the Marionette test runner is the method <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#860-931"><code class="highlighter-rouge">run_tests</code></a>. By combining some methods that take care of general test-harness functionality and some methods that let us set up and keep tabs on a Marionette client-server session, <code class="highlighter-rouge">run_tests</code> gives us the Marionette-centric test harness we never knew we always wanted. Thanks, <code class="highlighter-rouge">run_tests</code>!</p>
+
+<p>To get an idea of how the test runner works, let’s take a walk through the <code class="highlighter-rouge">run_tests</code> method and see what it does.<sup id="a2"><a href="#f2">2</a></sup></p>
+
+<p>First of all, it simply <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#861-862">initializes</a> some things, e.g. timers and counters for passed/failed tests. So far, so boring.</p>
+
+<p>Next, we get to the part that puts the “Marionette” in “Marionette test runner”. The <code class="highlighter-rouge">run_tests</code> method <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#864-865">starts up Marionette</a>, by <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#815">creating a <code class="highlighter-rouge">Marionette</code> object</a> – passing in the appropriate <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#688-749">arguments</a> based on the runner’s settings – which gives us the client-server session we need to automate the browser in the tests we’re about to run (we know how that all works from <a href="/blog/marionette-act-i-automation/">Act I</a>).</p>
+
+<p><a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#867">Adding the tests we want</a> to the runner’s to-run list (<code class="highlighter-rouge">self.tests</code>) is the next step. This means <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#964-1021">finding</a> the appropriate tests from test modules, a directory containing test modules, or a manifest file listing tests and the conditions under which they should be run.</p>
+
+<p>Given those tests, after  <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#869-880">gathering</a> and <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#882-888">logging</a> some info about the settings we’re using, we’re ready to <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#897">run</a>! (<a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#892-898">Perhaps multiple times</a>,  if repeated runs were requested.)</p>
+
+<p>To actually run the tests, the runner calls   <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#1082-1099"><code class="highlighter-rouge">run_test_sets</code></a>, which runs the tests we added earlier, possibly dividing them into several sets (or <code class="highlighter-rouge">chunks</code>) that will be run separately (thus enabling parallelization). This in turn calls <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#1072-1080"><code class="highlighter-rouge">run_test_set</code></a>, which basically just calls <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#1023-1070"><code class="highlighter-rouge">run_test</code></a>, which is the <a href="https://en.wikipedia.org/wiki/Turtles_all_the_way_down">final turtle</a>.<sup id="a3"><a href="#f3">3</a></sup></p>
+
+<p>Glancing at <code class="highlighter-rouge">run_test</code>, we can see how the Marionette harness is <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#1025-1026">based</a> on Python’s <a href="https://docs.python.org/2/library/unittest.html"><code class="highlighter-rouge">unittest</code></a>, which is why the tests we run with this harness basically look like <code class="highlighter-rouge">unittest</code> tests (we’ll say a bit more about that below). Using <code class="highlighter-rouge">unittest</code> to <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#1041">discover</a> our test cases in the modules we provided, <code class="highlighter-rouge">run_test</code> <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#1050-1051">runs</a> each test using a <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#217"><code class="highlighter-rouge">MarionetteTextTestRunner</code></a> and gets back a <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#61"><code class="highlighter-rouge">MarionetteTestResult</code></a>. These are basically Marionette-specific versions of classes from <a href="https://dxr.mozilla.org/mozilla-central/source/testing/mozbase/moztest"><code class="highlighter-rouge">moztest</code></a>, which helps us store the test results in a format that’s compatible with other Mozilla automation tools, like <a href="https://wiki.mozilla.org/Auto-tools/Projects/Treeherder">Treeherder</a>. Once we’ve got the test result, <code class="highlighter-rouge">run_test</code> simply <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#1053-1066">adds it to the runner’s tally</a> of test successes/failures.</p>
+
+<p>So, that’s how <code class="highlighter-rouge">run_tests</code> (and its helper functions) execute the tests. Once all the tests have been run, our main <code class="highlighter-rouge">run_tests</code> method basically just <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#911-913,921">logs some info</a> about how things went, and which tests passed. After that, the runner <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#927">cleans up</a> by <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#1101-1112">shutting down Marionette and the browser</a>, even if something <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#904-908,922-925">went wrong</a> during the running or logging, or if the user <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/runner/base.py#899-903,929-931">interrupted</a> the tests.</p>
+
+<p>So there we have it: our very own Marionette-centric test-runner! It runs our tests with Marionette and Firefox set up however we want, and also gives us control over more general things like logging and test chunking. In the next section, we’ll take a look at how we can interact with and customize the runner, and tell it how we want our tests run.</p>
+
+<h3 id="what-do-the-tests-look-like">What do the tests look like?</h3>
+
+<p>As for the tests themselves, since the Marionette harness is an extension of Python’s <code class="highlighter-rouge">unittest</code>, tests are mostly written as a custom flavor of <code class="highlighter-rouge">unittest</code> test cases. Tests extend <a href="https://dxr.mozilla.org/mozilla-central/rev/3ba5426a03b495b6417fffb872d42874edb80855/testing/marionette/harness/marionette/marionette_test.py#617"><code class="highlighter-rouge">MarionetteTestCase</code></a>, which is an extension of <a href="https://docs.python.org/2/library/unittest.html#unittest.TestCase"><code class="highlighter-rouge">unittest.TestCase</code></a>. So if you need to write a new test using Marionette, it’s as simple as writing a new test module named <code class="highlighter-rouge">test_super_awesome_things.py</code> which extends that class with whatever <code class="highlighter-rouge">test_*</code> methods you want – just like with vanilla <a href="https://docs.python.org/2/library/unittest.html#basic-example"><code class="highlighter-rouge">unittest</code></a>.</p>
+
+<p>Let’s take a look at a simple example, <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/harness/marionette/tests/unit/test_checkbox.py"><code class="highlighter-rouge">test_checkbox.py</code></a>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">marionette</span> <span class="kn">import</span> <span class="n">MarionetteTestCase</span>
+<span class="kn">from</span> <span class="nn">marionette_driver.by</span> <span class="kn">import</span> <span class="n">By</span>
+
+<span class="k">class</span> <span class="nc">TestCheckbox</span><span class="p">(</span><span class="n">MarionetteTestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_selected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">test_html</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">marionette</span><span class="o">.</span><span class="n">absolute_url</span><span class="p">(</span><span class="s">"test.html"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marionette</span><span class="o">.</span><span class="n">navigate</span><span class="p">(</span><span class="n">test_html</span><span class="p">)</span>
+        <span class="n">box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">marionette</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span> <span class="s">"myCheckBox"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">box</span><span class="o">.</span><span class="n">is_selected</span><span class="p">())</span>
+        <span class="n">box</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">box</span><span class="o">.</span><span class="n">is_selected</span><span class="p">())</span>
+</code></pre></div></div>
+
+<p>This and the other Marionette unit tests can be found in the directory  <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/harness/marionette/tests/unit/"><code class="highlighter-rouge">testing/marionette/harness/marionette/tests/unit/</code></a>, so have a peek there for some more examples.</p>
+
+<p>Once we’ve got our super awesome new test, we can run it (with whatever super awesome settings we want) using the harness’s command-line interface. Let’s take a look at how that interface works.</p>
+
+<h3 id="what-is-the-interface-to-the-harness-like">What is the interface to the harness like?</h3>
+
+<p>Let’s peek at the <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/testing/marionette/harness/marionette/runner/base.py#496-582">constructor method</a> for the <code class="highlighter-rouge">BaseMarionetteTestRunner</code> class:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">BaseMarionetteTestRunner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="c1"># ...
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">app</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">app_args</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">profile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">logger</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">logdir</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">repeat</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">testvars</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">symbols_path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shuffle_seed</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxint</span><span class="p">),</span> <span class="n">this_chunk</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">total_chunks</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">server_root</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">gecko_log</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">result_callbacks</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">prefs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">test_tags</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">socket_timeout</span><span class="o">=</span><span class="n">BaseMarionetteArguments</span><span class="o">.</span><span class="n">socket_timeout_default</span><span class="p">,</span>
+        <span class="n">startup_timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addons</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">workspace</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">e10s</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">emulator</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span></code></pre></figure>
+
+<!--** -->
+
+<p>Our first thought might be, “Wow, that’s a lot of arguments”. Indeed! This is how the runner knows how you want the tests to be run. For example, <code class="highlighter-rouge">binary</code> is the path to the specific Firefox application binary you want to use, and <code class="highlighter-rouge">e10s</code> conveys whether or not you want to run Firefox with multiple processes.</p>
+
+<p>Where do all these arguments come from? They’re <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/testing/marionette/harness/marionette/runtests.py#67">passed</a> to the runner by <code class="highlighter-rouge">MarionetteHarness</code>, which <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/testing/marionette/harness/marionette/runtests.py#51-52">gets them</a> from the <em>argument parser</em> we mentioned earlier, <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/testing/marionette/harness/marionette/runtests.py#24-27"><code class="highlighter-rouge">MarionetteArguments</code></a>.</p>
+
+<p>Analogous to <code class="highlighter-rouge">MarionetteTestRunner</code>/<code class="highlighter-rouge">BaseMarionetteTestRunner</code>, <code class="highlighter-rouge">MarionetteArgument</code> is just a small wrapper around <code class="highlighter-rouge">BaseMarionetteArguments</code> from <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/testing/marionette/harness/marionette/runner/base.py#241"><code class="highlighter-rouge">runner/base.py</code></a>, which in turn is just an extension of Python’s <a href="https://docs.python.org/2/library/argparse.html#argparse.ArgumentParser"><code class="highlighter-rouge">argparse.ArgumentParser</code></a>. <code class="highlighter-rouge">BaseMarionetteArguments</code> defines which <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/testing/marionette/harness/marionette/runner/base.py#254-373">arguments</a> can be passed in to the harness’s <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/testing/marionette/harness/marionette/runtests.py#72-92">command-line interface</a> to configure its settings. It also <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/testing/marionette/harness/marionette/runner/base.py#419">verifies</a> that whatever arguments the user passed in make sense and don’t contract each other.</p>
+
+<p>To actually <a href="https://developer.mozilla.org/en-US/docs/Marionette_Test_Runner">use the harness</a>, we can simply call the <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/harness/marionette/runtests.py"><code class="highlighter-rouge">runtests.py</code></a> script with: <code class="highlighter-rouge">python runtests.py [whole bunch of awesome arguments]</code>. Alternatively, we can use the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/mach">Mach command</a> <code class="highlighter-rouge">marionette-test</code> (which just calls <code class="highlighter-rouge">runtests.py</code>), as described <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/Running_Tests">here</a>.</p>
+
+<p>To see all of the available command-line options (there are a lot!), you can run <code class="highlighter-rouge">python runtests.py --help</code> or <code class="highlighter-rouge">./mach marionette-test --help</code>, which just spits out the arguments and their descriptions as defined in <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/testing/marionette/harness/marionette/runner/base.py#254-373"><code class="highlighter-rouge">BaseMarionetteArguments</code></a>.</p>
+
+<p>So, with the simple command <code class="highlighter-rouge">mach marionette-test [super fancy arguments] test_super_fancy_things.py</code>, you can get the harness to run your Marionette tests with whatever fancy options you desire to fit your specific fancy scenario.</p>
+
+<p><img src="https://media.tenor.co/images/532d794fb57c2b1bfbcedef396e93ce1/raw" alt="&quot;I'm so fancy&quot; (GIF from &quot;Fancy&quot; by Iggy Azalea)" /></p>
+<p class="credit">Iggy Azalea's "Fancy" via <a href="https://www.tenor.co/view/fancy-iggyazalea-gif-4448714">tenor</a></p>
+
+<p>But what if you’re extra fancy, and have testing needs that exceed the limits of what’s possible with the (copious) command-line options you can pass to the Marionette runner? Worry not! You can customize the runner even further by extending the base classes and making your own super-fancy harness. In the next section, we’ll see how and why you might do that.</p>
+
+<h2 id="how-is-the-marionette-test-harness-used-at-mozilla">How is the Marionette test harness used at Mozilla?</h2>
+
+<p>Other than enabling people to write and run their own tests using the Marionette client, what is the Marionette harness for? How does Mozilla use it internally?</p>
+
+<p>Well, first and foremost, the harness is used to run the Marionette Python unit tests we described earlier, which check that Marionette is functioning as expected (e.g. if Marionette tells the browser to check that box, then by golly that box better get checked!). Those are the tests that will get run if you just run <code class="highlighter-rouge">mach marionette-test</code> without specifying any test(s) in particular.</p>
+
+<p>But that’s not all! I mentioned above that there might be special cases where the runner’s functionality needs to be extended, and indeed Mozilla has already encountered this scenario a couple of times.</p>
+
+<p>One example is the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Firefox_UI_tests">Firefox UI tests</a>, and in particular the UI update tests. These test the functionality of e.g. clicking the “Update Firefox” button in the UI, which means they need to do things like compare the old version of the application to the updated one to make sure that the update worked. Since this involves binary-managing superpowers that the base Marionette harness doesn’t have, the UI tests have their own runner, <a href="https://dxr.mozilla.org/mozilla-central/source/testing/firefox-ui/harness/firefox_ui_harness/runners/base.py"><code class="highlighter-rouge">FirefoxUITestRunner</code></a>, which extends <code class="highlighter-rouge">BaseMarionetteTestRunner</code> with those superpowers.</p>
+
+<p>Another test suite that makes use of a superpowered harness is the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/external-media-tests">External Media Tests</a>, which tests video playback in Firefox and need some extra resources – namely a list of video URLs to make available to the tests. Since there’s no easy way to make such resources available to tests using the base Marionette harness, the external media tests have <a href="https://dxr.mozilla.org/mozilla-central/source/dom/media/test/external/external_media_harness/runtests.py">their own test harness</a> which uses the custom <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/external-media-tests"><code class="highlighter-rouge">MediaTestRunner</code></a> and <a href="https://dxr.mozilla.org/mozilla-central/rev/d5f20820c80514476f596090292a5d77c4b41e3b/dom/media/test/external/external_media_harness/runtests.py#49"><code class="highlighter-rouge">MediaTestArguments</code></a> (extensions of <code class="highlighter-rouge">BaseMarionetteTestRunner</code> and <code class="highlighter-rouge">BaseMarionetteArguments</code>, respectively), to allow the user to e.g. specify the video resources to use via the command line.</p>
+
+<p>So the Marionette harness is used in at least three test suites at Mozilla, and more surely can and will be added as the need arises! Since the harness is designed with automation in mind, suites like <code class="highlighter-rouge">marionette-test</code> and the Firefox UI tests can be (and are!) run automatically to make sure that developers aren’t breaking Firefox or Marionette as they make changes to the Mozilla codebase. This all makes the Marionette harness a rather indispensable development tool.</p>
+
+<p>Which brings us to a final thought…</p>
+
+<h2 id="how-do-we-know-that-the-harness-itself-is-running-tests-properly">How do we know that the harness itself is running tests properly?</h2>
+
+<p>The Marionette harness, like any test harness, is just another piece of software. It was written by humans, which means that bugs and breakage are always a possibility. Since breakage or bugs in the test harness could prevent us from running tests properly, and we need those tests to work on Firefox and other Mozilla tools, we need to make sure that they get caught!</p>
+
+<p>Do you see where I’m going with this? We need to… wait for it…</p>
+
+<blockquote>
+  <p><em>Test the thing that runs the tests</em></p>
+</blockquote>
+
+<p>Yup, that’s right: Meta-testing. Test-ception. Tests all the way down.</p>
+
+<p><img src="http://media1.popsugar-assets.com/files/thumbor/mQHBZmHnmyaKD5KDQ3Pczk6iM4E/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2015/07/21/936/n/1922283/2213f04074cccfc3_raw/i/When-You-Realize-Youre-Getting-Security-Deposit-Back-From-Your-Lease.gif" alt="&quot;Oh my god&quot; (GIF from the film &quot;Clueless&quot;)" /></p>
+<p class="credit"><em>Clueless</em> via <a href="http://www.popsugar.com/entertainment/Clueless-Movie-GIFs-37943154">POPSUGAR</a></p>
+
+<p>And that’s what I’ve been doing this summer for my <a href="https://wiki.mozilla.org/Outreachy#Test-driven_Refactoring_of_Marionette.27s_Python_Test_Runner">Outreachy project</a>: working on the tests for the Marionette test harness, otherwise known as the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/Developer_setup#Marionette_Harness_Unit_Tests">Marionette harness (unit) tests</a>. I wrote a bit about what I’ve been up to in my <a href="/blog/outreachy-halftime-ish-update/">previous post</a>, but in my next and final Outreachy post, I’ll explain in more detail what the harness tests do, how we run them in automation, and what improvements I’ve made to them during my time as a Mozilla contributor.</p>
+
+<p>Stay tuned!</p>
+
+<p><img src="http://media2.popsugar-assets.com/files/thumbor/fvDfv9zE69Mw1HJJtn4veTLo6BQ/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2015/07/21/935/n/1922283/3c71c918ce03dcce_tumblr_lv6o35jlkv1qb9pa3o1_500/i/When-Youre-Dinner-Weeknight-You-Realize-8-pm.gif" alt="&quot;I'm outty&quot; (GIF from the film &quot;Clueless&quot;)" /></p>
+<p class="credit"><em>Clueless</em> via <a href="http://www.popsugar.com/entertainment/Clueless-Movie-GIFs-37943154">POPSUGAR</a></p>
+
+<hr />
+
+<h4 id="notes">Notes</h4>
+
+<p><b id="f1">1</b> Or <a href="https://www.mozilla.org/en-US/firefox/android/">Fennec</a>, or <a href="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS">B2G</a>, or [insert <a href="https://en.wikipedia.org/wiki/Gecko_(software)#Usage">Gecko-based project</a> here]… <a href="#a1">↩</a></p>
+
+<p><b id="f2">2</b> If you scroll through it and think, “Wow, that’s long and ugly”, well, you should’ve seen it before I <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1275269">refactored</a> it!</p>
+
+<p><img src="http://media3.popsugar-assets.com/files/thumbor/fc9xotgGrHFZI0W6fUakt4MC2Ug/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2015/07/21/935/n/1922283/0151951e7852f4d2_hagsville/i/When-You-Look-Your-High-School-Enemies-Facebook-Pages.gif" alt="&quot;Hagsville&quot; (GIF from the film &quot;Clueless&quot;)" /></p>
+<p class="credit"><em>Clueless</em> via <a href="http://www.popsugar.com/entertainment/Clueless-Movie-GIFs-37943154">POPSUGAR</a></p>
+
+<p><a href="#a2">↩</a></p>
+
+<p><b id="f3">3</b> If you think distinguishing <code class="highlighter-rouge">run_tests</code>, <code class="highlighter-rouge">run_test_sets</code>, <code class="highlighter-rouge">run_test_set</code>, and <code class="highlighter-rouge">run_test</code> is confusing, I wholeheartedly agree with you! But best get used to it; working on the Marionette test harness involves developing an eagle-eye for plurals in method names (we’ve also got <code class="highlighter-rouge">_add_tests</code> and <code class="highlighter-rouge">add_test</code>). <a href="#a3">↩</a></p>
+
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/blog/katsconf2/">
+            <p>Notes from KatsConf2</p>
+
+            <small>19 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/fosdem-2017/">
+            <p>Notes from FOSDEM 2017</p>
+
+            <small>13 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/outreachy-halftime-ish-update/">
+            <p>Outreachy halftime(ish) update</p>
+
+            <small>02 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+
+  </body>
+</html>

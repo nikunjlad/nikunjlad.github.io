@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Notes from FOSDEM 2016 &middot; Anjana Sofia Vakil
+    
+  </title>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/public/css/anjana.css">
+
+  <!-- Custom JS -->
+  <script src="/public/js/anjana.js"></script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <!-- <link rel="shortcut icon" href="/public/favicon.ico"> -->
+
+  <!-- Feed (jekyll-feed) -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Anjana Sofia Vakil" />
+</head>
+
+
+  <body class="theme-base-0c">
+
+    <div class="sidebar">
+  <div class="container left-align">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Anjana Sofia Vakil
+        </a>
+      </h1>
+      <p class="lead">Language technologist and software developer</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      
+
+      <a class="sidebar-nav-item"
+         href="/">Blog</a>
+      
+      <a class="sidebar-nav-item"
+         href="/about/">About</a>
+      <!-- a class="sidebar-nav-item"
+         href="/resume/">Resume</a -->
+      <a class="sidebar-nav-item"
+         href="/projects/">Projects</a>
+      <a class="sidebar-nav-item"
+         href="/publications/">Publications</a>
+    </nav>
+
+    <ul class="list-inline" id="sidebar-buttons">
+        <li>
+            <a href="mailto:anjanavakil@gmail.com" class="btn-social btn-outline" title="E-Mail me">
+                <i class="fa fa-fw fa-at"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/vakila" target="_blank" class="btn-social btn-outline" title="vakila on GitHub">
+                <i class="fa fa-fw fa-github"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="http://www.facebook.com/anjana.vakil" target="_blank" class="btn-social btn-outline" title="Anjana Vakil on Facebook">
+                <i class="fa fa-fw fa-facebook"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://twitter.com/AnjanaVakil" target="_blank" class="btn-social btn-outline" title="@AnjanaVakil on Twitter">
+                <i class="fa fa-fw fa-twitter"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="" target="_blank" class="btn-social btn-outline" title="Google Plus">
+                <i class="fa fa-fw fa-google-plus"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://www.linkedin.com/in/anjanavakil " target="_blank" class="btn-social btn-outline" title="Anjana Vakil on LinkedIn">
+                <i class="fa fa-fw fa-linkedin"></i>
+            </a>
+        </li>
+
+
+    </ul>
+
+    <p id="credits">&copy; 2020. <a href="/credits">Credits</a>.</p>
+  </div>
+</div>
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title"><p>Notes from FOSDEM 2016</p>
+</h1>
+  
+  <span class="post-date">02 Feb 2016</span>
+  <p>The <a href="https://fosdem.org/2016/">Free and Open Source Developers’ European Meeting (FOSDEM)</a> just concluded its 2016 edition in Brussels, Belgium. It was my first time attending this huge, fascinating, registration-free conference, and I really enjoyed the chance to become more familiar with the FOSS community and its ideals, and learn about some very cool projects and technologies. Here’s a quick summary of what I took away from FOSDEM, along with my notes from the talks I attended.</p>
+
+<h3 id="some-things-i-learned">Some things I learned</h3>
+
+<ul>
+  <li>The meaning of <a href="http://www.gnu.org/philosophy/free-sw.html">“free software” and the four freedoms</a>, as told by Richard Stallman</li>
+  <li>Several <a href="#cpython">things about CPython</a> that can make Python code slow, and several <a href="#python-tips">ways</a> to <a href="#beyond-cpython">speed</a> it <a href="#mercurial">up</a></li>
+  <li>Interesting things going on in Lua land: <a href="#lua-web">cool projects</a> are using it for web development, LuaJIT is crazy fast (almost suspiciously so) and is even being used for <a href="https://fosdem.org/2016/schedule/event/snabbswitch/">networking</a></li>
+  <li>Accessible software: <a href="#design">design-for-all</a> principles and some FOSS projects concerned with <a href="#mail2voice">accessibility</a></li>
+  <li><a href="#weblate">Tools</a> &amp; <a href="#help-localizers">strategies</a> developers can use to make their (FOSS) projects easier to localize/translate</li>
+  <li>The <a href="#fairphone2">Fairphone 2</a> is pretty awesome (well, I already new that), and plays nicely with free software</li>
+  <li>Codes of Conduct are hella important, and <a href="#cocs">not contradictory</a> to the ideals of the FOSS community</li>
+  <li>The Humanitarian OpenStreetMap Team are my <a href="#map">heroes</a></li>
+</ul>
+
+<p>See the notes below for more!</p>
+
+<p><em>Disclaimer: The notes below represent my impressions of the content of these talks, jotted down as I listened. They may or may not be totally accurate, or precisely/adequately represent what the speakers said or think. If you want to get it from the horse’s mouth, follow the links to the <a href="https://fosdem.org/2016/schedule/events/">FOSDEM schedule</a> entry to find the abstract, slides, and/or other resources!</em></p>
+
+<hr />
+
+<h1 id="day-1---saturday-30012016">Day 1 - Saturday 30.01.2016</h1>
+
+<hr />
+
+<h2 id="python-tips-tricks-and-dark-magic"><a name="python-tips"></a><a href="https://fosdem.org/2016/schedule/event/python_tips/">Python Tips, Tricks, and Dark Magic</a></h2>
+
+<h4 id="jordi-soucheiron">Jordi Soucheiron</h4>
+
+<ul>
+  <li>Some useful syntax tricks, etc.</li>
+  <li>See slides on <a href="https://github.com/jsoucheiron/pttdm">GitHub</a></li>
+</ul>
+
+<hr />
+
+<h2 id="design-for-all-vs-design-for-one-and-adaptive-user-interfaces"><a name="design"></a><a href="https://fosdem.org/2016/schedule/event/osd_design_for_all_vs_design_for_one/">Design for All vs. Design for One and Adaptive User Interfaces</a></h2>
+
+<h4 id="c-strobbe-stuttgart-media-uniliberte0org">C. Strobbe (Stuttgart Media Uni/liberte0.org)</h4>
+<p>Github: cstrobbe</p>
+
+<p><a href="http://cstrobbe.github.io/AccessibilityResources/">http://cstrobbe.github.io/AccessibilityResources/</a></p>
+
+<p>GPII: universal preferences for accessibility settings
+gpii.net
+cloud4all.info</p>
+
+<ul>
+  <li>See slides on FOSDEM talk page</li>
+</ul>
+
+<p>OpenSouceDesign.net</p>
+
+<p>Freenote: #openSourceDeisgn</p>
+
+<p>Github: OpenSourceDesigns</p>
+
+<hr />
+
+<h2 id="exploring-cpython"><a name="cpython"></a><a href="https://fosdem.org/2016/schedule/event/python_interpreter/">Exploring CPython</a></h2>
+
+<h4 id="stephane-wirbel">Stephane Wirbel</h4>
+<p>(matrixise on GitHub, Twitter)</p>
+
+<p>Slides: <a href="https://speakerdeck.com/matrixise/exploring-our-python-interpreter">https://speakerdeck.com/matrixise/exploring-our-python-interpreter</a></p>
+
+<p>When you execute a Python command at the command line, the flow is:</p>
+
+<ul>
+  <li>command line</li>
+  <li>lexer (<code class="highlighter-rouge">tokens</code>)</li>
+  <li>parser (<code class="highlighter-rouge">ast</code>)</li>
+  <li>compiler (bytecode)</li>
+  <li>interpreter</li>
+  <li>standard library</li>
+</ul>
+
+<p>How to get started contributing to Python:</p>
+
+<ul>
+  <li>DevGuide</li>
+  <li>pythonmentors.com - program for new contributors to Python core (mailing list, see below)</li>
+  <li>mailing lists
+    <ul>
+      <li>ML = <a href="https://mail.python.org/mailman/listinfo">https://mail.python.org/mailman/listinfo</a></li>
+      <li>ML/new-bugs-announce</li>
+      <li>ML/python-bugs-list</li>
+      <li>ML/core-mentorship</li>
+    </ul>
+  </li>
+  <li>Create user account on <a href="https://bugs.python.org">https://bugs.python.org</a> (sign contributor agreement)</li>
+</ul>
+
+<p>Overview of directories (see slides)</p>
+
+<p>Use <code class="highlighter-rouge">ast</code> to explore the structure of your python code:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">ast</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s">'x = 2 + 2'</span><span class="p">)</span></code></pre></figure>
+
+<p>Use <code class="highlighter-rouge">dis</code> to explore bytecode (see Include/opcode.h for the codes)</p>
+
+<p>Peepholer</p>
+
+<ul>
+  <li>optimizes the bytecode by omitting e.g. instructions from the python source that won’t ever be executed (“dead branches”)</li>
+  <li>Python/peephole.c &gt; <code class="highlighter-rouge">PyCode_Optimize</code></li>
+  <li>In python, use via: <code class="highlighter-rouge">bytecodes = optimizer(bytecodes)</code></li>
+</ul>
+
+<p>Interpreter: everything is in Python/ceval.c, especially in the funciton <code class="highlighter-rouge">PyEval_EvalFrameEx</code> (huge switch statement that Allison Kaptur was talking about?)</p>
+
+<hr />
+
+<h2 id="python-tricks-from-mercurial"><a name="mercurial"></a><a href="https://fosdem.org/2016/schedule/event/mercurial/">Python Tricks from Mercurial</a></h2>
+
+<h4 id="pierre-yves-david">Pierre-Yves David</h4>
+
+<p>Imports</p>
+
+<ul>
+  <li>can be slow</li>
+  <li>you might not need everything you’re importing =&gt; lazy imports: only load module when accessed</li>
+</ul>
+
+<p>In Python, everything is stored as dictionaries (not entirely true, but for simplicity we’ll say it is)
+When python looks for <code class="highlighter-rouge">wally</code>, it searches:</p>
+
+<ul>
+  <li>Local variables (mostly)</li>
+  <li>Module variables</li>
+  <li>Global variables</li>
+</ul>
+
+<p>When Python looks for <code class="highlighter-rouge">wally.hat</code> , it searches:</p>
+
+<p>So if you put an attribute lookup inside of a loop, e.g.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
+	<span class="n">obj</span><span class="o">.</span><span class="n">att</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code></pre></figure>
+
+<p>This will be slow because python has to look up the attribute each time.
+So you should do something like:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">att</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#WHAT'S THIS?
+</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
+	<span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code></pre></figure>
+
+<p>Similarly, you should reassign globals/builtins to local variables for faster lookup inside of a loop:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">do_stuff</span><span class="p">():</span>
+	<span class="n">lmax</span> <span class="o">=</span> <span class="nb">max</span>
+	<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
+		<span class="c1">#do something with lmax() instead of max()</span></code></pre></figure>
+
+<p>Something about <code class="highlighter-rouge">__contains__</code> …?</p>
+
+<p><code class="highlighter-rouge">__slots__</code>:
+When Python creates an object, it creates a dictionary to store the object’s properties.
+It doesn’t know how many properties there’ll be, so it allocates a bunch of space.
+If you’re going to create a bunch of small objects (only a few properties),
+and you know they won’t need other properties, you should use
+<code class="highlighter-rouge">__slots__</code> to tell Python only to create a dictionary of the right size,
+and not to allocate unnecessary space for the dictionary</p>
+
+<p>Garbage collection can be turned off in certain situations to save time</p>
+
+<p>PyPy sped up <code class="highlighter-rouge">hg log</code> from 3x to 12x</p>
+
+<ul>
+  <li>just in time compilation</li>
+  <li>finds hot loops and compiles to machine code</li>
+</ul>
+
+<p>CPython also has room for improvement</p>
+
+<ul>
+  <li><code class="highlighter-rouge">LOAD_METHOD</code></li>
+  <li>FAT Python static optimizer</li>
+</ul>
+
+<p>Things not to do:</p>
+
+<ul>
+  <li>Testing <code class="highlighter-rouge">None</code> as a boolean, e.g. <code class="highlighter-rouge">if a:</code> - use <code class="highlighter-rouge">if a is not None:</code> instead</li>
+  <li>Using mutable default values, e.g. <code class="highlighter-rouge">def babar(hat=[])</code> - this value is created once when the function is defined, and then used by all subsequent calls to the function. So if the first call changes it, the changed version will be seen by the second call</li>
+  <li>A closure in a closure in a closure - try to make an actual function and reduce the number of arguments you want to pass</li>
+</ul>
+
+<hr />
+
+<h2 id="going-beyond-cpython-cffi-and-pypy"><a name="beyond-cpython"></a><a href="https://fosdem.org/2016/schedule/event/cpython/">Going beyond CPython: CFFI and PyPy</a></h2>
+
+<h4 id="armin-rego">Armin Rego</h4>
+<p>Slides: <a href="https://fosdem.org/2016/schedule/event/cpython/attachments/slides/944/export/events/attachments/cpython/slides/944/slides.html">https://fosdem.org/2016/schedule/event/cpython/attachments/slides/944/export/events/attachments/cpython/slides/944/slides.html</a></p>
+
+<p>PyPy: <a href="http://pypy.org/">http://pypy.org/</a>
+CFFI: <a href="http://cffi.readthedocs.org/">http://cffi.readthedocs.org/</a></p>
+
+<p>CFFI (C Foreign Function Interface):
+Basically lets you execute C code right from python</p>
+
+<p>PyPy: Python interpreter in Python</p>
+
+<ul>
+  <li>3-10x faster than CPython</li>
+  <li>Starts working like an interpreter, then uses a JIT compiler</li>
+  <li>Generate &amp; execute machine code from the program</li>
+  <li>Different garbage collection techniques than CPython
+    <ul>
+      <li>instead of using reference counters (as in CPYthon), stores objects in a “nursery” and then moves out the surviving objects when the nursery is full</li>
+      <li>doesn’t work with CPython C extensions (e.g. <code class="highlighter-rouge">numpy</code>), because these expect reference counters (assumes that the python object in question is PyObject*, that it won’t be moving around in memory and it has a reference counter)</li>
+    </ul>
+  </li>
+  <li>PyPy has some support for C extensions, via <code class="highlighter-rouge">cpyext</code> module: this emulates objects for C extensions with the expected stuff (fixed memory location and reference counter) - but <code class="highlighter-rouge">cpyext</code> is really, really slow</li>
+</ul>
+
+<p>CPython C API</p>
+
+<ul>
+  <li>Makes it easy to add things to Python</li>
+  <li>Tools built on top of it: SWIG, Cython, CFFI, ….</li>
+  <li>CFFI is sort of an alternative to it, because it essentially allows you to do C things in python via  <code class="highlighter-rouge">ffi.*()</code> - and CFFI works better with non-CPython interpreters</li>
+</ul>
+
+<hr />
+
+<h2 id="fat-python---static-optimizer"><a name="fat-python"></a><a href="https://fosdem.org/2016/schedule/event/fat_python/">FAT Python - static optimizer</a></h2>
+
+<h4 id="victor-stinner">Victor Stinner</h4>
+<p>(haypo on GitHub, @victorstinner on Twitter)</p>
+
+<p>PDF of slides on FOSDEM site</p>
+
+<p><a href="http://faster-cpython.readthedocs.org/fat_python.html">http://faster-cpython.readthedocs.org/fat_python.html</a></p>
+
+<ul>
+  <li>CPython is slower than C, also slower than JavaScript (fast JIT compilers)</li>
+  <li>There are other, faster versions of python: e.g. PyPy JIT, Pyston JIT, Numba JIT for numpy, Cython static optimizer</li>
+  <li>But none of these have replaced CPython yet as thte reference implementation for new features</li>
+</ul>
+
+<p>Problem: everythin in Python is mutable, e.g. you can replace builtin functions, function code, global variables… if you optimize based on the assumption that e.g. builtins haven’t been replaced, the optimization “breaks” python syntax and won’t work for all applications</p>
+
+<p>Solution: implement “guards” to check assumptions before attempting to optimize the code; if assumptions don’t hold, skip the optimization</p>
+
+<p>CPython already has optimization via the Peephole optimizer, but this is in C and is very limited</p>
+
+<p>Optimizing AST:</p>
+
+<ul>
+  <li>Call builtin functions: you can replace a call to a pure, builtin function with the result (e.g. len(‘abc’)=&gt;3)</li>
+  <li>If you have a call like <code class="highlighter-rouge">frozenset('abc')</code>, they object will be created at runtime. Instead, since the object won’t change, you can create the object at compile time and load it as a constant, so that it can be looked up directly in an array (or something?)</li>
+  <li>Simplify iterables (e.g. range(3)=&gt; (0,1,2))</li>
+  <li>Loop unrolling: rewrite <code class="highlighter-rouge">for x in [1,2,3]: print(x)</code> as <code class="highlighter-rouge">x=1; print(x); x=2; print(x);</code> etc.</li>
+  <li>Copy constants: rewrite <code class="highlighter-rouge">x=1; print(x); x=2; print(x);</code> as <code class="highlighter-rouge">x=1; print(1); x=2; print(2);</code> etc.</li>
+  <li>Constant folding: when you have operations on constants, compute everything you can at compile time: e.g. +(5)=&gt;5, <code class="highlighter-rouge">'P' in 'Python'=&gt;True</code>, <code class="highlighter-rouge">python2.7</code>[:-2]=&gt;’python’; <code class="highlighter-rouge">x in [1,2,3]</code>=&gt;<code class="highlighter-rouge">x in (1,2,3)</code></li>
+  <li>Copy globals to constants (LOAD_CONST is faster than LOAD_GLOBAL)</li>
+  <li>Remove dead code (code that will never be executed)</li>
+</ul>
+
+<p>PEPs related to FAT:</p>
+
+<p>PEP 509: dict version -
+Each dict (e.g. builtins) has a version identifier, such that when something is changed in the dictionary, the version changes. This allows you to check whether e.g. something has been replaced in builtins dict.</p>
+
+<p>PEP 510: Specialize -
+Adds PyFunction_Specialize() C function, and modifies Python/ceval.c to decide whether to specialize the code or not (e.g. based on result of guard checks)</p>
+
+<p>PEP 511: Transformer -
+This one is controversial, still under discussion and may change</p>
+
+<hr />
+
+<h2 id="lua-the-language-of-the-web"><a name="lua-web"></a><a href="https://fosdem.org/2016/schedule/event/lua_the_language_of_the_web_starlight/">Lua: The Language of the Web?</a></h2>
+
+<h4 id="paul-cuthbertson">Paul Cuthbertson</h4>
+<p>@paulcuth</p>
+
+<p>Starlight project: Lua to ES6 transpiler
+<a href="https://github.com/paulcuth/starlight">https://github.com/paulcuth/starlight</a></p>
+
+<p>Project started when he saw cool features of ES6 and noticed similarities with Lua (?) e.g. generators, …, proxies, destructuring, multiple return values, block scoping</p>
+
+<p>Starlight transpiles Lua to ES6 (need to also include Babel to run as ES5 in browsers)</p>
+
+<p>Allows you to write scripts in Lua and even import JS into the Lua env</p>
+
+<p>Has a DOM API (same as Moonshine)</p>
+
+<p>But not all features of Lua can translate to ES6</p>
+
+<p>Also: <a href="https://fosdem.org/2016/schedule/event/web_development_in_lua_sailor_mvc/">Sailor MVC framework</a> (uses Starlight)
+<a href="http://sailorproject.org/index.lua">http://sailorproject.org/index.lua</a></p>
+
+<hr />
+
+<h2 id="lua-for-scripting-osx-hammerspoon">Lua for scripting OSX: <a href="https://fosdem.org/2016/schedule/event/hammerspoon_os_x_automation_with_lua/">Hammerspoon</a></h2>
+<p>http://www.hammerspoon.org/</p>
+
+<hr />
+
+<h2 id="mail2voice---accessible-email"><a name="mail2voice"></a><a href="https://fosdem.org/2016/schedule/event/mail2voice/">Mail2Voice - Accessible email</a></h2>
+
+<ul>
+  <li><a href="http://www.mail2voice.org/en/">http://www.mail2voice.org/en/</a></li>
+  <li><a href="https://git.framasoft.org/Mail2Voice/Mail2Voice_v1">https://git.framasoft.org/Mail2Voice/Mail2Voice_v1</a></li>
+  <li><a href="http://www.mail2voice.org/wiki/doku.php">http://www.mail2voice.org/wiki/doku.php</a></li>
+  <li>Mailing list (see slides)</li>
+  <li>
+    <p>Slides on FOSDEM site</p>
+  </li>
+  <li>In version 1.0, now being re-worked for version 2.0</li>
+  <li>Uses speech synthesis to read emails out loud to users</li>
+  <li>Has users record an audio message and sends it as mp3</li>
+  <li>Doesn’t use recognition because target users may have speech impairment etc. which affects their ability to be recognized</li>
+</ul>
+
+<hr />
+
+<h1 id="day-2---sunday-31012016">Day 2 - Sunday 31.01.2016</h1>
+
+<hr />
+
+<h2 id="coala-code-analyzer"><a href="https://fosdem.org/2016/schedule/event/coala/">coala</a> Code Analyzer</h2>
+
+<p><a href="http://coala-analyzer.org/">http://coala-analyzer.org/</a></p>
+
+<hr />
+
+<h2 id="continuous-translation-with-weblate"><a name="weblate"></a><a href="https://fosdem.org/2016/schedule/event/continuous_translation_with_weblate/">Continuous translation with Weblate</a></h2>
+
+<h4 id="michal-čihař">Michal Čihař</h4>
+<p><a href="https://weblate.org/en/">https://weblate.org/en/</a></p>
+
+<ul>
+  <li>Solves the problem: by the time translators have finished translating (part of) a project, the source has been updated such that some of the translations are outdated</li>
+  <li>Allows translation to progress continuously throughout the project</li>
+  <li>Weblate pulls from your VCS (git or mercurial)</li>
+  <li>Translators commit new translations to Weblate (doesn’t require technical proficiency with git - uses web interface)</li>
+  <li>Weblate pushes the translations back to your project</li>
+  <li>Tracks authorship so you can use git blame to control quality</li>
+</ul>
+
+<hr />
+
+<h2 id="some-of-my-best-friends-are-localizers---tips-for-developers-to-help-localizers"><a name="help-localizers"></a><a href="https://fosdem.org/2016/schedule/event/10_easy_steps_to_ruin_your_localization/">“Some of my best friends are localizers” - tips for developers to help localizers</a></h2>
+
+<h4 id="dwayne-bailey">Dwayne Bailey</h4>
+<p>dwayne@translate.co.za</p>
+
+<ul>
+  <li>Translate.co.za builds tools</li>
+  <li>Driven by need in SA for localized systems so that people can learn/use software even if they’re not literate in English</li>
+  <li><a href="https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html">PO - GNU gettext format</a></li>
+</ul>
+
+<p><a href="http://www.translate.org.za/10-things-localizers-would-like-developers-to-keep-in-mind/">http://www.translate.org.za/10-things-localizers-would-like-developers-to-keep-in-mind/</a></p>
+
+<ul>
+  <li>Can’t assume technical skills on the part of localizers/translators (especially true for lower-resource languages)</li>
+  <li>Complex contribution processes can be a barrier to localization - don’t force localizers to become coders</li>
+  <li>Best localizers are users of your project/passionate about the domain</li>
+  <li>Translators use tools (e.g. with translation memories, variable highlighting) - if you add e.g. a new file format to the project, it might not be compatible with their tools. Forcing them to not use their tools is like forcing a vim user to use emacs
+    <ul>
+      <li>Use standard formats (PO, XLIFF)</li>
+      <li>or what is expected in your domain (if you’re doing Java, do it the Java way, etc.)</li>
+    </ul>
+  </li>
+  <li>Assumptions of language: direct translations might not work in all languages
+    <ul>
+      <li>try to choose e.g. a register that works internationally (instead of only over-hyped SV marketing speak) - be aware that localizers may need ot use a different register/tone in their language</li>
+      <li>keep an eye on idioms/pop culture references - most translators won’t know what to do with these and if there are no instructions on what to do with them, they’re stuck</li>
+      <li>don’t assume that e.g. capitalization or punctuation will work the same in other languages - e.g. Django automatically capitalizes the name of the model and adds a “:” - this doesn’t work for some languages</li>
+      <li>plurals will work differently in other languages - don’t make assumptions about them</li>
+      <li>number/date formatting</li>
+      <li>Names - don’t assume “first name” and then “surname”, not all names break down like that</li>
+    </ul>
+  </li>
+  <li>Keep strings to translate together - e.g. don’t split sentences over multiple lines</li>
+  <li>Terminology can be complicated (e.g. words that are unknown like “rasterization”, words that take on special meaning like “justify” in Word)</li>
+  <li>Comments are important - allow localizers to comment on strings</li>
+  <li>Don’t take away context (e.g. by sorting a list of strings alphabetically - terrible!)</li>
+  <li>Keep internationalization/localization in mind from the start
+    <ul>
+      <li>Don’t assume Left-To-Right layout - keep RTL a possibility from the outset</li>
+      <li>Use UTF8</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="hacking-on-the-fairphone-2"><a name="fairphone2"></a><a href="https://fosdem.org/2016/schedule/event/fairphone2/">Hacking on the Fairphone 2</a></h2>
+
+<h4 id="kees-jongenburger">Kees Jongenburger</h4>
+
+<p>Freenode: #fairphone
+<a href="http://forum.fairphone.com">http://forum.fairphone.com</a></p>
+
+<ul>
+  <li>Fairphone is the first modular phone on the market</li>
+  <li>OS Alternatives
+    <ul>
+      <li>Building your own android on Fairphone - <a href="http://code.fairphone.com/">http://code.fairphone.com/</a></li>
+      <li>Sailfish OS/Jolla phone
+        <ul>
+          <li><a href="https://sailfishos.org/">https://sailfishos.org/</a></li>
+          <li><a href="https://jolla.com/jolla/">https://jolla.com/jolla/</a></li>
+        </ul>
+      </li>
+      <li>Google Free (?)</li>
+      <li>Firefox OS</li>
+    </ul>
+  </li>
+  <li>Device not locked by default - easy to root</li>
+  <li>Alternative cases from Shapeways etc.</li>
+  <li>Software team - 6 white dudes</li>
+</ul>
+
+<hr />
+
+<h2 id="comparing-codes-of-conduct-to-copyleft-licenses"><a name="cocs"></a><a href="https://fosdem.org/2016/schedule/event/conduct_and_copyleft/">Comparing Codes of Conduct to Copyleft Licenses</a></h2>
+
+<h4 id="sumana-harihareswara">Sumana Harihareswara</h4>
+
+<p><a href="https://brainwane.dreamwidth.org/76629.html">Sumana’s notes</a></p>
+
+<ul>
+  <li>Copyleft licenses restrict certain behaviors in order to make the community a better, more freer place</li>
+  <li>Is a certain level of safety a prerequisite to liberty?</li>
+  <li>Also, excluding certain groups of potential contributors has negative effects on the amount/quality of free software</li>
+  <li>Differences between the two:
+    <ul>
+      <li>CoCs generally deal with face-to-face contexts/events</li>
+      <li>Does the restriction of behavior feel like a contract, or governance?
+        <ul>
+          <li>Copyleft licenses feel like a contract - specific, relatively easy to determine if someone has complied</li>
+          <li>Rules restraining (speech) acts feel more like governance - explicit about who gets to make/implement rules affecting a community (e.g. a committee to make policy decisions), takes work to decide who has complied</li>
+        </ul>
+      </li>
+      <li>Advantages of governance model over contract model:
+        <ul>
+          <li>Contracts have to be self-contained, and are generally inflexible - the governance model enables more flexibility and adaptability over time</li>
+          <li>Contracts have to enumerate cases of (non-)compliance, while governance model allows use of e.g. examples of cases of (non-)compliance without explicitly defining those as the all-and-only situations in which the code has been violated</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Advice for getting your community to implement CoCs
+    <ul>
+      <li>If the community isn’t ready to accept the idea that the community itself is an artifact we construct together, try starting out with CoCs that apply to things that are already thought of as such artifacts (e.g. rules for wiki pages, slide decks etc.)</li>
+      <li>Try to understand your own theory of change and that of the other(s)</li>
+    </ul>
+  </li>
+  <li>Maybe individual open source projects aren’t the right context in which to implement CoCs (what would a better context be?)</li>
+  <li>In addition to the contract-governance spectrum, we should also consider the hospitality-liberty spectrum</li>
+</ul>
+
+<p>Questions:</p>
+
+<ul>
+  <li>Are there standard CoCs such that I can say “The license is GPL and the CoC is X”?
+    <ul>
+      <li>Geek Feminism wiki CoC seems to be most popular</li>
+      <li>Subfictional blog: like you should get stakeholders to check in/reach some consensus re the license, you should have them check in re the CoC - otherwise CoC can become superficial</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="putting-8-million-people-on-the-map"><a name="map"></a><a href="https://fosdem.org/2016/schedule/event/keynote_crisis_response_through_open_mapping/">Putting 8 Million People on the Map</a></h2>
+
+<h4 id="blake-girardot">Blake Girardot</h4>
+<p>Humanitarian OpenStreetMap Team (HOT)</p>
+
+<ul>
+  <li>Many people (esp. in the “global south”) live in places that are not on any map, let alone open maps - e.g. Gueckedou, Guinea: center of Ebola epidemic, has 250,000 people but had virtually no map data before HOT effort</li>
+  <li>HOT trains people to be able to map their own communities; e.g. points of interest (your home, the doctor), infrastructure, etc.</li>
+  <li>Also does “remote mapping” - extract maps (vectorized data) of e.g. roads, buildings from aerial imagery</li>
+  <li>Crisis mapping - no time to walk around with paper &amp; pencil during a crisis</li>
+  <li>Also important to map before a disaster happens, e.g. in areas susceptible to malaria outbreaks, flooding, …</li>
+  <li>Turning vectorized data from remote mapping into useful maps: can see a building, but no idea what its for - ask volunteers to go around noting what the structures are</li>
+  <li>OSM Tasking Manager (written in Python with Pyramids framework, uses SQLAlchemy/GISAlchemy ) - prioritizes areas for mapping, tracks what’s been validated, etc. - important for crisis situations. This tool integrates with OSM mapping tools (different tools, created by OSM community)</li>
+  <li>OSM Export Tool - exports map data for use by e.g. disaster responders</li>
+  <li>HOT was founded in response to the Haiti crisis in 2010 (? check that)</li>
+  <li>In the Nepal earthquake 2015, the Kathmandu valley had already been mapped by a team (who realized that this type of data would be necessary in the future, as there were bound to be more earthquakes in Nepal), allowing the HOT team to focus on the more remote mountainous regions that were also affected</li>
+  <li>OpenAerialMap (Node.js app) - collects aerial imagery from drones, balloons, kites, etc., makes index available for people to find the best possible aerial imagery</li>
+  <li>Missing Maps - project founded by HOT and other organizations</li>
+</ul>
+
+<hr />
+
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/blog/katsconf2/">
+            <p>Notes from KatsConf2</p>
+
+            <small>19 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/fosdem-2017/">
+            <p>Notes from FOSDEM 2017</p>
+
+            <small>13 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/marionette-act-ii-testing/">
+            <p>Marionette, Act II: Harnessing automation to test the browser</p>
+
+            <small>22 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+
+  </body>
+</html>

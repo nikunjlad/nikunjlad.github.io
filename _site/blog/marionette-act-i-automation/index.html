@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Marionette, Act I: We've got Firefox on a string &middot; Anjana Sofia Vakil
+    
+  </title>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/public/css/anjana.css">
+
+  <!-- Custom JS -->
+  <script src="/public/js/anjana.js"></script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <!-- <link rel="shortcut icon" href="/public/favicon.ico"> -->
+
+  <!-- Feed (jekyll-feed) -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Anjana Sofia Vakil" />
+</head>
+
+
+  <body class="theme-base-0c">
+
+    <div class="sidebar">
+  <div class="container left-align">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Anjana Sofia Vakil
+        </a>
+      </h1>
+      <p class="lead">Language technologist and software developer</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- <a class="sidebar-nav-item" href="/">Home</a> -->
+
+      
+
+      <a class="sidebar-nav-item"
+         href="/">Blog</a>
+      
+      <a class="sidebar-nav-item"
+         href="/about/">About</a>
+      <!-- a class="sidebar-nav-item"
+         href="/resume/">Resume</a -->
+      <a class="sidebar-nav-item"
+         href="/projects/">Projects</a>
+      <a class="sidebar-nav-item"
+         href="/publications/">Publications</a>
+    </nav>
+
+    <ul class="list-inline" id="sidebar-buttons">
+        <li>
+            <a href="mailto:anjanavakil@gmail.com" class="btn-social btn-outline" title="E-Mail me">
+                <i class="fa fa-fw fa-at"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/vakila" target="_blank" class="btn-social btn-outline" title="vakila on GitHub">
+                <i class="fa fa-fw fa-github"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="http://www.facebook.com/anjana.vakil" target="_blank" class="btn-social btn-outline" title="Anjana Vakil on Facebook">
+                <i class="fa fa-fw fa-facebook"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://twitter.com/AnjanaVakil" target="_blank" class="btn-social btn-outline" title="@AnjanaVakil on Twitter">
+                <i class="fa fa-fw fa-twitter"></i>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="" target="_blank" class="btn-social btn-outline" title="Google Plus">
+                <i class="fa fa-fw fa-google-plus"></i>
+            </a>
+        </li> -->
+        <li>
+            <a href="https://www.linkedin.com/in/anjanavakil " target="_blank" class="btn-social btn-outline" title="Anjana Vakil on LinkedIn">
+                <i class="fa fa-fw fa-linkedin"></i>
+            </a>
+        </li>
+
+
+    </ul>
+
+    <p id="credits">&copy; 2020. <a href="/credits">Credits</a>.</p>
+  </div>
+</div>
+
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title"><p>Marionette, Act I: We’ve got Firefox on a string</p>
+</h1>
+  
+  <span class="post-date">08 Jul 2016</span>
+  <p>As you <a href="/blog/outreachy-what-how-why/">may already know</a>, I’m spending my summer interning with Mozilla’s <a href="https://wiki.mozilla.org/EngineeringProductivity">Enginering Productivity</a> team through the <a href="https://gnome.org/outreachy">Outreachy</a> program. Specifically, the project I’m working on is called <a href="https://wiki.mozilla.org/Outreachy#Test-driven_Refactoring_of_Marionette.27s_Python_Test_Runner_.5Bno_longer_taking_applicants.5D">Test-driven Refactoring of Marionette’s Python Test Runner</a>. But what exactly does that mean? What is Marionette, and what does it have to do with testing?</p>
+
+<p>In this two-part series, I’d like to share a bit of what I’ve learned about the Marionette project, and how its various components help us test Firefox by allowing us to automatically control the browser from within. Today, in Act I, I’ll give an overview of how the Marionette server and client make the browser our puppet. Later on, in Act II, I’ll describe how the Marionette test harness and runner make automated testing a breeze, and let you in on the work I’m doing on the Marionette test runner for my internship.</p>
+
+<p>And since we’re talking about puppets, you can bet there’s going to be a hell of a lot of <a href="http://www.imdb.com/title/tt0120601/"><em>Being John Malkovich</em></a> references. Consider yourself warned!</p>
+
+<!--/excerpt-->
+
+<h2 id="how-do-you-test-a-browser">How do you test a browser?</h2>
+
+<p>On the one hand, you probably want to make sure that the browser’s interface, or <em>chrome</em>, is working as expected; that users can, say, open and close tabs and windows, type into the search bar, change preferences and so on. But you probably also want to test how the browser displays the actual web pages, or <em>content</em>, that you’re trying to, well, browse; that users can do things like click on links, interact with forms, or play video clips from their favorite movies.</p>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/LU19Rqy1s9Y" frameborder="0" allowfullscreen=""></iframe>
+<p class="caption">Because let's be honest, that's like 96% of the point of the internet right there, no?</p>
+
+<p>These two parts, chrome and content, are the main things the browser has to get right. So how do you test them?</p>
+
+<p>Well, you could launch the browser application, type “Being John Malkovich” into the search bar and hit enter, check that a page of search results appears, click on a YouTube link and check that it takes you to a new page and starts playing a video, type “I ❤️ Charlie Kaufman and Spike Jonze” into the comment box and press enter, check that it submits the text…</p>
+
+<p>And when you’re done, you could write up a report about what you tested, what worked and what didn’t, and what philosophical discoveries about the nature of identity and autonomy you made along the way.</p>
+
+<p><img src="http://67.media.tumblr.com/tumblr_lzoteetytB1r7xg3oo1_1280.png" alt="Still from the film &quot;Being John Malkovich&quot; in which a marionette puppet regards itself in a mirror" /></p>
+
+<p class="caption">Am <em>I</em> the puppet? AM I?<br />
+<span class="credit"><em>Being John Malkovich</em> via <a href="http://lecoada.tumblr.com/post/17940837987/hysterically-dramatic-puppetry-in-being-john">COADA on Tumblr</a></span>
+</p>
+
+<p>Now, while this would be fun, if you have to do it a million times it would be less fun, and your boss might think that it is not fun at all that it takes you an entire developer-hour to test one simple interaction and report back.</p>
+
+<p>Wouldn’t it be better if we could magically automate the whole thing? Maybe something like:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">magical_automated_browser</span> <span class="k">as</span> <span class="n">client</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">navigate</span><span class="p">(</span><span class="s">"https://www.youtube.com"</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s">"search-bar"</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s">"Being John Malkovich"</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s">"search-button"</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<span class="c1"># etc., etc.</span></code></pre></figure>
+
+<p>SPOILER ALERT: We can, thanks to the Marionette project!</p>
+
+<h2 id="what-is-marionette">What is Marionette?</h2>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette">Marionette</a> refers to a suite of tools for automated testing of Mozilla browsers. One important part of the project is an automation framework for Gecko, the engine that powers Firefox. The automation side of Marionette consists of the Marionette server and client, which work together to make the browser your puppet: they give you a nice, simple little wooden handle with which you can pull a bunch of strings, which are tied to the browser internals, to make the browser and the content it’s displaying do whatever you want. The <code class="highlighter-rouge">client.do_stuff</code> code above isn’t even an oversimplification; that’s exactly how easy it becomes to control the browser using Marionette’s client and server. Pretty great right?</p>
+
+<p>But Marionette doesn’t stop there! In addition to the client &amp; server giving you this easy-peasy apparatus for automatic control of the browser, another facet of the Marionette project - the test harness and runner - provides a full-on framework for automatically running and reporting tests that utilize the automation framework. This makes it easy to set up your puppet and the stage you want it to perform on, pull the strings to make the browser dance, check whether the choreography looked right, and log a review of the performance. I can see the headline now:</p>
+
+<blockquote>
+  <p>Screenwriter Charlie Kaufman enthralls again with a brooding script for automated browser testing</p>
+</blockquote>
+
+<p><img src="/img/bjm_puppethead_loop.gif" alt="Animated GIF of a puppet from the film &quot;Being John Malkovich&quot; holding its hand to its head in disappointment" /></p>
+
+<p class="caption"><em>You:</em> GROAN. That's a terrible joke.<br />
+<em>Me:</em> Sorry, it won't be the last. Hang in there, reader.
+<br />
+<span class="credit"><em>Being John Malkovich</em> via <a href="https://thedissectedfrog.wordpress.com/2014/02/06/25-reasons-alfred-jarry-is-the-merdre/">the dissected frog</a> (adapted with <a href="http://gifmaker.me/">GIFMaker.me</a>)</span>
+</p>
+
+<p>As I see it, the overall aim of the Marionette project is to make automated browser testing easy. This breaks down into two main tasks:  automation and testing. Here in Act I, we’ll investigate how the Marionette server and client let us automate the browser. In the next post, Act II, we’ll take a closer look at how the Marionette test harness and runner make use of that automation to test the browser.</p>
+
+<h2 id="how-do-marionettes-server-and-client-automate-the-browser">How do Marionette’s server and client automate the browser?</h2>
+
+<p>A real marionette is composed of three parts:</p>
+
+<ul>
+  <li>a puppet</li>
+  <li>strings</li>
+  <li>a handle</li>
+</ul>
+
+<p>This is a great analogy for Marionette’s approach to automating the browser (I guess that’s why they named it that).</p>
+
+<p>The puppet we want to move is the Firefox browser, or to be precise, the <strong>Gecko browser engine</strong> underlying it. We want to make all of its  parts – windows, tabs, pages, page elements, scripts, and so forth – dance about as we please.</p>
+
+<p>The handle we use to control it is the <strong>Marionette client</strong>, a Python library that gives us an API for accessing and manipulating the browser’s components and mimicking user interactions.</p>
+
+<p>The strings, which connect handle to puppet and thus make the whole contraption work, are the <strong>Marionette server</strong>. The server comprises a set of components built in to Gecko (the bottom ends of the strings), and listens for commands coming in from the client (the top ends of the strings).</p>
+
+<p><img src="/img/marionette_labeled_wide.png" alt="Annotated picture of a marionette puppet with the handle labeled &quot;Marionette client&quot;, the strings labeled &quot;Marionette server&quot;, and the puppet labeled &quot;Gecko engine&quot;" /></p>
+
+<p class="credit" style="text-align: center;">Photo adapted from "Marionettes from Being John Malkovich" <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode">by</a> Alex Headrick, via <a href="https://www.flickr.com/photos/alexheadrick/10637183205">Flickr</a></p>
+
+<h3 id="the-puppet-the-gecko-browser-engine">The puppet: the Gecko browser engine</h3>
+
+<p>So far, I’ve been talking about “the browser” as the thing we want to automate, and the browser I have in mind is (desktop) Firefox, which Marionette indeed lets us automate. But in fact, Marionette’s even more powerful than that; we can also use it to automate other products, like <a href="https://www.mozilla.org/en-US/firefox/android/">Firefox for Android</a> (codenamed “Fennec”, so cute!) or <a href="https://www.mozilla.org/en-US/firefox/os/">FirefoxOS</a>/<a href="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS">Boot to Gecko (B2G)</a>. That’s because the puppet Marionette lets us control is actually not the Firefox desktop browser itself, but rather the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Gecko">Gecko browser engine</a> on top of which Firefox (like Fennec, and B2G) is built. All of the above, and any other <a href="https://en.wikipedia.org/wiki/Gecko_(software)#Usage">Gecko-based products</a>, can in principle be automated with Marionette.<sup id="a1"><a href="#f1">1</a></sup><sup>, </sup><sup id="a2"><a href="#f2">2</a></sup></p>
+
+<p><img src="/img/bjm_marionettes_logos.jpg" alt="Picture of three marionette puppets with Fennec, Firefox, and B2G logos instead of heads" /></p>
+
+<p class="caption">Just choose your puppet!<br />
+<span class="credit">Adapted from "Marionettes from Being John Malkovich" <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode">by</a> Alex Headrick via <a href="https://www.flickr.com/photos/alexheadrick/10637183205">Flickr</a>, with logos from <a href="https://twitter.com/FennecNightly">@FennecNightly</a>, <a href="https://www.mozilla.org/en-US/styleguide/identity/firefox/branding/">Firefox branding</a>, and <a href="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS">B2G OS</a>.</span>
+</p>
+
+<p>So what exactly is this Gecko thing we’re playing with? Well, I’ve already revealed that it’s a <a href="https://en.wikipedia.org/wiki/Web_browser_engine">browser engine</a> - but if you’re like me at the beginning of this internship, you’re wondering what a “browser engine” even is/does. <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Gecko">MDN</a> explains:</p>
+
+<blockquote>
+  <p>Gecko’s function is to read web content, such as HTML, CSS, XUL, JavaScript, and render it on the user’s screen or print it. In XUL-based applications Gecko is used to render the application’s user interface as well.</p>
+</blockquote>
+
+<p>In other words, a browser engine like Gecko takes all that ugly raw HTML/CSS/JS code and turns it into a pretty picture on your screen (or, you know, <a href="http://www.theworldsworstwebsiteever.com/">not so pretty</a> - but a picture, nonetheless), which explains why browser engines are also called “layout engines” or “rendering engines”.</p>
+
+<p>And see that bit about “XUL”? Well, <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL">XUL</a> (XML User interface Language) is a markup language Mozilla came up with that lets you write application interfaces almost <a href="https://en.wikipedia.org/wiki/XUL">as if they were web pages</a>. This lets Mozilla use Gecko not only to render the websites that Firefox lets you navigate to, but also to render the interface of Firefox itself: the search bar, tabs, forward and back buttons, etc. So it’s safe to say that Gecko is the heart of Firefox. And other applications, like the aforementioned Fennec and FirefoxOS, as well as the Thunderbird email client.</p>
+
+<p>But wait a minute; why do we have to go all the way down to Gecko to control the browser? It’s pretty easy to write add-ons to control Firefox’s <a href="https://addons.mozilla.org/en-US/firefox/addon/noverflow/">chrome</a> or <a href="https://addons.mozilla.org/en-US/firefox/addon/millennials-to-snake-people/">content</a>, so why can’t we just do that? Well, first of all, <a href="https://en.wikipedia.org/wiki/Add-on_(Mozilla)#Security">security</a> issues abound in add-on territory, which is why add-ons typically <a href="https://support.google.com/chrome_webstore/answer/186213?hl=en&amp;ref_topic=6238977">run with limited privileges</a> and/or <a href="https://blog.mozilla.org/addons/2015/04/15/the-case-for-extension-signing/">require approval</a>; so an add-on-based automation system would likely give under- or over-powered control over the browser. But in fact, the real reason Marionette isn’t an add-on is more historical. As browser automation expert and Mozillian David Burns explained at <a href="https://youtu.be/cU6GML70cR4?t=6m40s">SeleniumConf 2013</a>, Marionette was originally developed to test FirefoxOS, which had the goal of using Gecko to run the entire operating system of a smartphone (hence FirefoxOS being codenamed <a href="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS">Boot to Gecko</a>). FirefoxOS didn’t allow add-ons, so the Marionette team had to get creative and build an automation solution right into Gecko itself. This gave them the opportunity to make Marionette an implementation of the <a href="http://w3c.github.io/webdriver/webdriver-spec.html">WebDriver</a> specification, a W3C standard for a browser automation interface. The decision to build Marionette as part of Gecko rather than an add-on thus had at least two advantages: Marionette had native access to Gecko and didn’t have to deal with add-on security issues,<sup id="a3"><a href="#f3">3</a></sup> and by making Marionette WebDriver-compliant, Mozilla helped advanced the standardization of browser automation.</p>
+
+<p>So that’s why it’s Gecko, not Firefox, that Marionette ties strings to. In the next section, we’ll see what those knots look like.</p>
+
+<h3 id="the-strings-the-marionette-server">The strings: the Marionette server</h3>
+
+<p>As mentioned in the previous section, Marionette is built into Gecko itself. Specifically, the part of Marionette that’s built into Gecko, which gives us native access to the browser’s chrome and content, is called the Marionette server. The server acts as the strings of the contraption: the “top end” listens for commands from the handle (i.e. the Marionette client, which we’ll get to in the next section), and the “bottom end” actually manipulates the Gecko puppet as instructed by our commands.</p>
+
+<p>The code that makes up these strings is written in JavaScript and lives within the Firefox codebase at <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette"><code class="highlighter-rouge">mozilla-central/testing/marionette</code></a>. Let’s take a little tour, shall we?</p>
+
+<p>The strings are embedded into Gecko via a component called <code class="highlighter-rouge">MarionetteComponent</code>, which, when enabled,<sup id="a4"><a href="#f4">4</a></sup> starts up a <code class="highlighter-rouge">MarionetteServer</code>, which is the object that most directly represents the strings themselves.
+<code class="highlighter-rouge">MarionetteComponent</code> is defined in <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/components/marionettecomponent.js"><code class="highlighter-rouge">components/marionettecomponent.js</code></a> (which, incidentally, includes <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/components/marionettecomponent.js#209">the funniest line</a> in the entire Marionette codebase), while
+<code class="highlighter-rouge">MarionetteServer</code> is defined in the file <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/server.js"><code class="highlighter-rouge">server.js</code></a>. As you can see in <code class="highlighter-rouge">server.js</code>, <code class="highlighter-rouge">MarionetteServer</code> is responsible for tying the whole contraption together: it <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/server.js#85">sets up a socket</a> on a given port where it can listen for commands, and <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/server.js#110">uses the dispatcher</a> defined in <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/dispatcher.js"><code class="highlighter-rouge">dispatcher.js</code></a> to receive incoming commands and send data about command outcomes back to the client. Together, the <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/server.js#74">server</a> and <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/dispatcher.js#48">dispatcher</a> provide a point of connection to the “bottom end” of the strings: <code class="highlighter-rouge">GeckoDriver</code>, or the part of Marionette that actually talks to the browser’s chrome and content.</p>
+
+<p><code class="highlighter-rouge">GeckoDriver</code>, so named because it’s the part of the whole Marionette apparatus that can most accurately be said to be the part <em>automatically driving</em> Gecko, is defined in a file that is unsurprisingly named <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/driver.js#97"><code class="highlighter-rouge">driver.js</code></a>. The driver unites a bunch of other specialized modules which control various aspects of the automation, pulling them together and calling on them as needed according to the commands received by the server.
+Some examples of the “specialized modules” I’m talking about are:</p>
+
+<ul>
+  <li><a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/element.js"><code class="highlighter-rouge">element.js</code></a>, which maps out and gives us access to all the elements on the page</li>
+  <li><a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/interaction.js"><code class="highlighter-rouge">interaction.js</code></a> and <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/action.js"><code class="highlighter-rouge">action.js</code></a>, which help us mimic mouse, keyboard, and touchscreen interactions</li>
+  <li><a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/evaluate.js"><code class="highlighter-rouge">evaluate.js</code></a>, which lets us execute JavaScript code</li>
+</ul>
+
+<p>With the help of such modules, the driver allows us to grab on to whatever part of the browser’s chrome or content interests us and interact with it as we see fit.</p>
+
+<p>The Marionette server thus lets us communicate automatically with the browser, acting as the strings that get tugged on by the handle and in turn pull on the various limbs of our Gecko puppet. The final part of the puzzle, and subject of the next section, is the handle we can use to tell Marionette what it is we want to do.</p>
+
+<h3 id="the-handle-the-marionette-client">The handle: the Marionette client</h3>
+
+<p>For us puppeteers, the most relevant part of the whole marionette apparatus is the one we actually have contact with: the handle. In Marionette, that handle is called the Marionette client. The client gives us a convenient API for communicating with Gecko via the Marionette server and driver described in the previous section.</p>
+
+<p>Written in user-friendly Python,<sup id="a5"><a href="#f5">5</a></sup> the client is defined in the confusingly-named <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/client/marionette_driver"><code class="highlighter-rouge">client/marionette_driver</code></a> directory inside of <code class="highlighter-rouge">mozilla-central/testing/marionette</code>. The client and its API are described quite clearly in the <a href="http://marionette-client.readthedocs.io/en/latest/">refreshingly excellent documentation</a>, which includes a quick <a href="http://marionette-client.readthedocs.io/en/latest/interactive.html">tutorial</a> that walks you through the basic functionality.</p>
+
+<p>To start pulling Marionette’s strings, all we need to do is instantiate a <code class="highlighter-rouge">Marionette</code> object (a client), tell it to open up a “session” with the server, i.e. a unique connection that allows messages to be sent back and forth between the two, and give it some <a href="http://marionette-client.readthedocs.io/en/latest/reference.html">commands</a> to send to the server, which (as we saw above) executes them in Gecko. And of course, this assumes that the instance of Firefox (or our Gecko-based product of choice) has Marionette enabled,<sup id="a4"><a href="#f4">4</a></sup> i.e. that there’s a Marionette server ready and waiting for our commands; if the server’s disabled, the strings we’re pulling won’t actually be connected to anything.</p>
+
+<p>The commands we give can either make changes to the browser’s state (e.g. navigate to a new page, click on an element, resize the window, etc.), or return information about that state (e.g. get the URL of the current page, get the value of a property of a certain element, etc.). When giving commands, we have to be mindful of which <em>context</em> we’re in, i.e. whether we’re trying to do something with the browser’s <em>chrome</em> or its <em>content</em>. Some commands are specific to one context or the other (e.g. navigating to a given URL is a content operation), while others work in both contexts (e.g. clicking on an element can pertain to either of the two). Luckily, the client API gives us an easy one-liner to switch from one context to another.</p>
+
+<p>Let’s take a look at a little example (see the <a href="http://marionette-client.readthedocs.io/en/latest/">docs</a> for more):</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Import browser automation magic
+</span><span class="kn">from</span> <span class="nn">marionette</span> <span class="kn">import</span> <span class="n">Marionette</span>
+<span class="kn">from</span> <span class="nn">marionette_driver.by</span> <span class="kn">import</span> <span class="n">By</span>
+
+<span class="c1"># Instantiate the Marionette (client) class
+</span><span class="n">client</span> <span class="o">=</span> <span class="n">Marionette</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">'localhost'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">2828</span><span class="p">)</span>
+
+<span class="c1"># Start a session to talk to the server
+# (otherwise, nothing will work because the strings aren't connected)
+</span><span class="n">client</span><span class="o">.</span><span class="n">start_session</span><span class="p">()</span>
+
+<span class="c1"># Give a command and check that it worked
+</span><span class="n">client</span><span class="o">.</span><span class="n">navigate</span><span class="p">(</span><span class="s">"https://www.mozilla.org"</span><span class="p">)</span>
+<span class="k">assert</span> <span class="s">"building a better Internet"</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">title</span>
+
+<span class="c1"># Switch to the chrome context for a minute (content is default)
+</span><span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">using_context</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">CONTEXT_CHROME</span><span class="p">):</span>
+   <span class="n">urlbar</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s">"urlbar"</span><span class="p">)</span>
+   <span class="n">urlbar</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s">"about:robots"</span><span class="p">)</span>
+   <span class="c1"># try this one out yourself!
+</span>
+<span class="c1"># Close the window, which ends the session
+</span><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></code></pre></figure>
+
+<p>It’s as simple as that! We’ve got an easy-to-use, high-level API that gives us full control over the browser, in terms of both chrome and content. Given this simple handle provided by the client, we don’t really need to worry about the mechanics of the server strings or the Gecko puppet itself; instead, we can concern ourselves with the dance steps we want the browser to perform.</p>
+
+<p><img src="http://i.imgur.com/pcTBYgJ.jpg" alt="Still from the film &quot;Being John Malkovich&quot; picturing a life-sized marionette puppet dancing on a stage with ballerinas" /></p>
+
+<p class="caption">Arabesque? Pirouette? Pas de bourrée? You name it!<br />
+<span class="credit"><em>Being John Malkovich</em> via <a href="http://screenplayhowto.com/beat-sheet/being-john-malkovich/">ScreenplayHowTo</a></span></p>
+
+<h2 id="the-browser-is-our-plaything-now-what">The browser is our plaything! Now what?</h2>
+
+<p>So now we’ve seen how the Marionette client and server give us the apparatus to control the browser like a puppet. The client gives us a simple handle we can manipulate, the server ties strings to that handle that transmit our wishes directly to the Gecko browser engine, which dances about as we please.</p>
+
+<p>But what about checking that it’s got the choreography right? Well, as mentioned above, the client API not only lets us make changes to the browser’s chrome and content, but also gives us information about their current state. And since it’s just regular old Python code, we can use simple <code class="highlighter-rouge">assert</code> statements to perform quick checks, as in the example in the last section. But if we want to test the browser and user interactions with it more thoroughly, we could probably use a more developed and full-featured testing framework.</p>
+
+<p>ANOTHER SPOILER ALERT (well OK I actually already spoiled this one): the Marionette project gives us a tool for that too!</p>
+
+<p>In Act II of this article, we’ll explore the Marionette test harness and runner, which wrap the server-client automation apparatus described here in Act I in a testing framework that makes it easy to set the stage, perform a dance, and write a review of the performance. See you back here after the intermission!</p>
+
+<h4 id="sources">Sources</h4>
+
+<ul>
+  <li>The brains of Mozillians David Burns, Maja Frydrychowicz, Henrik Skupin, and Andreas Tolfsen. Many thanks to them for their feedback on this article.</li>
+  <li><a href="https://www.youtube.com/watch?v=cU6GML70cR4">From FirefoxDriver to Marionette, Mozilla pulls the strings</a> - Jonathan Griffin &amp; David Burns, SeleniumConf 2013</li>
+  <li><a href="https://youtu.be/lfIzRHNXQhM?t=5m7s">Automating your browser-based testing using WebDriver</a> - Simon Stewart, Google Tech Talks 2012</li>
+  <li>The Marionette <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette">codebase</a> and <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette">documentation</a> - Mozilla</li>
+</ul>
+
+<h4 id="notes">Notes</h4>
+
+<p><b id="f1">1</b> Emphasis on the “in principle” part, because getting Marionette to play nicely with all of these products may not be trivial. For example, my internship mentor Maja has been hard at work recently on the Marionette runner and client to <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=787203">make them Fennec-friendly</a>. <a href="#a1">↩</a></p>
+
+<p><b id="f2">2</b> If you’re interested in automating a browser that doesn’t run on Gecko, don’t fret! Marionette is Gecko-specific, but it’s an implementation of the engine-agnostic <a href="http://w3c.github.io/webdriver/webdriver-spec.html">WebDriver</a> standard, a W3C specification for a browser automation protocol. Given a WebDriver implementation for the engine in question, any browser can in principle be automated in the same way that Marionette automates Gecko browsers. <a href="#a2">↩</a></p>
+
+<p><b id="f3">3</b> In fact, Marionette’s built-in design makes it able to circumvent the add-on signing requirement mentioned earlier; this would be dangerous if exposed to end users (see <a href="#f4">4</a>), but comes in handy when Mozilla developers need to inject unsigned add-ons into development versions of Gecko browsers in automation. <a href="#a3">↩</a></p>
+
+<p><b id="f4">4</b> At this point (or some much-earlier point) you might be wondering:</p>
+
+<blockquote>
+  <p><em>Wait a minute - if the Marionette server is built into Gecko itself, and gives us full automatic control of the browser, isn’t that a security risk?</em></p>
+</blockquote>
+
+<p>Indeed it is. That’s why, although Marionette is indeed built into Gecko and is thus, in a sense, laying dormant in every instance of a Gecko-based application like Firefox, <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/components/marionettecomponent.js#56">it’s disabled by default </a> so it can’t be used to control the browser. To run Firefox (or your puppet of choice) with Marionette enabled, you have to be running a <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/Builds">Marionette-friendly build</a> (i.e. a version for developers and not standard users) and <a href="https://dxr.mozilla.org/mozilla-central/source/testing/marionette/components/marionettecomponent.js#109-117">specifically indicate that you want Marionette turned on when you launch the application</a>. <a href="#a4">↩</a></p>
+
+<p><b id="f5">5</b> Prefer to talk to the Marionette server from another language? No problem! All you need to do is implement a client in your language of choice, which is pretty simple since the <a href="https://www.w3.org/TR/webdriver/">WebDriver</a> specification that Marionette implements uses bog-standard JSON over HTTP for client-server communications. If you want to use JavaScript, your job is even easier: you can take advantage of a <a href="https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/Marionette_JavaScript_Tools">JS Marionette client</a> developed for the B2G project. <a href="#a5">↩</a></p>
+
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/blog/katsconf2/">
+            <p>Notes from KatsConf2</p>
+
+            <small>19 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/fosdem-2017/">
+            <p>Notes from FOSDEM 2017</p>
+
+            <small>13 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/marionette-act-ii-testing/">
+            <p>Marionette, Act II: Harnessing automation to test the browser</p>
+
+            <small>22 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+
+  </body>
+</html>
