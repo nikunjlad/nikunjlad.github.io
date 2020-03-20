@@ -4,6 +4,7 @@ title: "Classification of voice disorders using i-Vector analysis"
 tagline: "Kshipra Naikare; J. H. Nirmal; Nikunj Lad, 2018 International Conference on Communication information and Computing Technology (ICCICT) pp. 1-7., IEEEXplore"
 website: "10.1109/ICCICT.2018.8325877"
 skills: ["MATLAB", "Speech Processing"]
+
 ---
 
 This paper is based on classification of various voice disorders using non-invasive methods
