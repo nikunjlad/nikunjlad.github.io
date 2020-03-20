@@ -11,7 +11,7 @@ with the help of Machine Learning algorithms. In this work, voice samples for th
 Vocal Fold Paralysis and Laryngitis along with normal speech samples are considered. 
 A comprehensive database for each category (4 classes) is created. Using speech processing and feature 
 extraction techniques, the relevant features are extracted, which are stored in a supervector using 
-GMM-UBM. This supervector is then projected on a low dimensional feature vector known as `i-Vectors' 
+GMM-UBM. This supervector is then projected on a low dimensional feature vector known as 'i-Vectors' 
 using total variability factor analysis. These extracted features are stored and a feature matrix is created. 
 The parameters obtained hereafter are used to train the system using Support Vector Machines, Naïve Bayes and K-NN. 
 The trained system is capable of classification of voice disorders. The accuracy using the above-mentioned 
