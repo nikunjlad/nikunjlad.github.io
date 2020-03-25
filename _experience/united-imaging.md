@@ -1,5 +1,5 @@
 ---
-title: "Text-to-Image Metamorphosis using GANs"
+title: "Text-to-Image test Metamorphosis using GANs"
 tagline: "Contains source code to generate synthetic bird images from a given text input"
 website: "https://github.com/nikunjlad/Text-to-Image-Metamorphosis-using-GANs"
 skills: ["PyTorch", "Python", "NumPy"]

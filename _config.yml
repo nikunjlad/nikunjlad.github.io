@@ -6,7 +6,8 @@ plugins:
   - jekyll-feed
 
 # Permalinks
-permalink:              /posts/:categories/:title/
+#permalink:              /:title/
+#permalink:              /posts/:categories/:title/
 # permalink:            posts/:categories/:year/:month/:day/:title/
 
 # Setup
@@ -45,6 +46,7 @@ github:
 collections:
   - publications
   - projects
+  - experience
   - talks
 
 # defaults:
