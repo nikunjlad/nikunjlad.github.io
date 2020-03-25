@@ -7,7 +7,7 @@ title: Publications
   {% for publication in site.publications %}
   <div class="publication post">
     <h2 class="publication-title post-title">
-      <a href="{{ publication.website }}">
+      <a href="{{ publication.website }}" target="_blank">
         {{ publication.title }}
       </a>
     </h2>
