@@ -9,7 +9,7 @@ title: Experience
   <div class="exp post">
       <span id="textbox">
           <h2 class="exp-title post-title alignleft">
-            {{ exp.title }}
+            <a href="{{ exp.website }}" target="_blank">{{ exp.title }}</a>
           </h2>
         <div class="alignright">{{ exp.duration }}</div>
       </span>

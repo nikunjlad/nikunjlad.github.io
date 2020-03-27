@@ -1,6 +1,7 @@
 ---
 title: "InVideo"
 tagline: "Computer Vision Developer"
+website: "https://invideo.io/"
 duration: Sept 2017 - May 2018
 ---
 
