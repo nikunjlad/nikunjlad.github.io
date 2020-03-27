@@ -9,8 +9,8 @@ title: Home
     </div>
     <div class="alignright">
         <br><br><br><br><br><br><br><br><br><br><br>
-        <div id="element1"><a href="https://scholar.google.com/citations?user=is6g3oAAAAAJ&hl=en"><img src="img/google.png" alt="google-scholars" width="50" height="50"></a></div>
-        <div id="element2"><a href="https://sourcerer.io/nikunjlad"><img src="img/sourcerer.png" alt="sourcerer" width="50" height="50"></a></div>
+        <div id="element1"><a href="https://scholar.google.com/citations?user=is6g3oAAAAAJ&hl=en" target="_blank"><img src="img/google.png" alt="google-scholars" width="50" height="50"></a></div>
+        <div id="element2"><a href="https://sourcerer.io/nikunjlad" target="_blank"><img src="img/sourcerer.png" alt="sourcerer" width="50" height="50"></a></div>
     </div> 
 </div>
 <div style="clear: both;"></div>
