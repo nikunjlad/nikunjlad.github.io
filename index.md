@@ -3,7 +3,17 @@ layout: default
 title: Home
 ---
 
-![](https://avatars0.githubusercontent.com/u/4640912?s=400&u=deee4465e71cd7d10ccf2bc459b6774cb4acf24b&v=4)
+<div id="textbox">
+    <div class="alignleft">
+        <img src="https://avatars0.githubusercontent.com/u/4640912?s=400&u=deee4465e71cd7d10ccf2bc459b6774cb4acf24b&v=4" alt="Profile">
+    </div>
+    <div class="alignright">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <div id="element1"><a href="https://scholar.google.com/citations?user=is6g3oAAAAAJ&hl=en"><img src="img/google.png" alt="google-scholars" width="50" height="50"></a></div>
+        <div id="element2"><a href="https://sourcerer.io/nikunjlad"><img src="img/sourcerer.png" alt="sourcerer" width="50" height="50"></a></div>
+    </div> 
+</div>
+<div style="clear: both;"></div>
 
 <span style="color:#000; font-family: 'Montserrat'; font-size: 2.5em;"><b>Hi, I'm Nikunj!</b></span>
 

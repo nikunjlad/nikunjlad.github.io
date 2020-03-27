@@ -11,6 +11,9 @@
     text-align: right;
 }
 
+#element1 {display:inline-block; margin-right:20px}
+#element2 {display:inline-block}
+
 /* Font */
 html {
   font-family: Helvetica, Arial, sans-serif;
