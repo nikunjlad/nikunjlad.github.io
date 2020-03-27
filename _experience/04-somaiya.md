@@ -1,11 +1,11 @@
 ---
-title: "Electronics Department | K. J. Somaiya College of Engineering"
+title: "K. J. Somaiya College of Engineering"
 tagline: "Research Assistant"
 website: "https://kjsce.somaiya.edu/kjsce/academic/department/20/electronics_engineering#about"
 duration: May 2017 - Aug 2017
 ---
 
-- Worked Under [Dr. Nirmal Jagannath](https://scholar.google.com/citations?user=Rl16d3UAAAAJ&hl=en), HOD, Electronics Department, KJSCE on industrial Machine Learning and 
+- Worked Under [Dr. Nirmal Jagannath](https://scholar.google.com/citations?user=Rl16d3UAAAAJ&hl=en){:target="_blank"}, HOD, Electronics Department, KJSCE on industrial Machine Learning and 
 Computer Vision applications.
 - Worked on a project demanding the need to develop a system to classify Dysphonia patients from normal patients using
 Machine Learning. It uses an algorithm which uses a robust feature extraction technique named I-Vectors for classification. 
