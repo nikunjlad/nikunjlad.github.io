@@ -31,8 +31,8 @@
 
       <a class="sidebar-nav-item"
          href="{{ site.baseurl }}/about/">About</a>
-      <a class="sidebar-nav-item"
-         href="{{ site.baseurl }}/resume/">Resume</a>
+      <!-- <a class="sidebar-nav-item"
+         href="{{ site.baseurl }}/resume/">Resume</a> -->
       <a class="sidebar-nav-item"
          href="{{ site.baseurl }}/experience/">Experience</a>
       <a class="sidebar-nav-item"
@@ -62,8 +62,12 @@
                 <i class="fa fa-fw fa-linkedin"></i>
             </a>
         </li>
-
-
+        <li>
+          <a href="{{ site.author.resume }}" target="_blank" class="btn-social btn-outline" title="Nikunj Lad Resume">
+              <i class="fa fa-fw fa-download"></i>
+          </a>
+        </li>
+      
     </ul>
 
     <p id="credits">&copy; {{ site.time | date: '%Y' }}. <a href="{{ site.baseurl }}/credits">Credits</a>.</p>
