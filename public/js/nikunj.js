@@ -79,4 +79,4 @@ function initializeColors() {
     //addColorLink();
 }
 
-window.onload = initializeColors;
+//window.onload = initializeColors;
