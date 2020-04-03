@@ -10,6 +10,7 @@ incorporating some designs from <a href="http://alexandrevicenzi.com" target="_b
 <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme for
 <a href="http://getpelican.com" target="_blank">Pelican</a>, along with other modifications.
 
-Resume built with <a href="https://www.latex-project.org/">LaTeX</a> using a modified version of the <a href="http://www.latextemplates.com/template/friggeri-resume-cv">Friggeri Resume/CV</a> template originally created by <a href="https://github.com/afriggeri">Adrien Friggeri</a>. 
+Special thanks to a dear friend, [Prathamesh Tambe](https://prathamesh-tambe.github.io/){:target="_blank"} for helping me fix certain design elements of the
+site. I am grateful for his help and support and could not done this without his help.
 
 &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
