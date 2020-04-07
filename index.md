@@ -15,7 +15,7 @@ title: Home
 </div>
 <div style="clear: both;"></div>
 
-<span style="color:#000; font-family: 'Montserrat'; font-size: 2.1em;"><b>Hi, I'm Nikunj!</b></span>
+<span style="color:#000; font-family: 'Montserrat'; font-size: 2.1em;"><b>Hi, I'm Nikunj.</b></span>
 
 I love building [Computer Vision](https://www.sas.com/en_us/insights/analytics/computer-vision.html){:target="_blank"} applications and programming in Python. 
 At the moment I'm doing my research on [Long-Short Term Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/){:target="_blank"} and
