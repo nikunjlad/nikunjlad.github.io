@@ -5,7 +5,7 @@ title: Home
 
 <div id="textbox">
     <div class="alignleft">
-        <img src="https://avatars0.githubusercontent.com/u/4640912?s=400&u=deee4465e71cd7d10ccf2bc459b6774cb4acf24b&v=4" alt="Profile" width="250" height="250">
+        <img src="img/nikunj.png" alt="Profile" width="250" height="250">
     </div>
     <div class="alignright">
         <br><br><br><br><br><br><br>
@@ -29,6 +29,6 @@ For extra fun, take a look at some of the [projects]({{ site.baseurl }}projects/
 
 Get in touch with me by [email](mailto:{{ site.author.email }}) or follow me on [Github]({{ site.author.github }}).
 
-To find all the information in one place, check out my [resume]({{ site.baseurl }}resume/).
+To find all the information in one place, check out my [resume](https://nikunjlad.github.io/resume/Nikunj_Lad.pdf){:target="_blank"}.
 
 Thanks for dropping by!
