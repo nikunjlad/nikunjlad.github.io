@@ -8,7 +8,7 @@ duration: Jan 2019 - Present
 - Currently assisting [Dr. Nik Bear Brown](https://www.linkedin.com/in/nikbearbrown/){:target="_blank"} in his course of 
 [INFO 7390 - Advances in Data Science and Architectures](https://github.com/nikbearbrown/INFO_7390){:target="_blank"}.
 - Previously assisted for [INFO 6105 - Data Science Engineering Tools and Methods](https://github.com/nikbearbrown/INFO_6105){:target="_blank"}.
-- Managing a batch of 50 students and assisting them academic course.
+- Managing a batch of 50 students and assisting them in the academic course.
 - Currently also exploring Semantic, Instance and Panoptic Segmentation techniques.
 - Worked on integrating and developing production scripts for time series data using LSTMs as part of being a research assistant
 - Worked on [Mouse Brain Image Analysis](https://github.com/nikunjlad/Broad-Institute-Mouse-Brain-Mapping){:target="_blank"} by trying to 
