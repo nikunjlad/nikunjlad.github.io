@@ -25,14 +25,14 @@ pdfs:           '/pdf'
 
 author:
   name:           'Nikunj Rajesh Lad'
-  url:            nikunjlad.github.io
+  url:            https://nikunjlad.dev
   email:          'lad.n@husky.neu.edu'
   github:         'https://github.com/nikunjlad'
   facebook:       'http://www.facebook.com/nikunj.sporty'
   twitter:        'https://twitter.com/LadNikunj'
   googleplus:     ''
   linkedin:       'https://www.linkedin.com/in/nikunjlad '
-  resume:         'https://nikunjlad.github.io/resume/Nikunj_Lad.pdf'
+  resume:         'https://nikunjlad.dev/resume/Nikunj_Lad.pdf'
 
 paginate:         3
 # paginate_path:    "/posts/page:num/"
