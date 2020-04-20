@@ -30,7 +30,7 @@ experimenting on new cuisines. My mother instilled in me this crazy love for foo
 and I try to carry forward that tradition of giving back and strive to reciprocate her teachings in my life.
 
 I also, happen to explore places ever now and then. Ever place has its own story and I feel sharing personal experiences with others helps
-them in the longer run. I am a <b>Google Maps Local Guide</b> and I share my views on places I visited during my time exploring on Google Maps. 
+them in the longer run. I am a [<b>Google Maps Local Guide</b>](https://goo.gl/maps/cDFTikbdW9k){:target="_blank"}  and I share my views on places I visited during my time exploring on Google Maps. 
 I see Google Maps as a treasure map, with places as markers to be explored, each revealing a new story. While most of the places exist on the 
 map, there are many new local businesses which are yet not recognized and after having stumbled across them, I end up adding them on the Map.
 
