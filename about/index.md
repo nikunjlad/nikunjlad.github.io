@@ -9,9 +9,10 @@ Northeastern University. I am currently assisting [Dr. Nik Bear Brown](https://w
 as a <b>Graduate Teaching Assistant</b> in the Advanced Data Sciences and Architectures course. 
 
 My work is mostly related to understanding images and videos and trying to find the underlying relationships. Having said that, I 
-have worked on various Machine Learning projects as well giving me a good foundation for the same. While, I started off with 
+have worked on various Machine Learning projects as well which gave me good foundational knowledge. While, I started off with 
 image classification tasks, I have lately worked on captioning images with text, generating images given a text and also real-time
-object tracking using OpenCV while undertaking an advanced <b>Special Topics in AI</b> course by [Dr. Subrata Das](https://www.linkedin.com/in/subrata-das-1293354/). A few months ago, I interned in a startup and worked on problems related to Pose Estimation, Dense Correspondence Estimation
+object tracking using OpenCV while undertaking an advanced <b>Special Topics in AI</b> course by [Dr. Subrata Das](https://www.linkedin.com/in/subrata-das-1293354/). 
+A few months ago, I interned in a startup and worked on problems related to Pose Estimation, Dense Correspondence Estimation
 and annotation techniques for a medical application. 
 
 I was really fascinated by how our applications can be scaled and parallelized using state-of-the-art computational techniques.

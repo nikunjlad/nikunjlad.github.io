@@ -16,6 +16,11 @@ name:             'Nikunj Rajesh Lad'
 #tagline:          ''
 description:      'Computer Vision Developer | Machine Learning Engineer'
 
+seo:
+  title:  'Nikunj Rajesh Lad'
+  description:  'I love building Computer Vision applications and programming in Python. At the moment I’m doing my research on Long-Short Term Networks and developing a project on American Sign Language Detection using Parallel Computing strategies'
+  keywords: 'Computer Vision, Deep Learning, Image Processing'
+
 baseurl:
 # blogurl:          /posts/
 
