@@ -5,16 +5,8 @@ website: "https://doi.org/10.1007/s41870-018-0112-5"
 skills: ["MATLAB", "Speech Processing"]
 ---
 
-This paper proposes the use of a new feature extraction technique named I-Vectors to detect 
-and classify Dysphonic voice data. After initial pre-processing and framing, a total of 52 
-important acoustic features are extracted from the speech. Gaussian Mixture Model (GMM) 
-algorithm makes use of an Expectation–Maximization (EM) algorithm to compute the zeroth, 
-first and second order statistics pertaining to the UBM model for final extraction of 
-I-Vectors. This high dimensional supervector is transformed into a low dimensional subspace 
-called the Total Variability space (TV subspace) following which a new vector set 
-(called I-Vectors) in extracted using the UBM model and Baum-Welch statistics. 
-A total of 110 I-Vectors are extracted for the given input data after undergoing Cholesky 
-whitening. This newly created data is now used for classifying normal and dysphonia samples. 
-The application of Support Vector Machines (SVM) along with the extracted I-Vectors gives 
-98% accuracy on the unknown data set, which is a significant improvement in accuracy, 
-as compared to 92% obtained without using I-Vectors.
+
+I-Vectors is a feature extraction technique which is predominantly used for speaker identification and recognition.
+We decided to use this technique to help us detect Dysphonic patients from Normal patients with higher levels of accuracy. 
+We used Gaussian-Mixture Models for helping us extract I-Vectors while the final classification was done using 
+Support Vector Machines (SVM). Using I-Vectors we achieved accuracy of 98%, significantly higher than without using I-Vectors.

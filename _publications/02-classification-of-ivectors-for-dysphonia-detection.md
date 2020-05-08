@@ -5,11 +5,7 @@ website: "https://ieeexplore.ieee.org/document/8325877"
 skills: ["MATLAB", "Speech Processing"]
 ---
 
-This paper is based on classification of various voice disorders using non-invasive methods with the help of Machine Learning
-algorithms. In this work, voice samples for three disorders-Dysphonia, Vocal Fold Paralysis and Laryngitis along with normal
-speech samples are considered. A comprehensive database for each category (4 classes) is created. Using speech processing
-and feature extraction techniques, the relevant features are extracted, which are stored in a supervector using GMM-UBM.
-This supervector is then projected on a low dimensional feature vector known as 'i-Vectors' using total variability factor 
-analysis. These extracted features are stored and a feature matrix is created. The parameters obtained hereafter are used to 
-train the system using Support Vector Machines, Naïve Bayes and K-NN. The trained system is capable of classification of voice 
-disorders. The accuracy using the above-mentioned classifiers is in the range of 84% to 96%.
+
+This paper is a comparative study of how Support Vector Machines (SVM), Naive Bayes and K-Nearest Neighbors (KNN) can be used for 
+classifying three voice disorders - Dysphonia, Vocal Fold Paralysis and Laryngitis along with normal speech samples. For our
+study, we made use of the proposed I-Vector Feature extraction technique. 
