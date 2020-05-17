@@ -1,5 +1,5 @@
 ---
-title: "United Imaging Intelligence"
+title: "UII America Inc."
 tagline: "Computer Vision Research Intern"
 website: "https://www.uii-ai.com/en/"
 duration: Sept 2019 - Jan 2020
