@@ -33,6 +33,12 @@ h2, h3, h4, h5, h6 {
   margin-bottom: .4em;
 }
 
+@media screen and (max-width: 600px) {
+  .projects img{
+    width: 100%;
+  }
+}
+
 
 /* Override Hyde/Poole */
 @media (min-width: 48em) {
