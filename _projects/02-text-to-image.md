@@ -5,7 +5,7 @@ website: "https://github.com/nikunjlad/Text-to-Image-Metamorphosis-using-AttnGAN
 skills: ["PyTorch", "Python", "NumPy"]
 ---
 
-<img src="/img/bird_gan.png" alt="Bird" height="228" width="1046">
+<img src="/img/bird_gan.png" alt="Bird">
 Text-to-Image Metamorphosis is translation of a text to an Image. Essentially, it is 
 inverse of Image Captioning. In Image Captioning, given an image, we develop a model to 
 generate a caption for it based on the underlying scene. Text-to-Image Metamorphosis, 
