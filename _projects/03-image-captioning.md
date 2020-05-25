@@ -6,7 +6,7 @@ skills: ["PyTorch", "Python", "NumPy"]
 ---
 
 <img src="/img/captioning.png" alt="Bird">
-What does a particular scene in an image mean? Given an image its easy for humans to describe the scene
-and various elements in it, but it is a fairly challenging problem for a computer to do that and yet 
-generalize it. This project is an effort to explore image captioning and understand how images are 
-captioned with descriptive texts by training a CNN-LSTM hybrid network.
+What does a particular scene in an image mean? Given an image it is easy for humans to describe the scene and various 
+elements in it, but it is a fairly challenging problem for a computer to do that and yet generalize it. This project is 
+an effort to explore image captioning and understand how images are captioned with descriptive texts by training a 
+CNN-LSTM hybrid network.
