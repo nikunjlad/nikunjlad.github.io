@@ -5,10 +5,6 @@ title: Home
 
 <div id="textbox">
     <div class="alignleft">
-        <img src="img/nikunj.png" alt="Profile" width="250" height="250">
-    </div>
-    <div class="alignright">
-        <br><br><br><br><br><br><br>
         <div id="element1"><a href="https://scholar.google.com/citations?user=is6g3oAAAAAJ&hl=en" target="_blank"><img src="img/google.png" alt="google-scholars" width="35" height="35"></a></div>
         <div id="element2"><a href="https://sourcerer.io/nikunjlad" target="_blank"><img src="img/sourcerer.png" alt="sourcerer" width="35" height="35"></a></div>
     </div> 
