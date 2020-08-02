@@ -19,8 +19,7 @@ title: Home
 <span style="color:#000; font-family: 'Montserrat'; font-size: 2.1em;"><b>Hi, I'm Nikunj.</b></span>
 
 I love building [Computer Vision](https://www.sas.com/en_us/insights/analytics/computer-vision.html){:target="_blank"} applications and programming in Python. 
-Currently, I'm doing my research on [Image Segmentation Techniques](https://www.mathworks.com/discovery/image-segmentation.html){:target="_blank"} and
-developing a project on [American Sign Language Detection](https://github.com/nikunjlad/ASL-Detection-Using-Convolutional-Neural-Networks){:target="_blank"} using Parallel Computing strategies.
+Currently, I'm doing my research on Interpretability in Image [Image Segmentation Techniques](https://www.mathworks.com/discovery/image-segmentation.html){:target="_blank"}.
 
 For more about me, please check out my [bio]({{ site.baseurl }}about/).
 
