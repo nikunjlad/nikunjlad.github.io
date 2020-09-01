@@ -7,9 +7,10 @@ permalink: /about/
 <img src="/img/nikunj.png" alt="Profile" width="250" height="250">
     
 I am a <b>Computer Vision / Machine Learning Engineer</b> currently pursing my masters in Information Systems at 
-Northeastern University. I am currently researching on <b>Interpretability in Image Segmentation Techniques</b> with
-[Dr. Nik Bear Brown](https://www.linkedin.com/in/nikbearbrown/){:target="_blank"} as an Independent Study during the 
-summer term.
+Northeastern University. I recently completed an independent research on <b>Interpretability in Image Segmentation Techniques via Inverse Correlation</b> with
+[Dr. Nik Bear Brown](https://www.linkedin.com/in/nikbearbrown/){:target="_blank"} where I tried to ask the question can we interpret
+Image Segmentation models via inverse correlation with their precursors - the Image Classification networks? I summarized my findings in a 
+book which I have hosted [here](https://interpretability-in-image-segmentation-techniques.readthedocs.io/en/latest/){:target="_blank"}
 
 My work is mostly related to understanding images and videos and trying to find the underlying relationships. 
 Having said that, I have worked on various Machine Learning projects as well which gave me good foundational knowledge. 

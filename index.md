@@ -14,8 +14,8 @@ title: Home
 
 <span style="color:#000; font-family: 'Montserrat'; font-size: 2.1em;"><b>Hi, I'm Nikunj.</b></span>
 
-I love building [Computer Vision](https://www.sas.com/en_us/insights/analytics/computer-vision.html){:target="_blank"} applications and programming in Python. 
-Currently, I'm doing my research on Interpretability in Image [Image Segmentation Techniques](https://www.mathworks.com/discovery/image-segmentation.html){:target="_blank"}.
+I love building [Computer Vision](https://www.sas.com/en_us/insights/analytics/computer-vision.html){:target="_blank"} applications and programming in Python.
+Currently, I am working on developing efficient dataloading pipelines for large datasets using multiprocessing and multi-threading strategies.
 
 For more about me, please check out my [bio]({{ site.baseurl }}about/).
 
@@ -26,5 +26,8 @@ For extra fun, take a look at some of the [projects]({{ site.baseurl }}projects/
 Get in touch with me by [email](mailto:{{ site.author.email }}) or follow me on [Github]({{ site.author.github }}).
 
 To find all the information in one place, check out my [resume](https://nikunjlad.github.io/resume/Nikunj_Lad.pdf){:target="_blank"}.
+
+Lastly, I wrote an [ebook](https://interpretability-in-image-segmentation-techniques.readthedocs.io/en/latest/){:target="_blank"} on my 
+recent work. Do give it a read!
 
 Thanks for dropping by!
