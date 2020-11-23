@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Projects
+title: Vision & NLP Projects
 ---
 
 <div class="projects">
-  {% for project in site.projects %}
+  {% for project in site.cvprojects %}
   <div class="project post">
     <h2 class="project-title post-title">
       <a href="{{ project.website }}" target="_blank">
