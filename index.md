@@ -27,7 +27,4 @@ Get in touch with me by [email](mailto:{{ site.author.email }}) or follow me on 
 
 To find all the information in one place, check out my [resume](https://nikunjlad.github.io/resume/Nikunj_Lad.pdf){:target="_blank"}.
 
-Lastly, I wrote an [ebook](https://interpretability-in-image-segmentation-techniques.readthedocs.io/en/latest/){:target="_blank"} on my 
-recent work. Do give it a read!
-
 Thanks for dropping by!
