@@ -12,4 +12,5 @@ which many researchers are trying to answer lately. While, there are various alg
 many more CNN architectures that exist, we often don't know how do they work internally and what kind of intuition do these models build
 in the intermediate layers before classifying a particular image. This work is an independent study I pursued under the guidance of Professor
 [Nik Brown](https://www.linkedin.com/in/nikbearbrown/){:target="_blank"}, where I tried to interpret these models.  
-Check it out [here](https://interpretability-in-image-classification-techniques.readthedocs.io/en/latest/){:target="_blank"}!
+
+<-- Check it out [here](https://interpretability-in-image-classification-techniques.readthedocs.io/en/latest/){:target="_blank"}! -->
