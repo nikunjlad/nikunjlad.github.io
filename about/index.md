@@ -7,7 +7,7 @@ permalink: /about/
 <img src="/img/nikunj.png" alt="Profile" width="250" height="250">
     
 I am a <b>Computer Vision / Machine Learning Engineer</b> currently pursing my masters in Information Systems at 
-Northeastern University. I recently completed an independent research on <b>Interpretability in Image Segmentation Techniques via Inverse Correlation</b> with
+Northeastern University. I recently completed an independent research on <b>Interpretability in Classification Techniques</b> with
 [Dr. Nik Bear Brown](https://www.linkedin.com/in/nikbearbrown/){:target="_blank"} where I tried to ask the question can we interpret
 Image Classification models? 
 
