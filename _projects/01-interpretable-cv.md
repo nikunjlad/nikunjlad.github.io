@@ -5,7 +5,7 @@ website: "https://github.com/nikunjlad/Interpretability-in-Image-Classification-
 skills: ["PyTorch", "Python", "NumPy"]
 ---
 
-<img src="/img/interpretable.png" alt="Interpretation" width="85%">
+<img src="/img/interpretable.png" alt="Interpretation">
 
 How do computer vision algorithms work internally? How can we interpret their inner workings? These are some of the questions 
 which many researchers are trying to answer lately. While, there are various algorithms like ResNets, GoogleNet, VGGNet, DenseNets, etc and
