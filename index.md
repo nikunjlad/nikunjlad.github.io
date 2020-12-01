@@ -25,6 +25,8 @@ For extra fun, take a look at some of the [projects]({{ site.baseurl }}projects/
 
 Get in touch with me by [email](mailto:{{ site.author.email }}) or follow me on [Github]({{ site.author.github }}).
 
+<!-- 
 To find all the information in one place, check out my [resume](https://nikunjlad.github.io/resume/Nikunj_Lad.pdf){:target="_blank"}.
+-->
 
 Thanks for dropping by!
