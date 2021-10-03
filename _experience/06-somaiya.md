@@ -1,7 +1,7 @@
 ---
 title: "K. J. Somaiya College of Engineering"
 tagline: "Research Assistant"
-website: "https://kjsce.somaiya.edu/kjsce/academic/department/20/electronics_engineering#about"
+website: "https://kjsce.somaiya.edu/en"
 duration: May 2017 - Aug 2017
 ---
 
