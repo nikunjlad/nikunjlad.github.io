@@ -5,8 +5,8 @@ title: Home
 
 <div id="textbox">
     <div class="alignleft">
-        <div id="element1"><a href="https://scholar.google.com/citations?user=is6g3oAAAAAJ&hl=en" target="_blank"><img src="img/google.png" alt="google-scholars" width="35" height="35"></a></div>
-        <div id="element2"><a href="https://sourcerer.io/nikunjlad" target="_blank"><img src="img/sourcerer.png" alt="sourcerer" width="35" height="35"></a></div>
+        <div id="element1"><a href="https://scholar.google.com/citations?user=is6g3oAAAAAJ&hl=en" target="_blank"><img src="img/google.png" alt="Google Scholar profile" width="35" height="35"></a></div>
+        <div id="element2"><a href="https://sourcerer.io/nikunjlad" target="_blank"><img src="img/sourcerer.png" alt="Sourcerer profile" width="35" height="35"></a></div>
     </div> 
 </div>
 <div style="clear: both;"></div>
