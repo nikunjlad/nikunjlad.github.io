@@ -76,7 +76,7 @@
 
   <script>
      provideGtagPlugin({
-        apiKey: '80209597e254c5cc9900cf363aea73150a4dc0ffd8bbb8ceae52cc889333e4ab',
+        apiKey: '{{ site.ipmeta_api_key | default: ENV["IPMETA_API_KEY"] }}',
         serviceProvider: 'dimension1',
         networkDomain: 'dimension2',
         networkType: 'dimension3',
