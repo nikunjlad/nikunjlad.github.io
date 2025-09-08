@@ -5,14 +5,13 @@ title: Home
 
 <div id="textbox">
     <div class="alignleft">
-        <div id="element1"><a href="https://scholar.google.com/citations?user=is6g3oAAAAAJ&hl=en" target="_blank"><img src="img/google.png" alt="Google Scholar profile" width="35" height="35"></a></div>
-        <div id="element2"><a href="https://sourcerer.io/nikunjlad" target="_blank"><img src="img/sourcerer.png" alt="Sourcerer profile" width="35" height="35"></a></div>
-    </div> 
+        <div id="element1"><a href="https://scholar.google.com/citations?user=is6g3oAAAAAJ&hl=en" target="_blank"><img src="img/google.png" alt="google-scholars" width="35" height="35"></a></div>
+    </div>
 </div>
 <div style="clear: both;"></div>
 
 
-<span style="color:#000; font-family: 'Montserrat'; font-size: 2.1em;"><b>Hi, I'm Nikunj.</b></span>
+<span class="intro-heading"><b>Hi, I'm Nikunj.</b></span>
 
 I love building [Computer Vision](https://www.sas.com/en_us/insights/analytics/computer-vision.html){:target="_blank"} applications and programming in Python.
 Currently, I am working on developing efficient dataloading pipelines for large datasets using multiprocessing and multi-threading strategies.
