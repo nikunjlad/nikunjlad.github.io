@@ -12,7 +12,12 @@
 }
 
 #element1 {display:inline-block; margin-right:9px}
-#element2 {display:inline-block}
+.intro-heading {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.1em;
+}
+
 
 /* Font */
 html {
