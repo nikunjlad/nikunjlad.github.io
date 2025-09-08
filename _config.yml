@@ -4,6 +4,7 @@ highlighter:      rouge
 plugins:
   - jekyll-paginate
   - jekyll-feed
+  - jekyll-sitemap
 
 # Permalinks
 #permalink:              /:title/
