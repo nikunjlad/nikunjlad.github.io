@@ -45,6 +45,7 @@ paginate:         3
 
 # Custom vars
 version:          2.1.0
+ipmeta_api_key:   "" # set or use environment variable IPMETA_API_KEY
 
 github:
   repo:           https://github.com/nikunjlad/nikunjlad.github.io
