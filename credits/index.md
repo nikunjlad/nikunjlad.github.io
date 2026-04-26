@@ -10,6 +10,8 @@ incorporating some designs from <a href="http://alexandrevicenzi.com" target="_b
 <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme for
 <a href="http://getpelican.com" target="_blank">Pelican</a>, along with other modifications and also taking a lot of inspiration from [Anjana Vakil](https://www.linkedin.com/in/anjanavakil/).
 
+Modernized in 2026 with a custom design layer — dark-mode theming, refreshed typography, hero homepage, and card-based content layouts with client-side pagination — paired-coded with [Claude Code](https://claude.com/claude-code).
+
 Special thanks to a dear friend, [Prathamesh Tambe](https://prathamesh-tambe.github.io/){:target="_blank"} for helping me fix certain design elements of the
 site and also for suggesting and making major edits to make this site what it is now. I am grateful for his help and support and could not have done this without him.
 
@@ -20,7 +22,7 @@ closed relatives, I would like to extend my gratitude to the following people:
 [Jigar Chheda](https://www.linkedin.com/in/jigar-chheda-957492107/), [Smita Pise](https://www.linkedin.com/in/smita-pise/), [Ankita Gandhi](https://www.linkedin.com/in/ankita-gandhi-11b5b0129/),
 [Swapnil Patel](https://www.linkedin.com/in/swapnil-patel-fin/), [Raina Jha](https://www.linkedin.com/in/rainajha/), [Shubham](https://www.linkedin.com/in/shub1646/),
 [Raghav Avasthi](https://www.linkedin.com/in/raghav-avasthi/), [Mustafa Merchant](https://www.linkedin.com/in/mam94/), [Hardi Desai](https://www.linkedin.com/in/hardi-desai/),
-[Akash Rana](https://www.linkedin.com/in/akash-rana-5b037358/), [Mansi Gandhi](https://www.linkedin.com/in/mansigandhi4/), [Akshay Patel](https://www.linkedin.com/in/akshaypatel6/),
+[Akash Rana](https://www.linkedin.com/in/akash-rana-5b037358/), [Akshay Patel](https://www.linkedin.com/in/akshaypatel6/),
 [Piyush Gondchawar](https://www.linkedin.com/in/piyushgondchawar/), [Preetam Jain](https://www.linkedin.com/in/preetamjain/), [Nikunj Doshi](linkedin.com/in/nikunjdoshi23/),
 [Tejas Bobhate](https://www.linkedin.com/in/tejas-bobhate/), [Kshitij Agarwal](https://www.linkedin.com/in/kshitijagrawal/), [Parikshit Hedge](https://www.linkedin.com/in/parikshit-hegde-0832b542/)
 

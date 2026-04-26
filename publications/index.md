@@ -3,21 +3,25 @@ layout: page
 title: Publications
 ---
 
-<div class="publications">
+<div class="entries">
   {% for publication in site.publications %}
-  <div class="publication post">
-    <h2 class="publication-title post-title">
-      <a href="{{ publication.website }}" target="_blank">
+  <article class="entry">
+    <h2 class="entry-title">
+      {% if publication.website %}
+        <a href="{{ publication.website }}" target="_blank" rel="noopener">{{ publication.title }}</a>
+      {% else %}
         {{ publication.title }}
-      </a>
+      {% endif %}
     </h2>
-    <span class="publication-tagline post-date">
-        {{ publication.tagline }}
-    </span>
-
-    {{ publication.content }}
-
-
-  </div>
+    {% if publication.tagline %}<span class="entry-meta">{{ publication.tagline }}</span>{% endif %}
+    <div class="entry-body">
+      {{ publication.content }}
+    </div>
+    {% if publication.skills %}
+    <div class="entry-tags">
+      {% for skill in publication.skills %}<span class="tag">{{ skill }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </article>
   {% endfor %}
 </div>

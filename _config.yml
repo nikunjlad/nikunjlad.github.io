@@ -33,7 +33,7 @@ pdfs:           '/pdf'
 author:
   name:           'Nikunj Rajesh Lad'
   url:            'https://nikunjlad.dev'
-  email:          'lad.n@husky.neu.edu'
+  email:          'nikunjrlad@gmail.com'
   github:         'https://github.com/nikunjlad'
   facebook:       'https://www.facebook.com/nikunj.sporty'
   twitter:        'https://twitter.com/LadNikunj'
@@ -57,6 +57,7 @@ collections:
   - cvprojects
   - dsprojects
   - experience
+  - service
   - talks
 
 # defaults:

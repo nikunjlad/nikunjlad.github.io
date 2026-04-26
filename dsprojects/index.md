@@ -1,23 +1,17 @@
 ---
-layout: page
-title: Classical ML Projects
+layout: null
+permalink: /dsprojects/
+sitemap: false
 ---
-
-<div class="projects">
-  {% for project in site.dsprojects %}
-  <div class="project post">
-    <h2 class="project-title post-title">
-      <a href="{{ project.website }}" target="_blank">
-        {{ project.title }}
-      </a>
-    </h2>
-    <span class="project-tagline post-date">
-        {{ project.tagline }}
-    </span>
-
-    {{ project.content }}
-
-
-  </div>
-  {% endfor %}
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <meta http-equiv="refresh" content="0; url={{ site.baseurl }}/projects/">
+  <link rel="canonical" href="{{ site.baseurl }}/projects/">
+</head>
+<body>
+  <p>This page has moved. Redirecting to <a href="{{ site.baseurl }}/projects/">/projects/</a>…</p>
+</body>
+</html>

@@ -6,24 +6,9 @@ permalink: /about/
 
 <img src="/img/nikunj.png" alt="Profile" width="250" height="250">
     
-I am a <b>Computer Vision / Machine Learning Engineer</b> recently graduated with a Master of Science in Information Systems from
-Northeastern University with a specialization in Machine Learning and Pattern Recognition. I recently completed an 
-independent research on <b>Interpretability in Image Classification Techniques</b> with
-[Dr. Nik Bear Brown](https://www.linkedin.com/in/nikbearbrown/){:target="_blank"} where I tried to ask the question can we interpret
-Image Classification models? 
+I am a <b>Sr. Machine Learning Engineer</b> at [Knightscope](https://www.knightscope.com/){:target="_blank"}, where I own the end-to-end AI/CV stack across a fleet of <b>100+ autonomous security robots</b> deployed at 50+ clients nationwide. I joined Knightscope as the company's sole ML engineer in 2021 — fresh out of my Master of Science in Information Systems at Northeastern University, where I concentrated in Machine Learning & Pattern Recognition and researched <b>Interpretability in Image Classification</b> with [Dr. Nik Bear Brown](https://www.linkedin.com/in/nikbearbrown/){:target="_blank"} at AI Skunkworks. Five years in, I'm still building computer vision systems for the real world.
 
-My work is mostly related to understanding images and videos and trying to find the underlying relationships. 
-Having said that, I have worked on various Machine Learning projects as well which gave me good foundational knowledge. 
-While, I started off with image classification tasks, I have lately worked on captioning images with text, generating 
-images given a text and also real-time object tracking using OpenCV while undertaking an advanced <b>Special Topics in 
-AI</b> course by [Dr. Subrata Das](https://www.linkedin.com/in/subrata-das-1293354/){:target="_blank"}. A few months 
-ago, I interned in a startup and worked on problems related to Pose Estimation, Dense Correspondence Estimation and 
-annotation techniques for a medical application.
-
-I was really fascinated by how our applications can be scaled and parallelized using state-of-the-art computational 
-techniques. I recently took a subject of <b>Parallel Computing</b> taught by [Dr. Liu Handan](https://www.linkedin.com/in/handan-liu-439050169/){:target="_blank"} where I explored strategies and techniques to 
-work on High-Performance Computing platforms like Discovery Clusters. Since then, I have been harnessing the power of 
-GPUs for distributed training of the models.
+My day-to-day spans <b>edge object detection</b> (people, faces, vehicles, license plates, thermal targets), <b>real-time video pipelines</b> on Nvidia Jetson devices, and <b>model optimization</b> — quantizing detectors to INT8/FP16 with TensorRT to ease edge resource usage and cut bandwidth and cellular costs across the deployed fleet. Most recently I'm leading the AI/CV stack inside the <b>K7 ICM (Intelligence Control Module)</b> on Knightscope's next-generation robot, developed against NIST 800-53 security controls. The thread through all of it is what continues to pull me in — <b>shipping vision systems that work outside the lab</b>: under low light, occlusion, real network constraints, and real compliance requirements.
 
 When I am not coding or working on anything related to vision, I love reading psychological-fictional books; 
 books which help to stimulate the right half of my brain, the creative one. The power which lies inside thoughts is 

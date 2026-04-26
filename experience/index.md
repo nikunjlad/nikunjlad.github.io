@@ -3,22 +3,23 @@ layout: page
 title: Experience
 ---
 
-
-<div class="experience">
+<div class="entries paginated" data-page-size="3">
   {% for exp in site.experience %}
-  <div class="exp post">
-      <!-- <span id="textbox">0 -->
-        <div style="overflow: auto;">  
-          <h2 class="exp-title post-title alignleft">
-            <a href="{{ exp.website }}" target="_blank">{{ exp.title }}</a>
-          </h2>
-          <div class="alignright">{{ exp.duration }}</div>
-        </div>
-      <!-- </span> -->
-      <span class="exp-tagline post-date">
-        {{ exp.tagline }}
-      </span>
-    {{ exp.content }}
-  </div>
+  <article class="entry">
+    <div class="entry-head">
+      <h2 class="entry-title">
+        {% if exp.website %}
+          <a href="{{ exp.website }}" target="_blank" rel="noopener">{{ exp.title }}</a>
+        {% else %}
+          {{ exp.title }}
+        {% endif %}
+      </h2>
+      {% if exp.duration %}<span class="entry-duration">{{ exp.duration }}</span>{% endif %}
+    </div>
+    {% if exp.tagline %}<span class="entry-meta">{{ exp.tagline }}</span>{% endif %}
+    <div class="entry-body">
+      {{ exp.content }}
+    </div>
+  </article>
   {% endfor %}
 </div>
